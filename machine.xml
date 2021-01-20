@@ -43,6 +43,12 @@
             <jerk-per-second-3 value="0.0" units="Millimeters"/>
             <resolution>1.0E-4</resolution>
          </axis>
+         <axis class="org.openpnp.machine.reference.axis.ReferenceCamClockwiseAxis" id="AXS165c09d6f9b871c0" name="CamClockwiseAxis" type="Z" input-axis-id="AXS165c099017b6c81c"/>
+         <axis class="org.openpnp.machine.reference.axis.ReferenceCamCounterClockwiseAxis" id="AXS165c099017b6c81c" name="CamCounterClockwiseAxis" type="Z" input-axis-id="AXS165bcf97384fc124">
+            <cam-radius value="24.0" units="Millimeters"/>
+            <cam-wheel-radius value="6.0" units="Millimeters"/>
+            <cam-wheel-gap value="0.0" units="Millimeters"/>
+         </axis>
          <axis class="org.openpnp.machine.reference.axis.ReferenceControllerAxis" id="AXS165bcf9738505c9c" name="A" type="Rotation" driver-id="DRV165bcf9d9bfaa238" letter="A" backlash-compensation-method="None" backlash-speed-factor="0.1" limit-rotation="true" wrap-around-rotation="false" invert-linear-rotational="false" soft-limit-low-enabled="false" soft-limit-high-enabled="false" safe-zone-low-enabled="false" safe-zone-high-enabled="false">
             <home-coordinate value="0.0" units="Millimeters"/>
             <backlash-offset value="0.0" units="Millimeters"/>
@@ -55,17 +61,35 @@
             <jerk-per-second-3 value="0.0" units="Millimeters"/>
             <resolution>1.0E-4</resolution>
          </axis>
+         <axis class="org.openpnp.machine.reference.axis.ReferenceControllerAxis" id="AXS165c09ca09bc48ec" name="B" type="Rotation" driver-id="DRV165bcf9d9bfaa238" letter="B" backlash-compensation-method="None" backlash-speed-factor="0.1" limit-rotation="false" wrap-around-rotation="false" invert-linear-rotational="false" soft-limit-low-enabled="false" soft-limit-high-enabled="false" safe-zone-low-enabled="false" safe-zone-high-enabled="false">
+            <home-coordinate value="0.0" units="Millimeters"/>
+            <backlash-offset value="0.0" units="Millimeters"/>
+            <soft-limit-low value="0.0" units="Millimeters"/>
+            <soft-limit-high value="0.0" units="Millimeters"/>
+            <safe-zone-low value="0.0" units="Millimeters"/>
+            <safe-zone-high value="0.0" units="Millimeters"/>
+            <feedrate-per-second value="250.0" units="Millimeters"/>
+            <acceleration-per-second-2 value="500.0" units="Millimeters"/>
+            <jerk-per-second-3 value="2000.0" units="Millimeters"/>
+            <resolution>1.0E-4</resolution>
+         </axis>
       </axes>
       <heads>
          <head class="org.openpnp.machine.reference.ReferenceHead" id="H1" name="H1" visual-homing-method="ResetToHomeLocation">
             <nozzles>
-               <nozzle class="org.openpnp.machine.reference.ReferenceNozzle" axis-X-id="AXS165bcf973840e3ac" axis-Y-id="AXS165bcf97384b4ce8" axis-Z-id="AXS165bcf97384fc124" axis-rotation-id="AXS165bcf9738505c9c" id="N1" name="N1" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" current-nozzle-tip-id="NT1" changer-enabled="false" nozzle-tip-changed-on-manual-feed="false" enable-dynamic-safe-z="false" limit-rotation="true">
+               <nozzle class="org.openpnp.machine.reference.ReferenceNozzle" axis-X-id="AXS165bcf973840e3ac" axis-Y-id="AXS165bcf97384b4ce8" axis-Z-id="AXS165c09d6f9b871c0" axis-rotation-id="AXS165bcf9738505c9c" id="N1" name="N1" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" current-nozzle-tip-id="NT1" changer-enabled="false" nozzle-tip-changed-on-manual-feed="false" enable-dynamic-safe-z="false" limit-rotation="true">
                   <compatible-nozzle-tip-ids class="java.util.ArrayList">
                      <string>NT1</string>
                   </compatible-nozzle-tip-ids>
                   <head-offsets units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
                   <vacuum-sense-actuator-name>A1</vacuum-sense-actuator-name>
                   <vacuum-actuator-name>A1</vacuum-actuator-name>
+               </nozzle>
+               <nozzle class="org.openpnp.machine.reference.ReferenceNozzle" axis-X-id="AXS165bcf973840e3ac" axis-Y-id="AXS165bcf97384b4ce8" axis-Z-id="AXS165c099017b6c81c" axis-rotation-id="AXS165c09ca09bc48ec" id="NOZ165c09f01317c92c" name="N2" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" changer-enabled="false" nozzle-tip-changed-on-manual-feed="false" enable-dynamic-safe-z="false" limit-rotation="true">
+                  <compatible-nozzle-tip-ids class="java.util.ArrayList"/>
+                  <head-offsets units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+                  <vacuum-sense-actuator-name>.migrate</vacuum-sense-actuator-name>
+                  <vacuum-actuator-name>.migrate</vacuum-actuator-name>
                </nozzle>
             </nozzles>
             <actuators>
