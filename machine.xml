@@ -45,8 +45,8 @@
          </axis>
          <axis class="org.openpnp.machine.reference.axis.ReferenceCamClockwiseAxis" id="AXS165c09d6f9b871c0" name="CamClockwiseAxis" type="Z" input-axis-id="AXS165c099017b6c81c"/>
          <axis class="org.openpnp.machine.reference.axis.ReferenceCamCounterClockwiseAxis" id="AXS165c099017b6c81c" name="CamCounterClockwiseAxis" type="Z" input-axis-id="AXS165bcf97384fc124">
-            <cam-radius value="24.0" units="Millimeters"/>
-            <cam-wheel-radius value="6.0" units="Millimeters"/>
+            <cam-radius value="22.0" units="Millimeters"/>
+            <cam-wheel-radius value="0.0" units="Millimeters"/>
             <cam-wheel-gap value="0.0" units="Millimeters"/>
          </axis>
          <axis class="org.openpnp.machine.reference.axis.ReferenceControllerAxis" id="AXS165bcf9738505c9c" name="A" type="Rotation" driver-id="DRV165bcf9d9bfaa238" letter="A" backlash-compensation-method="None" backlash-speed-factor="0.1" limit-rotation="true" wrap-around-rotation="false" invert-linear-rotational="false" soft-limit-low-enabled="false" soft-limit-high-enabled="false" safe-zone-low-enabled="false" safe-zone-high-enabled="false">
@@ -356,13 +356,16 @@
             </command>
             <command type="MOVE_TO_COMMAND">
                <text><![CDATA[M201.3 {XJerk:X%.0f} {YJerk:Y%.0f} {ZJerk:Z%.0f} {AJerk:A%.0f} ]]></text>
-               <text><![CDATA[G1 {X:X%.4f} {Y:Y%.4f} {Z:Z%.4f} {A:A%.4f} {FeedRate:F%.2f} ;Move to target]]></text>
+               <text><![CDATA[G1 {X:X%.4f} {Y:Y%.4f} {Z:Z%.4f} {A:A%.4f} {B:B%.4f} {FeedRate:F%.2f} ;Move to target]]></text>
             </command>
             <command type="MOVE_TO_COMPLETE_COMMAND">
                <text><![CDATA[M400 ;Wait for moves to complete before returning]]></text>
             </command>
-            <command type="CONNECT_COMMAND">
-               <text><![CDATA[G21 ;Set millimeters mode .]]></text>
+            <command type="DISABLE_COMMAND">
+               <text><![CDATA[M18 ;Power off motors.]]></text>
+            </command>
+            <command type="ENABLE_COMMAND">
+               <text><![CDATA[G21 ;Set millimeters mode.]]></text>
                <text><![CDATA[G90 ;Set absolute positioning mode.]]></text>
                <text><![CDATA[G28 ;Home all axis.]]></text>
             </command>
