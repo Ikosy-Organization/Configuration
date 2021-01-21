@@ -1,7 +1,7 @@
 <openpnp-machine>
    <machine class="org.openpnp.machine.reference.ReferenceMachine" speed="1.0">
       <axes>
-         <axis class="org.openpnp.machine.reference.axis.ReferenceControllerAxis" id="AXS165bcf973840e3ac" name="X" type="X" driver-id="DRV165bcf9d9bfaa238" letter="X" backlash-compensation-method="None" backlash-speed-factor="0.1" limit-rotation="false" wrap-around-rotation="false" invert-linear-rotational="false" soft-limit-low-enabled="false" soft-limit-high-enabled="false" safe-zone-low-enabled="false" safe-zone-high-enabled="false">
+         <axis class="org.openpnp.machine.reference.axis.ReferenceControllerAxis" id="AXS165bcf973840e3ac" name="X" type="X" driver-id="DRV165c19964c7c2824" letter="X" backlash-compensation-method="None" backlash-speed-factor="0.1" limit-rotation="false" wrap-around-rotation="false" invert-linear-rotational="false" soft-limit-low-enabled="false" soft-limit-high-enabled="false" safe-zone-low-enabled="false" safe-zone-high-enabled="false">
             <home-coordinate value="0.0" units="Millimeters"/>
             <backlash-offset value="0.0" units="Millimeters"/>
             <soft-limit-low value="0.0" units="Millimeters"/>
@@ -13,7 +13,7 @@
             <jerk-per-second-3 value="0.0" units="Millimeters"/>
             <resolution>1.0E-4</resolution>
          </axis>
-         <axis class="org.openpnp.machine.reference.axis.ReferenceControllerAxis" id="AXS165bcf97384b4ce8" name="Y" type="Y" driver-id="DRV165bcf9d9bfaa238" letter="Y" backlash-compensation-method="None" backlash-speed-factor="0.1" limit-rotation="false" wrap-around-rotation="false" invert-linear-rotational="false" soft-limit-low-enabled="false" soft-limit-high-enabled="false" safe-zone-low-enabled="false" safe-zone-high-enabled="false">
+         <axis class="org.openpnp.machine.reference.axis.ReferenceControllerAxis" id="AXS165bcf97384b4ce8" name="Y" type="Y" driver-id="DRV165c19964c7c2824" letter="Y" backlash-compensation-method="None" backlash-speed-factor="0.1" limit-rotation="false" wrap-around-rotation="false" invert-linear-rotational="false" soft-limit-low-enabled="false" soft-limit-high-enabled="false" safe-zone-low-enabled="false" safe-zone-high-enabled="false">
             <home-coordinate value="0.0" units="Millimeters"/>
             <backlash-offset value="0.0" units="Millimeters"/>
             <soft-limit-low value="0.0" units="Millimeters"/>
@@ -31,7 +31,7 @@
          <axis class="org.openpnp.machine.reference.axis.ReferenceVirtualAxis" id="AXS165bcf97384eed08" name="VirtualA" type="Rotation">
             <home-coordinate value="0.0" units="Millimeters"/>
          </axis>
-         <axis class="org.openpnp.machine.reference.axis.ReferenceControllerAxis" id="AXS165bcf97384fc124" name="Z" type="Z" driver-id="DRV165bcf9d9bfaa238" letter="Z" backlash-compensation-method="None" backlash-speed-factor="0.1" limit-rotation="false" wrap-around-rotation="false" invert-linear-rotational="true" soft-limit-low-enabled="false" soft-limit-high-enabled="false" safe-zone-low-enabled="true" safe-zone-high-enabled="true">
+         <axis class="org.openpnp.machine.reference.axis.ReferenceControllerAxis" id="AXS165bcf97384fc124" name="Z" type="Z" driver-id="DRV165c19964c7c2824" letter="Z" backlash-compensation-method="None" backlash-speed-factor="0.1" limit-rotation="false" wrap-around-rotation="false" invert-linear-rotational="true" soft-limit-low-enabled="false" soft-limit-high-enabled="false" safe-zone-low-enabled="true" safe-zone-high-enabled="true">
             <home-coordinate value="0.0" units="Millimeters"/>
             <backlash-offset value="0.0" units="Millimeters"/>
             <soft-limit-low value="0.0" units="Millimeters"/>
@@ -49,27 +49,27 @@
             <cam-wheel-radius value="0.0" units="Millimeters"/>
             <cam-wheel-gap value="0.0" units="Millimeters"/>
          </axis>
-         <axis class="org.openpnp.machine.reference.axis.ReferenceControllerAxis" id="AXS165bcf9738505c9c" name="A" type="Rotation" driver-id="DRV165bcf9d9bfaa238" letter="A" backlash-compensation-method="None" backlash-speed-factor="0.1" limit-rotation="true" wrap-around-rotation="false" invert-linear-rotational="false" soft-limit-low-enabled="false" soft-limit-high-enabled="false" safe-zone-low-enabled="false" safe-zone-high-enabled="false">
+         <axis class="org.openpnp.machine.reference.axis.ReferenceControllerAxis" id="AXS165bcf9738505c9c" name="A" type="Rotation" driver-id="DRV165c19964c7c2824" letter="A" backlash-compensation-method="None" backlash-speed-factor="0.1" limit-rotation="false" wrap-around-rotation="false" invert-linear-rotational="false" soft-limit-low-enabled="false" soft-limit-high-enabled="false" safe-zone-low-enabled="false" safe-zone-high-enabled="false">
             <home-coordinate value="0.0" units="Millimeters"/>
             <backlash-offset value="0.0" units="Millimeters"/>
             <soft-limit-low value="0.0" units="Millimeters"/>
             <soft-limit-high value="0.0" units="Millimeters"/>
             <safe-zone-low value="0.0" units="Millimeters"/>
             <safe-zone-high value="0.0" units="Millimeters"/>
-            <feedrate-per-second value="3333.3333333333335" units="Millimeters"/>
-            <acceleration-per-second-2 value="6666.666666666667" units="Millimeters"/>
-            <jerk-per-second-3 value="0.0" units="Millimeters"/>
+            <feedrate-per-second value="3000.0" units="Millimeters"/>
+            <acceleration-per-second-2 value="6000.0" units="Millimeters"/>
+            <jerk-per-second-3 value="2000.0" units="Millimeters"/>
             <resolution>1.0E-4</resolution>
          </axis>
-         <axis class="org.openpnp.machine.reference.axis.ReferenceControllerAxis" id="AXS165c09ca09bc48ec" name="B" type="Rotation" driver-id="DRV165bcf9d9bfaa238" letter="B" backlash-compensation-method="None" backlash-speed-factor="0.1" limit-rotation="false" wrap-around-rotation="false" invert-linear-rotational="false" soft-limit-low-enabled="false" soft-limit-high-enabled="false" safe-zone-low-enabled="false" safe-zone-high-enabled="false">
+         <axis class="org.openpnp.machine.reference.axis.ReferenceControllerAxis" id="AXS165c09ca09bc48ec" name="B" type="Rotation" driver-id="DRV165c19964c7c2824" letter="B" backlash-compensation-method="None" backlash-speed-factor="0.1" limit-rotation="false" wrap-around-rotation="false" invert-linear-rotational="false" soft-limit-low-enabled="false" soft-limit-high-enabled="false" safe-zone-low-enabled="false" safe-zone-high-enabled="false">
             <home-coordinate value="0.0" units="Millimeters"/>
             <backlash-offset value="0.0" units="Millimeters"/>
             <soft-limit-low value="0.0" units="Millimeters"/>
             <soft-limit-high value="0.0" units="Millimeters"/>
             <safe-zone-low value="0.0" units="Millimeters"/>
             <safe-zone-high value="0.0" units="Millimeters"/>
-            <feedrate-per-second value="250.0" units="Millimeters"/>
-            <acceleration-per-second-2 value="500.0" units="Millimeters"/>
+            <feedrate-per-second value="3000.0" units="Millimeters"/>
+            <acceleration-per-second-2 value="6000.0" units="Millimeters"/>
             <jerk-per-second-3 value="2000.0" units="Millimeters"/>
             <resolution>1.0E-4</resolution>
          </axis>
@@ -88,8 +88,6 @@
                <nozzle class="org.openpnp.machine.reference.ReferenceNozzle" axis-X-id="AXS165bcf973840e3ac" axis-Y-id="AXS165bcf97384b4ce8" axis-Z-id="AXS165c099017b6c81c" axis-rotation-id="AXS165c09ca09bc48ec" id="NOZ165c09f01317c92c" name="N2" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" changer-enabled="false" nozzle-tip-changed-on-manual-feed="false" enable-dynamic-safe-z="false" limit-rotation="true">
                   <compatible-nozzle-tip-ids class="java.util.ArrayList"/>
                   <head-offsets units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-                  <vacuum-sense-actuator-name>.migrate</vacuum-sense-actuator-name>
-                  <vacuum-actuator-name>.migrate</vacuum-actuator-name>
                </nozzle>
             </nozzles>
             <actuators>
@@ -337,8 +335,8 @@
          </part-alignment>
       </part-alignments>
       <drivers>
-         <driver class="org.openpnp.machine.reference.driver.GcodeDriver" id="DRV165bcf9d9bfaa238" name="GcodeDriver" motion-control-type="SimpleSCurve" communications="serial" connection-keep-alive="true" units="Millimeters" max-feed-rate="1000" backlash-offset-x="-1.0" backlash-offset-y="-1.0" backlash-offset-z="0.0" backlash-offset-r="0.0" non-squareness-factor="0.0" backlash-feed-rate-factor="0.1" timeout-milliseconds="5000" connect-wait-time-milliseconds="3000" visual-homing-enabled="true" backslash-escaped-characters-enabled="false" remove-comments="false" compress-gcode="false" logging-gcode="false" supporting-pre-move="false" using-letter-variables="true" infinity-timeout-milliseconds="60000">
-            <serial line-ending-type="LF" port-name="COM3" baud="115200" flow-control="Off" data-bits="Eight" stop-bits="One" parity="None" set-dtr="false" set-rts="false" name="SerialPortCommunications"/>
+         <driver class="org.openpnp.machine.reference.driver.GcodeDriver" id="DRV165bcf9d9bfaa238" name="GcodeDriver" motion-control-type="ToolpathFeedRate" communications="serial" connection-keep-alive="true" units="Millimeters" max-feed-rate="1000" backlash-offset-x="-1.0" backlash-offset-y="-1.0" backlash-offset-z="0.0" backlash-offset-r="0.0" non-squareness-factor="0.0" backlash-feed-rate-factor="0.1" timeout-milliseconds="5000" connect-wait-time-milliseconds="3000" visual-homing-enabled="true" backslash-escaped-characters-enabled="false" remove-comments="false" compress-gcode="false" logging-gcode="false" supporting-pre-move="false" using-letter-variables="true" infinity-timeout-milliseconds="60000">
+            <serial line-ending-type="LF" port-name="COM1" baud="115200" flow-control="Off" data-bits="Eight" stop-bits="One" parity="None" set-dtr="false" set-rts="false" name="SerialPortCommunications"/>
             <tcp line-ending-type="LF" ip-address="127.0.0.1" port="23" name="TcpCommunications"/>
             <simulated line-ending-type="LF"/>
             <homing-fiducial-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
@@ -356,19 +354,67 @@
             </command>
             <command type="MOVE_TO_COMMAND">
                <text><![CDATA[M201.3 {XJerk:X%.0f} {YJerk:Y%.0f} {ZJerk:Z%.0f} {AJerk:A%.0f} ]]></text>
+               <text><![CDATA[{Acceleration:M204 S%.2f}]]></text>
                <text><![CDATA[G1 {X:X%.4f} {Y:Y%.4f} {Z:Z%.4f} {A:A%.4f} {B:B%.4f} {FeedRate:F%.2f} ;Move to target]]></text>
             </command>
             <command type="MOVE_TO_COMPLETE_COMMAND">
                <text><![CDATA[M400 ;Wait for moves to complete before returning]]></text>
             </command>
             <command type="DISABLE_COMMAND">
-               <text><![CDATA[M18 ;Power off motors.]]></text>
+               <text><![CDATA[M999 ;Reset.  This is used to reset in case of an issue.  Note, to use this, you must have a home command in the ENABLE_COMMAND.]]></text>
+               <text><![CDATA[M18  ;Power off motors.]]></text>
             </command>
             <command type="ENABLE_COMMAND">
                <text><![CDATA[G21 ;Set millimeters mode.]]></text>
                <text><![CDATA[G90 ;Set absolute positioning mode.]]></text>
                <text><![CDATA[G28 ;Home all axis.]]></text>
             </command>
+            <command type="SET_GLOBAL_OFFSETS_COMMAND">
+               <text><![CDATA[G92 {X:X%.4f} {Y:Y%.4f} {Z:Z%.4f} {A:A%.4f} {B:B%.4f} ;Reset coordinates in the controller.]]></text>
+            </command>
+            <command type="POSITION_REPORT_REGEX">
+               <text><![CDATA[^.*X:(?<X>-?\d+\.\d+) Y:(?<Y>-?\d+\.\d+) Z:(?<Z>-?\d+\.\d+) A:(?<A>-?\d+\.\d+) B:(?<B>-?\d+\.\d+).*]]></text>
+            </command>
+         </driver>
+         <driver class="org.openpnp.machine.reference.driver.GcodeAsyncDriver" id="DRV165c19964c7c2824" name="GcodeAsyncDriver" motion-control-type="ToolpathFeedRate" communications="serial" connection-keep-alive="true" units="Millimeters" max-feed-rate="1000" backlash-offset-x="-1.0" backlash-offset-y="-1.0" backlash-offset-z="0.0" backlash-offset-r="0.0" non-squareness-factor="0.0" backlash-feed-rate-factor="0.1" timeout-milliseconds="5000" connect-wait-time-milliseconds="3000" visual-homing-enabled="true" backslash-escaped-characters-enabled="false" remove-comments="false" compress-gcode="false" logging-gcode="false" supporting-pre-move="false" using-letter-variables="true" infinity-timeout-milliseconds="60000" writer-polling-interval="100" writer-queue-timeout="60000" max-commands-queued="1000" confirmation-flow-control="true" reported-location-confirmation="true" interpolation-max-steps="32" interpolation-jerk-steps="4" interpolation-time-step="0.001" interpolation-min-step="16">
+            <serial line-ending-type="LF" port-name="COM3" baud="115200" flow-control="Off" data-bits="Eight" stop-bits="One" parity="None" set-dtr="false" set-rts="false" name="SerialPortCommunications"/>
+            <tcp line-ending-type="LF" ip-address="127.0.0.1" port="23" name="TcpCommunications"/>
+            <simulated line-ending-type="LF"/>
+            <homing-fiducial-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+            <command type="HOME_COMMAND">
+               <text><![CDATA[M117 Homing, Please wait]]></text>
+               <text><![CDATA[G28 ;Home all axes]]></text>
+               <text><![CDATA[G92 G1 A0 ;Set N2 rotation to zero]]></text>
+               <text><![CDATA[G92 G1 B0 ;Set N1 rotation to zero]]></text>
+               <text><![CDATA[M117 Homimg Complete]]></text>
+            </command>
+            <command type="GET_POSITION_COMMAND">
+               <text><![CDATA[M114 ;Get position]]></text>
+            </command>
+            <command type="MOVE_TO_COMMAND">
+               <text><![CDATA[M201.3 {XJerk:X%.0f} {YJerk:Y%.0f} {ZJerk:Z%.0f} {AJerk:A%.0f} ]]></text>
+               <text><![CDATA[{Acceleration:M204 S%.2f}]]></text>
+               <text><![CDATA[G1 {X:X%.4f} {Y:Y%.4f} {Z:Z%.4f} {A:A%.4f} {B:B%.4f} {FeedRate:F%.2f} ;Move to target]]></text>
+            </command>
+            <command type="MOVE_TO_COMPLETE_COMMAND">
+               <text><![CDATA[M400 ;Wait for moves to complete before returning]]></text>
+            </command>
+            <command type="DISABLE_COMMAND">
+               <text><![CDATA[M999 ;Reset.  This is used to reset in case of an issue.  Note, to use this, you must have a home command in the ENABLE_COMMAND.]]></text>
+               <text><![CDATA[M18  ;Power off motors.]]></text>
+            </command>
+            <command type="ENABLE_COMMAND">
+               <text><![CDATA[G21 ;Set millimeters mode.]]></text>
+               <text><![CDATA[G90 ;Set absolute positioning mode.]]></text>
+               <text><![CDATA[G28 ;Home all axis.]]></text>
+            </command>
+            <command type="SET_GLOBAL_OFFSETS_COMMAND">
+               <text><![CDATA[G92 {X:X%.4f} {Y:Y%.4f} {Z:Z%.4f} {A:A%.4f} {B:B%.4f} ;Reset coordinates in the controller.]]></text>
+            </command>
+            <command type="POSITION_REPORT_REGEX">
+               <text><![CDATA[^.*X:(?<X>-?\d+\.\d+) Y:(?<Y>-?\d+\.\d+) Z:(?<Z>-?\d+\.\d+) A:(?<A>-?\d+\.\d+) B:(?<B>-?\d+\.\d+).*]]></text>
+            </command>
+            <junction-deviation value="0.02" units="Millimeters"/>
          </driver>
       </drivers>
       <discard-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
