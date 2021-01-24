@@ -8,8 +8,8 @@
             <soft-limit-high value="340.0" units="Millimeters"/>
             <safe-zone-low value="0.0" units="Millimeters"/>
             <safe-zone-high value="0.0" units="Millimeters"/>
-            <feedrate-per-second value="333.3333333333333" units="Millimeters"/>
-            <acceleration-per-second-2 value="666.6666666666666" units="Millimeters"/>
+            <feedrate-per-second value="350.0" units="Millimeters"/>
+            <acceleration-per-second-2 value="700.0" units="Millimeters"/>
             <jerk-per-second-3 value="0.0" units="Millimeters"/>
             <resolution>1.0E-4</resolution>
          </axis>
@@ -20,8 +20,8 @@
             <soft-limit-high value="405.0" units="Millimeters"/>
             <safe-zone-low value="0.0" units="Millimeters"/>
             <safe-zone-high value="0.0" units="Millimeters"/>
-            <feedrate-per-second value="333.3333333333333" units="Millimeters"/>
-            <acceleration-per-second-2 value="666.6666666666666" units="Millimeters"/>
+            <feedrate-per-second value="350.0" units="Millimeters"/>
+            <acceleration-per-second-2 value="700.0" units="Millimeters"/>
             <jerk-per-second-3 value="0.0" units="Millimeters"/>
             <resolution>1.0E-4</resolution>
          </axis>
@@ -38,8 +38,8 @@
             <soft-limit-high value="55.359" units="Millimeters"/>
             <safe-zone-low value="0.0" units="Millimeters"/>
             <safe-zone-high value="0.0" units="Millimeters"/>
-            <feedrate-per-second value="333.3333333333333" units="Millimeters"/>
-            <acceleration-per-second-2 value="666.6666666666666" units="Millimeters"/>
+            <feedrate-per-second value="350.0" units="Millimeters"/>
+            <acceleration-per-second-2 value="700.0" units="Millimeters"/>
             <jerk-per-second-3 value="0.0" units="Millimeters"/>
             <resolution>1.0E-4</resolution>
          </axis>
@@ -77,7 +77,7 @@
       <heads>
          <head class="org.openpnp.machine.reference.ReferenceHead" id="H1" name="H1" visual-homing-method="ResetToHomeLocation">
             <nozzles>
-               <nozzle class="org.openpnp.machine.reference.ReferenceNozzle" axis-X-id="AXS165bcf973840e3ac" axis-Y-id="AXS165bcf97384b4ce8" axis-Z-id="AXS165c09d6f9b871c0" axis-rotation-id="AXS165bcf9738505c9c" id="N1" name="N1" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" current-nozzle-tip-id="NT1" changer-enabled="false" nozzle-tip-changed-on-manual-feed="false" enable-dynamic-safe-z="false" limit-rotation="true">
+               <nozzle class="org.openpnp.machine.reference.ReferenceNozzle" axis-X-id="AXS165bcf973840e3ac" axis-Y-id="AXS165bcf97384b4ce8" axis-Z-id="AXS165c09d6f9b871c0" axis-rotation-id="AXS165bcf9738505c9c" id="N1" name="Nozzle1" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" current-nozzle-tip-id="NT1" changer-enabled="false" nozzle-tip-changed-on-manual-feed="false" enable-dynamic-safe-z="false" limit-rotation="true">
                   <compatible-nozzle-tip-ids class="java.util.ArrayList">
                      <string>NT1</string>
                   </compatible-nozzle-tip-ids>
@@ -85,13 +85,13 @@
                   <vacuum-sense-actuator-name>A1</vacuum-sense-actuator-name>
                   <vacuum-actuator-name>A1</vacuum-actuator-name>
                </nozzle>
-               <nozzle class="org.openpnp.machine.reference.ReferenceNozzle" axis-X-id="AXS165bcf973840e3ac" axis-Y-id="AXS165bcf97384b4ce8" axis-Z-id="AXS165c099017b6c81c" axis-rotation-id="AXS165c09ca09bc48ec" id="NOZ165c09f01317c92c" name="N2" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" changer-enabled="false" nozzle-tip-changed-on-manual-feed="false" enable-dynamic-safe-z="false" limit-rotation="true">
+               <nozzle class="org.openpnp.machine.reference.ReferenceNozzle" axis-X-id="AXS165bcf973840e3ac" axis-Y-id="AXS165bcf97384b4ce8" axis-Z-id="AXS165c099017b6c81c" axis-rotation-id="AXS165c09ca09bc48ec" id="NOZ165c09f01317c92c" name="Nozzle2" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" changer-enabled="false" nozzle-tip-changed-on-manual-feed="false" enable-dynamic-safe-z="false" limit-rotation="true">
                   <compatible-nozzle-tip-ids class="java.util.ArrayList"/>
                   <head-offsets units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
                </nozzle>
             </nozzles>
             <actuators>
-               <actuator class="org.openpnp.machine.reference.ReferenceActuator" id="A1" name="A1" interlock-actuator="false" coordinated-before-actuate="true" coordinated-after-actuate="false" coordinated-before-read="true" index="0">
+               <actuator class="org.openpnp.machine.reference.ReferenceActuator" id="A1" name="TopLightActuator" interlock-actuator="false" driver-id="DRV165c19964c7c2824" coordinated-before-actuate="true" coordinated-after-actuate="false" coordinated-before-read="true" index="0">
                   <head-offsets units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
                </actuator>
             </actuators>
@@ -105,6 +105,28 @@
                      <distortion-coefficients length="5">0.0, 0.0, 0.0, 0.0, 2.433434253E-315</distortion-coefficients>
                   </calibration>
                   <source-uri>classpath://samples/pnp-test/pnp-test.png</source-uri>
+               </camera>
+               <camera class="org.openpnp.machine.reference.camera.OpenPnpCaptureCamera" axis-X-id="AXS165bcf973840e3ac" axis-Y-id="AXS165bcf97384b4ce8" axis-Z-id="AXS165bcf97384e03d4" axis-rotation-id="AXS165bcf97384eed08" id="CAM165ce07569ca1d18" name="TopCamera" looking="Down" settle-method="FixedTime" settle-time-ms="250" settle-timeout-ms="500" settle-threshold="0.0" settle-debounce="0" settle-full-color="false" settle-gaussian-blur="0" settle-gradients="false" settle-mask-circle="0.0" settle-contrast-enhance="0.0" settle-diagnostics="false" rotation="0.0" flip-x="true" flip-y="true" offset-x="0" offset-y="0" crop-width="0" crop-height="0" scale-width="0" scale-height="0" deinterlace="false" unique-id="HD USB Camera \\?\usb#vid_32e4&amp;pid_9230&amp;mi_00#6&amp;1a7641e8&amp;0&amp;0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\global" format-id="0" fps="10.0">
+                  <units-per-pixel units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+                  <vision-provider class="org.openpnp.machine.reference.vision.OpenCvVisionProvider"/>
+                  <head-offsets units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+                  <calibration enabled="false">
+                     <camera-matrix length="9">1.04260657E-316, 7.8389147E-317, 1.0377497E-316, 7.8519284E-317, 1.03289285E-316, 7.8389147E-317, 1.02933735E-316, 7.80336E-317, 1.028036E-316</camera-matrix>
+                     <distortion-coefficients length="5">2.447635570273665E-307, 1.6911933005114767E-306, 9.346070740522925E-307, 1.4241966602692605E-306, 9.346070737207306E-307</distortion-coefficients>
+                  </calibration>
+                  <back-light-compensation property="BackLightCompensation" value="1" auto="false"/>
+                  <brightness property="Brightness" value="0" auto="false"/>
+                  <contrast property="Contrast" value="38" auto="false"/>
+                  <exposure property="Exposure" value="-8" auto="false"/>
+                  <focus property="Focus"/>
+                  <gain property="Gain" value="0" auto="false"/>
+                  <gamma property="Gamma" value="72" auto="false"/>
+                  <hue property="Hue" value="0" auto="false"/>
+                  <power-line-frequency property="PowerLineFrequency" value="1" auto="false"/>
+                  <saturation property="Saturation" value="60" auto="false"/>
+                  <sharpness property="Sharpness" value="2" auto="false"/>
+                  <white-balance property="WhiteBalance" value="4600" auto="true"/>
+                  <zoom property="Zoom"/>
                </camera>
             </cameras>
             <park-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
@@ -303,8 +325,34 @@
             </calibration>
             <error-offsets units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
          </camera>
+         <camera class="org.openpnp.machine.reference.camera.OpenPnpCaptureCamera" id="CAM165d05be57df7828" name="BottomCamera" looking="Up" settle-method="FixedTime" settle-time-ms="250" settle-timeout-ms="500" settle-threshold="0.0" settle-debounce="0" settle-full-color="false" settle-gaussian-blur="0" settle-gradients="false" settle-mask-circle="0.0" settle-contrast-enhance="0.0" settle-diagnostics="false" rotation="0.0" flip-x="false" flip-y="false" offset-x="0" offset-y="0" crop-width="0" crop-height="0" scale-width="0" scale-height="0" deinterlace="false" unique-id="HD USB Camera \\?\usb#vid_32e4&amp;pid_9230&amp;mi_00#6&amp;2d2ff28d&amp;0&amp;0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\global" format-id="0" fps="10.0">
+            <units-per-pixel units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+            <vision-provider class="org.openpnp.machine.reference.vision.OpenCvVisionProvider"/>
+            <head-offsets units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+            <calibration enabled="false">
+               <camera-matrix length="9">0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0</camera-matrix>
+               <distortion-coefficients length="5">1.8325555675064E-310, -1.534217329607229E287, 2.3427491934851446E22, -2.950994708218264E-65, 0.0</distortion-coefficients>
+            </calibration>
+            <back-light-compensation property="BackLightCompensation" value="1" auto="false"/>
+            <brightness property="Brightness" value="0" auto="false"/>
+            <contrast property="Contrast" value="32" auto="false"/>
+            <exposure property="Exposure" value="-3" auto="false"/>
+            <focus property="Focus"/>
+            <gain property="Gain" value="0" auto="false"/>
+            <gamma property="Gamma" value="72" auto="false"/>
+            <hue property="Hue" value="0" auto="false"/>
+            <power-line-frequency property="PowerLineFrequency" value="1" auto="false"/>
+            <saturation property="Saturation" value="60" auto="false"/>
+            <sharpness property="Sharpness" value="2" auto="false"/>
+            <white-balance property="WhiteBalance" value="4600" auto="true"/>
+            <zoom property="Zoom"/>
+         </camera>
       </cameras>
-      <actuators/>
+      <actuators>
+         <actuator class="org.openpnp.machine.reference.ReferenceActuator" id="ACT165d075d2d206188" name="BottomLightActuator" interlock-actuator="false" driver-id="DRV165c19964c7c2824" coordinated-before-actuate="true" coordinated-after-actuate="false" coordinated-before-read="true" index="0">
+            <head-offsets units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+         </actuator>
+      </actuators>
       <part-alignments>
          <part-alignment class="org.openpnp.machine.reference.vision.ReferenceBottomVision" enabled="true" pre-rotate="false" max-vision-passes="3" max-angular-offset="10.0">
             <pipeline>
@@ -341,7 +389,7 @@
             <simulated line-ending-type="LF"/>
             <homing-fiducial-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
             <detected-firmware><![CDATA[FIRMWARE_NAME:Smoothieware, FIRMWARE_URL:http%3A//smoothieware.org, X-SOURCE_CODE_URL:https%3A//github.com/markmaker/Smoothieware/tree/feature/best-for-pnp, FIRMWARE_VERSION:feature/best-for-pnp-c82d0b45, X-FIRMWARE_BUILD_DATE:Oct 22 2020 21:21:58, X-SYSTEM_CLOCK:120MHz, X-AXES:5, X-PAXES:5, X-GRBL_MODE:0, X-CNC:0, X-MSD:1]]></detected-firmware>
-            <reported-axes><![CDATA[ok C: X:300.0000 Y:10.0000 Z:0.0000 A:0.0000 B:0.0000]]></reported-axes>
+            <reported-axes><![CDATA[ok C: X:300.0000 Y:10.0000 Z:0.0000 A:170.0000 B:0.0000]]></reported-axes>
             <command type="HOME_COMMAND">
                <text><![CDATA[M117 Homing, Please wait...]]></text>
                <text><![CDATA[G28 ; Home all axes.]]></text>
@@ -359,6 +407,7 @@
                <text><![CDATA[M400 ; Wait for moves to complete before returning.]]></text>
             </command>
             <command type="DISABLE_COMMAND">
+               <text><![CDATA[M802 ; Top light off.  Needs to be before power off.]]></text>
                <text><![CDATA[M84  ; Power off motors.]]></text>
                <text><![CDATA[M999 ; Reset.  This is used to reset in case of an issue.  Note, to use this, you must have a home command in the ENABLE_COMMAND.]]></text>
             </command>
@@ -374,6 +423,12 @@
             </command>
             <command type="COMMAND_CONFIRM_REGEX">
                <text><![CDATA[^ok.*]]></text>
+            </command>
+            <command head-mountable-id="A1" type="ACTUATE_BOOLEAN_COMMAND">
+               <text><![CDATA[{False:M802}{True:M803}]]></text>
+            </command>
+            <command type="ENABLE_COMMAND">
+               <text><![CDATA[M803 ; Top light on.]]></text>
             </command>
             <junction-deviation value="0.02" units="Millimeters"/>
          </driver>
