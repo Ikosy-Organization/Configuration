@@ -19,46 +19,46 @@ digipot_max_current                                2.0                    # Maxi
 # For a 1.8 degree/step motor there are 200 steps/revolution.  With 1/32 uStepping:
 # 200*32/360 = 17.77777777778 steps/degree
 
-# Basic motion configuration
+# Basic motion configuration.
 default_feed_rate                                  80000                  # Default speed (mm/minute) for G1/G2/G3 moves.
 default_seek_rate                                  80000                  # Default speed (mm/minute) for G0 moves.
 mm_per_arc_segment                                 0.5                    # Arcs are cut into segments ( lines ), this is the length for these segments.  
 
-# Planner module configuration : Look-ahead and acceleration configuration
+# Planner module configuration.  Look-ahead and acceleration configuration.
 planner_queue_size                                 40                     # DO NOT CHANGE THIS UNLESS YOU KNOW EXACTLY WHAT YOUR ARE DOING.
 acceleration                                       5000                   # Acceleration in mm/second/second (was 10,000, reduced in an attempt to reduce oscillation of belt).
 z_acceleration                                     6000                   # Acceleration for Z only moves in mm/s^2, 0 disables it, disabled by default. DO NOT SET ON A DELTA.
 acceleration_ticks_per_second                      1000                   # Number of times per second the speed is updated.
 junction_deviation                                 0.005                  # Similar to the old "max_jerk", in millimeters, see: https://github.com/grbl/grbl/blob/master/planner.c#L409
 
-# Stepper module configuration
+# Stepper module configuration.
 microseconds_per_step_pulse                        1                      # Duration of step pulses to stepper drivers, in microseconds.
 base_stepping_frequency                            100000                 # Base frequency for stepping, higher gives smoother movement.
 
-# Stepper module configuration 
-# Pins are defined as  ports, and pin numbers, appending "!" to the number will invert a pin
+# Stepper module configuration.
+# Pins are defined as  ports and pin numbers.  Appending "!" to the number will invert a pin.
 
-# X AXIS - Left / Right
+# X AXIS
 alpha_steps_per_mm                                 160                    # 160 Steps per mm for 20 tooth alpha ( X / Left / Right ) stepper.
 alpha_step_pin                                     2.0                    # Pin for alpha stepper step signal.
 alpha_dir_pin                                      0.5                    # Pin for alpha stepper direction, add '!' to reverse direction.
 alpha_en_pin                                       0.4                    # Pin for alpha enable pin.
 alpha_current                                      1.5                    # X stepper motor current - Max 1.7.
 alpha_max_rate                                     80000                  # Maximum rate in mm/min.
-alpha_acceleration                                 100000                 # In mm/sec^2.
+alpha_acceleration                                 10000                  # In mm/sec^2.
 x_axis_max_speed                                   80000                  # In mm/min.
 
-#Y AXIS - Towards / Away
+# Y AXIS
 beta_steps_per_mm                                  160                    # 160 Steps per mm for 20 tooth beta ( Y / Near / Far ) stepper.
 beta_step_pin                                      2.1                    # Pin for beta stepper step signal.
 beta_dir_pin                                       0.11!                  # Pin for beta stepper direction, add '!' to reverse direction.
 beta_en_pin                                        0.10                   # Pin for beta enable.
 beta_current                                       1.5                    # Y stepper motor current - Max 1.8.
 beta_max_rate                                      80000                  # Maxmimum rate in mm/min.
-beta_acceleration                                  100000                 # In mm/sec^2.
+beta_acceleration                                  10000                  # In mm/sec^2.
 y_axis_max_speed                                   80000                  # In mm/min.
 
-#Z Axis - Head Up / Down
+# Z AXIS
 gamma_steps_per_mm                                 17.777777777778        # 17.777777 is the computed step rate for a cam arm 1.8 deg 1/32 uStep.
 gamma_step_pin                                     2.2                    # Pin for gamma stepper step signal.
 gamma_dir_pin                                      0.20                   # Pin for gamma stepper direction, add '!' to reverse direction.
@@ -68,7 +68,7 @@ gamma_max_rate                                     20000                  # Maxi
 gamma_acceleration                                 10000                  # In mm/sec^2.
 z_axis_max_speed                                   20000                  # In mm/min.
 
-# A axis
+# A AXIS
 delta_steps_per_mm                                 17.777777777778        # Steps per degree.
 delta_step_pin                                     2.3                    # Pin for delta stepper step signal.
 delta_dir_pin                                      0.22                   # Pin for delta stepper direction.
@@ -77,7 +77,7 @@ delta_current                                      0.6                    # Step
 delta_max_rate                                     30000.0                # In mm/min.
 delta_acceleration                                 50000.0                # In mm/sec^2.
 
-# B axis
+# B AXIS
 epsilon_steps_per_mm                               17.777777777778        # Steps per degree.
 epsilon_step_pin                                   2.8                    # Pin for delta stepper step signal.
 epsilon_dir_pin                                    2.13                   # Pin for delta stepper direction.
@@ -86,47 +86,9 @@ epsilon_current                                    0.6                    # Step
 epsilon_max_rate                                   30000.0                # In mm/min.
 epsilon_acceleration                               50000.0                # In mm/sec^2.
 
-# Switch module for head light control
-switch.headlight.enable                            true                   # Enable this module.
-switch.headlight.startup_state                     false                  # Turned off at start.
-switch.headlight.input_off_command                 M800                   # Command that will turn this switch off.
-switch.headlight.input_on_command                  M801                   # Command that will turn this switch on.
-switch.headlight.output_pin                        2.4                    # Pin this module controls is small MOSFET Q8.
-switch.headlight.output_type                       digital                # Digital means this is just an on or off pin.
-
-# Switch module for bottom light control
-switch.bottomlight.enable                          true                   # Enable this module.
-switch.bottomlight.startup_state                   false                  # Turned off at start.
-switch.bottomlight.input_off_command               M802                   # Command that will turn this switch off.
-switch.bottomlight.input_on_command                M803                   # Command that will turn this switch on.
-switch.bottomlight.output_pin                      2.6                    # Pin this module controls is small MOSFET Q9.
-switch.bottomlight.output_type                     digital                # Digital means this is just an on or off pin.
-
-# Switch module for nozzle 1 puff (left) - Q4 Large MOSFET
-switch.pressnozzleleft.enable                      true                   # Enable this module.
-switch.pressnozzleleft.startup_state               false                  # Turned off at start.
-switch.pressnozzleleft.input_off_command           M804                   # Command that will turn this switch off.
-switch.pressnozzleleft.input_on_command            M805                   # Command that will turn this switch on.
-switch.pressnozzleleft.output_pin                  1.23                   # Pin this module controls is big MOSFET Q5.
-switch.pressnozzleleft.output_type                 digital                # Digital means this is just an on or off pin.
-
-# Switch module for nozzle 2 puff (right) - Q4 Small MOSFET
-switch.pressnozzleright.enable                     true                   # Enable this module.
-switch.pressnozzleright.startup_state              false                  # Turned off at start.
-switch.pressnozzleright.input_off_command          M806                   # Command that will turn this switch off.
-switch.pressnozzleright.input_on_command           M807                   # Command that will turn this switch on.
-switch.pressnozzleright.output_pin                 1.22                   # Pin this module controls is small MOSFET Q5.
-switch.pressnozzleright.output_type                digital                # Digital means this is just an on or off pin.
-
-# Switch module for vacuum nozzle 1 (left)
-switch.vacnozzleleft.enable                        true                   # Enable this module.
-switch.vacnozzleleft.startup_state                 false                  # Turned off at start.
-switch.vacnozzleleft.input_off_command             M810                   # Command that will turn this switch off.
-switch.vacnozzleleft.input_on_command              M811                   # Command that will turn this switch on.
-switch.vacnozzleleft.output_pin                    2.5                    # Pin this module controls is small MOSFET Q6.
-switch.vacnozzleleft.output_type                   digital                # Digital means this is just an on or off pin.
-
-# Switch module for vacuum nozzle 2 (right)
+# VACUUM AND EJECTION
+# Switch module for vacuum nozzle 1 (right).
+# First large mosfet.
 switch.vacnozzleright.enable                       true                   # Enable this module.
 switch.vacnozzleright.startup_state                false                  # Turned off at start.
 switch.vacnozzleright.input_off_command            M812                   # Command that will turn this switch off.
@@ -134,7 +96,54 @@ switch.vacnozzleright.input_on_command             M813                   # Comm
 switch.vacnozzleright.output_pin                   2.7                    # Pin this module controls is small MOSFET Q7.
 switch.vacnozzleright.output_type                  digital                # Digital means this is just an on or off pin.
 
-# Vacuum Sensors
+# Switch module for nozzle 1 puff (left).
+# Second large mosfet.
+switch.vacnozzleleft.enable                        true                   # Enable this module.
+switch.vacnozzleleft.startup_state                 false                  # Turned off at start.
+switch.vacnozzleleft.input_off_command             M810                   # Command that will turn this switch off.
+switch.vacnozzleleft.input_on_command              M811                   # Command that will turn this switch on.
+switch.vacnozzleleft.output_pin                    2.5                    # Pin this module controls is small MOSFET Q6.
+switch.vacnozzleleft.output_type                   digital                # Digital means this is just an on or off pin.
+
+# Switch module for vacuum nozzle 2 (left).
+# Third large mosfet.
+switch.pressnozzleleft.enable                      true                   # Enable this module.
+switch.pressnozzleleft.startup_state               false                  # Turned off at start.
+switch.pressnozzleleft.input_off_command           M804                   # Command that will turn this switch off.
+switch.pressnozzleleft.input_on_command            M805                   # Command that will turn this switch on.
+switch.pressnozzleleft.output_pin                  1.23                   # Pin this module controls is big MOSFET Q5.
+switch.pressnozzleleft.output_type                 digital                # Digital means this is just an on or off pin.
+
+# Switch module for nozzle 2 puff (right).
+# First small mosfet.
+switch.headlight.enable                            true                   # Enable this module.
+switch.headlight.startup_state                     false                  # Turned off at start.
+switch.headlight.input_off_command                 M800                   # Command that will turn this switch off.
+switch.headlight.input_on_command                  M801                   # Command that will turn this switch on.
+switch.headlight.output_pin                        2.4                    # Pin this module controls is small MOSFET Q8.
+switch.headlight.output_type                       digital                # Digital means this is just an on or off pin.
+
+# LIGHTS
+# Switch module for top (down looking) light control.
+# Second small mosfet.
+switch.bottomlight.enable                          true                   # Enable this module.
+switch.bottomlight.startup_state                   false                  # Turned off at start.
+switch.bottomlight.input_off_command               M802                   # Command that will turn this switch off.
+switch.bottomlight.input_on_command                M803                   # Command that will turn this switch on.
+switch.bottomlight.output_pin                      2.6                    # Pin this module controls is small MOSFET Q9.
+switch.bottomlight.output_type                     digital                # Digital means this is just an on or off pin.
+
+# Switch module for bottom (up looking) light control.
+# Third small mosfet.
+switch.pressnozzleright.enable                     true                   # Enable this module.
+switch.pressnozzleright.startup_state              false                  # Turned off at start.
+switch.pressnozzleright.input_off_command          M806                   # Command that will turn this switch off.
+switch.pressnozzleright.input_on_command           M807                   # Command that will turn this switch on.
+switch.pressnozzleright.output_pin                 1.22                   # Pin this module controls is small MOSFET Q5.
+switch.pressnozzleright.output_type                digital                # Digital means this is just an on or off pin.
+
+
+# Vacuum Sensors.
 temperature_control.nozzle1.enable                 true
 temperature_control.nozzle1.sensor                 ad8495                 # Nozzle 1 vacuum.
 temperature_control.nozzle1.ad8495_pin	           0.24	                  # Pin to read.
@@ -150,9 +159,9 @@ temperature_control.nozzle2.readings_per_second	   50
 temperature_control.nozzle2.get_m_code	           832	                  # M code to get this temp i.e. M832.
 
 
-## Endstops - new syntax 
-# NOTE only a min or a max homing endstop maybe defined
-# NOTE : Failure to add a .axis property will disable the endstop !!
+# Endstops - new syntax.
+# NOTE only a min or a max homing endstop maybe defined.
+# NOTE Failure to add a *.axis property will disable the endstop!!
 
 # X MIN ENDSTOP (HOME)
 endstop.minx.enable                                true                   # Enable an endstop.
@@ -195,13 +204,13 @@ endstop.maxy.max_travel                            430                    # The 
 # Z MIN ENDSTOP
 endstop.minz.enable                                true                   # Enable an endstop.
 endstop.minz.pin                                   1.28^!                 # Pin.
-endstop.minz.homing_direction                      home_to_max            # Direction it moves to the endstop.
-endstop.minz.homing_position                       0                      # the cartesian coordinate this is set to when it homes.
 endstop.minz.axis                                  Z                      # The axis designator.
 endstop.minz.max_travel                            65                     # The maximum travel in mm before it times out.
+endstop.minz.homing_direction                      home_to_max            # Direction it moves to the endstop.
+endstop.minz.homing_position                       0                      # the cartesian coordinate this is set to when it homes.
 endstop.minz.fast_rate                             50                     # Fast homing rate in mm/sec.
 endstop.minz.slow_rate                             10                     # Slow homing rate in mm/sec.
-endstop.minz.retract                               -10.156                # Bounce off endstop in mm.
+endstop.minz.retract                               -10.677                # Bounce off endstop in mm.
 endstop.minz.release_first                         true                   # First move away from endstop until released.
 
 
@@ -209,26 +218,26 @@ endstop.minz.release_first                         true                   # Firs
 # Use soft endstops to prevent illegal moves beyond the actual endstops
 soft_endstop.enable                                true                   # Enable soft endstops.
 soft_endstop.x_min                                 0                      # Minimum X position.
-soft_endstop.x_max                                 341                    # Maximum X position. Set slightly higher than the soft limit in OpenPnP.
+soft_endstop.x_max                                 347                    # Maximum X position. Set slightly higher than the soft limit in OpenPnP.
 
 soft_endstop.y_min                                 0                      # Minimum Y position
-soft_endstop.y_max                                 406	                  # Maximum Y position. Set slightly higher than the soft limit in OpenPnP.
+soft_endstop.y_max                                 412	                  # Maximum Y position. Set slightly higher than the soft limit in OpenPnP.
 
 #soft_endstop.z_min                                -60                    # Minimum Z position. Set slightly higher than the soft limit in OpenPnP.
 #soft_endstop.z_max                                +60                    # Maximum Z position. Set slightly higher than the soft limit in OpenPnP.
 
 soft_endstop.halt                                  true                   # Whether to issue a HALT state when hitting a soft endstop (if false, will just ignore commands that would exceed the limit).
 
-# optional order in which axis will home, default is they all home at the same time,
-# if this is set it will force each axis to home one at a time in the specified order
+# Optional order in which axis will home.  The default is they all home at the same time,
+# if this is set it will force each axis to home one at a time in the specified order.
 home_z_first 	                                   true                   # Do not set this to false otherwise you might drag the nozzle across the table.
 
-## Panel
-# See http://smoothieware.org/panel
-# Please find your panel on the wiki and copy/paste the right configuration here
+# CONTROL PANEL
+# See: http://smoothieware.org/panel
+# Please find your panel on the wiki and copy/paste the right configuration here.
 panel.enable                                       true                   # Set to true to enable the panel code.
 
-# Example for reprap discount GLCD
+# Example for reprap discount GLCD.
 # on GLCD EXP1 is to left and EXP2 is to right, pin 1 is bottom left, pin 2 is top left etc.
 # +5v is EXP1 pin 10, Gnd is EXP1 pin 9
 panel.lcd                                          reprap_discount_glcd
@@ -240,7 +249,7 @@ panel.click_button_pin                             1.30^!                 # Clic
 panel.buzz_pin                                     1.31                   # Pin for buzzer:      ; GLCD EXP1 Pin 1
 panel.back_button_pin                              2.11^!                 # Back button:         ; GLCD EXP2 Pin 8
 
-# setup for external sd card on the GLCD which uses the onboard sdcard SPI port
+# Setup for external sd card on the GLCD which uses the onboard sdcard SPI port.
 #panel.external_sd                                 true                   # Set to true if there is an extrernal sdcard on the panel.
 #panel.external_sd.spi_channel                     1                      # Set spi channel the sdcard is on.
 #panel.external_sd.spi_cs_pin                      0.28                   # Set spi chip select for the sdcard (or any spare pin).
@@ -251,8 +260,8 @@ panel.alpha_jog_feedrate                           9000                   # X jo
 panel.beta_jog_feedrate                            9000                   # Y jogging feedrate in mm/min.
 panel.gamma_jog_feedrate                           3000                   # Z jogging feedrate in mm/min.
 
-## Custom menus : Example of a custom menu entry, which will show up in the Custom entry.
-# NOTE _ gets converted to space in the menu and commands, | is used to separate multiple commands
+# Custom menus: Example of a custom menu entry, which will show up in the Custom entry.
+# NOTE An underscore (_) gets converted to space in the menu and commands, | is used to separate multiple commands.
 custom_menu.reset.enable                           true                   #
 custom_menu.reset.name                             REBOOT                 # Reboot the Smoothie.
 custom_menu.reset.command                          reset                  #
@@ -291,7 +300,7 @@ custom_menu.n2_vac_off.command                     M812                   #
 
 ## System configuration
 
-# Ethernet Network settings
+# Ethernet Network settings.
 network.enable                                     true                   # Enable the ethernet network services.
 network.webserver.enable                           true                   # Enable the webserver.
 network.telnet.enable                              true                   # Enable the telnet server.
@@ -299,15 +308,15 @@ network.ip_address                                 192.168.100.224        # The 
 network.ip_mask                                    255.255.255.0          # The IP subnet mask.
 network.ip_gateway                                 192.168.100.1          # The gateway address.
 
-# Serial communications configuration ( baud rate defaults to 9600 if undefined )
-# For communication over the UART port, *not* the USB/Serial port
+# Serial communications configuration (baud rate defaults to 9600 if undefined).
+# For communication over the UART port, *not* the USB/Serial port.
 uart0.baud_rate                                    115200                 # Baud rate for the default hardware ( UART ) serial port.
 second_usb_serial_enable                           false                  # This enables a second USB serial port.
 
 leds_disable                                       false                  # Disable using leds after config loaded.
 
-# Kill button maybe assigned to a different pin, set to the onboard pin by default
-# See http://smoothieware.org/killbutton
+# Kill button maybe assigned to a different pin, set to the onboard pin by default.
+# See: http://smoothieware.org/killbutton
 kill_button_enable                                 true                   # Set to true to enable a kill button.
 kill_button_pin                                    2.12                   # Kill button pin. Default is same as pause button 2.12 (2.11 is another good choice).
 kill_button_toggle_enable                          true                   # Allows for latching estop button.
@@ -316,8 +325,8 @@ kill_button_toggle_enable                          true                   # Allo
 #msd_disable                                       false                  # Disable the MSD (USB SDCARD), see http://smoothieware.org/troubleshooting#disable-msd.
 #dfu_enable                                        false                  # For linux developers, set to true to enable DFU.
 
-# Only needed on a smoothieboard
-# See http://smoothieware.org/currentcontrol
+# Only needed on a smoothieboard.
+# See: http://smoothieware.org/currentcontrol
 currentcontrol_module_enable                       true                   # Control stepper motor current via the configuration file.
 
 return_error_on_unhandled_gcode                    false
