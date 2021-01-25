@@ -43,7 +43,7 @@ alpha_steps_per_mm                                 160                    # 160 
 alpha_step_pin                                     2.0                    # Pin for alpha stepper step signal.
 alpha_dir_pin                                      0.5                    # Pin for alpha stepper direction, add '!' to reverse direction.
 alpha_en_pin                                       0.4                    # Pin for alpha enable pin.
-alpha_current                                      1.5                    # X stepper motor current - Max 1.7.
+alpha_current                                      1.7                    # X stepper motor current - Max 1.7.
 alpha_max_rate                                     80000                  # Maximum rate in mm/min.
 alpha_acceleration                                 10000                  # In mm/sec^2.
 x_axis_max_speed                                   80000                  # In mm/min.
@@ -53,7 +53,7 @@ beta_steps_per_mm                                  160                    # 160 
 beta_step_pin                                      2.1                    # Pin for beta stepper step signal.
 beta_dir_pin                                       0.11!                  # Pin for beta stepper direction, add '!' to reverse direction.
 beta_en_pin                                        0.10                   # Pin for beta enable.
-beta_current                                       1.5                    # Y stepper motor current - Max 1.8.
+beta_current                                       1.8                    # Y stepper motor current - Max 1.8.
 beta_max_rate                                      80000                  # Maxmimum rate in mm/min.
 beta_acceleration                                  10000                  # In mm/sec^2.
 y_axis_max_speed                                   80000                  # In mm/min.
@@ -170,7 +170,7 @@ endstop.minx.pin                                   1.24^                  # Pin.
 endstop.minx.axis                                  X                      # The axis designator.
 endstop.minx.max_travel                            355                    # The maximum travel in mm before it times out.
 endstop.minx.homing_direction                      home_to_min            # Direction it moves to the endstop.
-endstop.minx.homing_position                       -5                     # The cartesian coordinate this is set to when it homes.
+endstop.minx.homing_position                       0                      # The cartesian coordinate this is set to when it homes.
 endstop.minx.fast_rate                             70                     # Fast homing rate in mm/sec.
 endstop.minx.slow_rate                             10                     # Slow homing rate in mm/sec.
 endstop.minx.retract                               5                      # Bounce off endstop in mm.
@@ -189,7 +189,7 @@ endstop.miny.pin                                   1.26^                  # Pin.
 endstop.miny.axis                                  Y                      # The axis designator.
 endstop.miny.max_travel                            430                    # The maximum travel in mm before it times out.
 endstop.miny.homing_direction                      home_to_min            # Direction it moves to the endstop.
-endstop.miny.homing_position                       -5                     # The cartesian coordinate this is set to when it homes.
+endstop.miny.homing_position                       0                      # The cartesian coordinate this is set to when it homes.
 endstop.miny.fast_rate                             70                     # Fast homing rate in mm/sec.
 endstop.miny.slow_rate                             10                     # Slow homing rate in mm/sec.
 endstop.miny.retract                               5                      # Bounce off endstop in mm.
@@ -216,7 +216,7 @@ endstop.minz.release_first                         true                   # Firs
 
 
 # Use soft endstops to prevent illegal moves beyond the actual endstops
-soft_endstop.enable                                true                   # Enable soft endstops.
+soft_endstop.enable                                false                   # Enable soft endstops.
 soft_endstop.x_min                                 0                      # Minimum X position.
 soft_endstop.x_max                                 347                    # Maximum X position. Set slightly higher than the soft limit in OpenPnP.
 
