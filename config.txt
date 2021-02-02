@@ -91,7 +91,9 @@ epsilon_current                                    0.6                    # Step
 epsilon_max_rate                                   30000.0                # In mm/min.
 epsilon_acceleration                               50000.0                # In mm/sec^2.
 
+
 # VACUUM AND EJECTION
+# http://smoothieware.org/mosfets
 # Nozzle 1 vacuum (right).
 # First large mosfet.
 switch.vacnozzleright.enable                       true                   # Enable this module.
@@ -129,6 +131,7 @@ switch.pressnozzleright.output_pin                 2.4                    # Pin 
 switch.pressnozzleright.output_type                digital                # Digital means this is just an on or off pin.
 
 # LIGHTS
+# http://smoothieware.org/mosfets
 # Top (down looking) light control.
 # Second small mosfet.
 switch.toplight.enable                             true                   # Enable this module.
