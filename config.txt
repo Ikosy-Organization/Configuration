@@ -11,13 +11,18 @@ digipot_max_current                                2.0                    # Maxi
 
 # STEP CALCULATION
 # Calculator: https://www.prusaprinters.org/calculator/
-# 20 teeth = 160 at 1/32 uStepping using GT2 (2mm)
-# Command to set the steps per mm:
-# M92 X64.00
-# Z Cam Wheel.
+# 20 teeth gears
+# 12.73 mm gear pitch diameter
+# 1/32 uStepping
+# GT2 belt with 2mm spacing
+# 1.8 degree/step motors (200 steps/revolution)
+#
+# X and Y axis.
+# 200 steps/rev * 32 uSteps/step / (12.73*Pi mm/rev) = 160.03010774362 uSteps/mm
+#
+# Z cam wheel, A axis, and B axis.
 # For rotational axis, treat as steps/degree.
-# For a 1.8 degree/step motor there are 200 steps/revolution.  With 1/32 uStepping:
-# 200*32/360 = 17.77777777778 steps/degree
+# 200 steps/rev * 32 uSteps/step / 360 degrees/rev   =  17.77777777778 uSteps/degree
 
 # Basic motion configuration.
 default_feed_rate                                  80000                  # Default speed (mm/minute) for G1/G2/G3 moves.
@@ -87,63 +92,64 @@ epsilon_max_rate                                   30000.0                # In m
 epsilon_acceleration                               50000.0                # In mm/sec^2.
 
 # VACUUM AND EJECTION
-# Switch module for vacuum nozzle 1 (right).
+# Nozzle 1 vacuum (right).
 # First large mosfet.
 switch.vacnozzleright.enable                       true                   # Enable this module.
 switch.vacnozzleright.startup_state                false                  # Turned off at start.
 switch.vacnozzleright.input_off_command            M812                   # Command that will turn this switch off.
 switch.vacnozzleright.input_on_command             M813                   # Command that will turn this switch on.
-switch.vacnozzleright.output_pin                   2.7                    # Pin this module controls is small MOSFET Q7.
+switch.vacnozzleright.output_pin                   2.7                    # Pin to control first big mosfet.
 switch.vacnozzleright.output_type                  digital                # Digital means this is just an on or off pin.
 
-# Switch module for nozzle 1 puff (left).
+# Nozzle 1 puff (left).
 # Second large mosfet.
-switch.vacnozzleleft.enable                        true                   # Enable this module.
-switch.vacnozzleleft.startup_state                 false                  # Turned off at start.
-switch.vacnozzleleft.input_off_command             M810                   # Command that will turn this switch off.
-switch.vacnozzleleft.input_on_command              M811                   # Command that will turn this switch on.
-switch.vacnozzleleft.output_pin                    2.5                    # Pin this module controls is small MOSFET Q6.
-switch.vacnozzleleft.output_type                   digital                # Digital means this is just an on or off pin.
-
-# Switch module for vacuum nozzle 2 (left).
-# Third large mosfet.
 switch.pressnozzleleft.enable                      true                   # Enable this module.
 switch.pressnozzleleft.startup_state               false                  # Turned off at start.
-switch.pressnozzleleft.input_off_command           M804                   # Command that will turn this switch off.
-switch.pressnozzleleft.input_on_command            M805                   # Command that will turn this switch on.
-switch.pressnozzleleft.output_pin                  1.23                   # Pin this module controls is big MOSFET Q5.
+switch.pressnozzleleft.input_off_command           M810                   # Command that will turn this switch off.
+switch.pressnozzleleft.input_on_command            M811                   # Command that will turn this switch on.
+switch.pressnozzleleft.output_pin                  2.5                    # Pin to control second big mosfet.
 switch.pressnozzleleft.output_type                 digital                # Digital means this is just an on or off pin.
 
-# Switch module for nozzle 2 puff (right).
+# Nozzle 2 vacuum (left).
+# Third large mosfet.
+switch.vacnozzleright.enable                       true                   # Enable this module.
+switch.vacnozzleright.startup_state                false                  # Turned off at start.
+switch.vacnozzleright.input_off_command            M804                   # Command that will turn this switch off.
+switch.vacnozzleright.input_on_command             M805                   # Command that will turn this switch on.
+switch.vacnozzleright.output_pin                   1.23                   # Pin to control third big mosfet.
+switch.vacnozzleright.output_type                  digital                # Digital means this is just an on or off pin.
+
+# Nozzle 2 puff (right).
 # First small mosfet.
-switch.headlight.enable                            true                   # Enable this module.
-switch.headlight.startup_state                     false                  # Turned off at start.
-switch.headlight.input_off_command                 M800                   # Command that will turn this switch off.
-switch.headlight.input_on_command                  M801                   # Command that will turn this switch on.
-switch.headlight.output_pin                        2.4                    # Pin this module controls is small MOSFET Q8.
-switch.headlight.output_type                       digital                # Digital means this is just an on or off pin.
-
-# LIGHTS
-# Switch module for top (down looking) light control.
-# Second small mosfet.
-switch.bottomlight.enable                          true                   # Enable this module.
-switch.bottomlight.startup_state                   false                  # Turned off at start.
-switch.bottomlight.input_off_command               M802                   # Command that will turn this switch off.
-switch.bottomlight.input_on_command                M803                   # Command that will turn this switch on.
-switch.bottomlight.output_pin                      2.6                    # Pin this module controls is small MOSFET Q9.
-switch.bottomlight.output_type                     digital                # Digital means this is just an on or off pin.
-
-# Switch module for bottom (up looking) light control.
-# Third small mosfet.
 switch.pressnozzleright.enable                     true                   # Enable this module.
 switch.pressnozzleright.startup_state              false                  # Turned off at start.
-switch.pressnozzleright.input_off_command          M806                   # Command that will turn this switch off.
-switch.pressnozzleright.input_on_command           M807                   # Command that will turn this switch on.
-switch.pressnozzleright.output_pin                 1.22                   # Pin this module controls is small MOSFET Q5.
+switch.pressnozzleright.input_off_command          M800                   # Command that will turn this switch off.
+switch.pressnozzleright.input_on_command           M801                   # Command that will turn this switch on.
+switch.pressnozzleright.output_pin                 2.4                    # Pin to control first small mosfet.
 switch.pressnozzleright.output_type                digital                # Digital means this is just an on or off pin.
 
+# LIGHTS
+# Top (down looking) light control.
+# Second small mosfet.
+switch.toplight.enable                             true                   # Enable this module.
+switch.toplight.startup_state                      false                  # Turned off at start.
+switch.toplight.input_off_command                  M802                   # Command that will turn this switch off.
+switch.toplight.input_on_command                   M803                   # Command that will turn this switch on.
+switch.toplight.output_pin                         2.6                    # Pin to control second small mosfet.
+switch.toplight.output_type                        digital                # Digital means this is just an on or off pin.
 
-# Vacuum Sensors.
+# Bottom (up looking) light control.
+# Third small mosfet.
+switch.bottomlight.enable                          true                   # Enable this module.
+switch.bottomlight.startup_state                   false                  # Turned off at start.
+switch.bottomlight.input_off_command               M806                   # Command that will turn this switch off.
+switch.bottomlight.input_on_command                M807                   # Command that will turn this switch on.
+switch.bottomlight.output_pin                      1.22                   # Pin to control third small mosfet.
+switch.bottomlight.output_type                     digital                # Digital means this is just an on or off pin.
+
+
+# VACUUM SENSORS
+# Nozzle 1.
 temperature_control.nozzle1.enable                 true
 temperature_control.nozzle1.sensor                 ad8495                 # Nozzle 1 vacuum.
 temperature_control.nozzle1.ad8495_pin	           0.24	                  # Pin to read.
@@ -151,6 +157,7 @@ temperature_control.nozzle1.ad8495_offset   	   100
 temperature_control.nozzle1.readings_per_second	   50
 temperature_control.nozzle1.get_m_code	           831	                  # M code to get this temp i.e. M831.
 
+# Nozzle 2.
 temperature_control.nozzle2.enable                 true
 temperature_control.nozzle2.sensor                 ad8495                 # Nozzle 2 vacuum.
 temperature_control.nozzle2.ad8495_pin	           0.23	                  # Pin to read.
@@ -159,11 +166,12 @@ temperature_control.nozzle2.readings_per_second	   50
 temperature_control.nozzle2.get_m_code	           832	                  # M code to get this temp i.e. M832.
 
 
-# Endstops - new syntax.
-# NOTE only a min or a max homing endstop maybe defined.
-# NOTE Failure to add a *.axis property will disable the endstop!!
+# HARD ENDSTOPS
+# New syntax.
+# NOTE only a min or a max *homing* endstop maybe defined.
+# NOTE Failure to add a *.axis property will disable the endstop.
 
-# X MIN ENDSTOP (HOME)
+# X min (home).
 endstop.minx.enable                                true                   # Enable an endstop.
 endstop.minx.limit_enable                          true                   # Set to true to enable the limit on this endstop.
 endstop.minx.pin                                   1.24^                  # Pin.
@@ -175,14 +183,14 @@ endstop.minx.fast_rate                             70                     # Fast
 endstop.minx.slow_rate                             10                     # Slow homing rate in mm/sec.
 endstop.minx.retract                               5                      # Bounce off endstop in mm.
 
-# X MAX ENDSTOP (HARD ENDSTOP)
+# X max.
 endstop.maxx.enable                                true                   # Enable an endstop.
 endstop.maxx.limit_enable                          true                   # Set to true to enable the limit on this endstop.
 endstop.maxx.pin                                   1.25^                  # Pin.
 endstop.maxx.axis                                  X                      # The axis designator.
 endstop.maxx.max_travel                            355                    # The maximum travel in mm before it times out.
 
-# Y MIN ENDSTOP (HOME)
+# Y min (home).
 endstop.miny.enable                                true                   # Enable an endstop.
 endstop.miny.limit_enable                          true                   # Set to true to enable the limit on this endstop.
 endstop.miny.pin                                   1.26^                  # Pin.
@@ -194,14 +202,15 @@ endstop.miny.fast_rate                             70                     # Fast
 endstop.miny.slow_rate                             10                     # Slow homing rate in mm/sec.
 endstop.miny.retract                               5                      # Bounce off endstop in mm.
 
-# Y MAX ENDSTOP (HARD ENDSTOP)
+# Y max.
 endstop.maxy.enable                                true                   # Enable an endstop.
 endstop.maxy.limit_enable                          true                   # set to true to enable the limit on this endstop.
 endstop.maxy.pin                                   1.27^                  # Pin.
 endstop.maxy.axis                                  Y                      # The axis designator.
 endstop.maxy.max_travel                            430                    # The maximum travel in mm before it times out.
 
-# Z MIN ENDSTOP
+# Z min (home).
+# The "min" module is used but this is a mid-axis homing sensor.
 endstop.minz.enable                                true                   # Enable an endstop.
 endstop.minz.pin                                   1.28^!                 # Pin.
 endstop.minz.axis                                  Z                      # The axis designator.
@@ -214,7 +223,7 @@ endstop.minz.retract                               -10.677                # Boun
 endstop.minz.release_first                         true                   # First move away from endstop until released.
 
 
-
+# SOFT ENDSTOPS
 # Use soft endstops to prevent illegal moves beyond the actual endstops
 soft_endstop.enable                                false                   # Enable soft endstops.
 soft_endstop.x_min                                 0                      # Minimum X position.
@@ -248,6 +257,7 @@ panel.encoder_b_pin                                3.26^!                 # Enco
 panel.click_button_pin                             1.30^!                 # Click button:        ; GLCD EXP1 Pin 2
 panel.buzz_pin                                     1.31                   # Pin for buzzer:      ; GLCD EXP1 Pin 1
 panel.back_button_pin                              2.11^!                 # Back button:         ; GLCD EXP2 Pin 8
+panel.encoder_resolution                           2                      # The number of pulses the encoder emits per detent.
 
 # Setup for external sd card on the GLCD which uses the onboard sdcard SPI port.
 #panel.external_sd                                 true                   # Set to true if there is an extrernal sdcard on the panel.
