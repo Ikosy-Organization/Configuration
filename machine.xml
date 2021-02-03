@@ -1,28 +1,28 @@
 <openpnp-machine>
-   <machine class="org.openpnp.machine.reference.ReferenceMachine" speed="1.0">
+   <machine class="org.openpnp.machine.reference.ReferenceMachine" speed="0.7000000000000001">
       <axes>
          <axis class="org.openpnp.machine.reference.axis.ReferenceControllerAxis" id="AXS165bcf973840e3ac" name="X" type="X" driver-id="DRV165c19964c7c2824" letter="X" backlash-compensation-method="None" backlash-speed-factor="0.1" limit-rotation="false" wrap-around-rotation="false" invert-linear-rotational="false" soft-limit-low-enabled="true" soft-limit-high-enabled="true" safe-zone-low-enabled="false" safe-zone-high-enabled="false">
             <home-coordinate value="0.0" units="Millimeters"/>
             <backlash-offset value="0.0" units="Millimeters"/>
-            <soft-limit-low value="0.0" units="Millimeters"/>
-            <soft-limit-high value="340.0" units="Millimeters"/>
+            <soft-limit-low value="4.0" units="Millimeters"/>
+            <soft-limit-high value="350.0" units="Millimeters"/>
             <safe-zone-low value="0.0" units="Millimeters"/>
             <safe-zone-high value="0.0" units="Millimeters"/>
-            <feedrate-per-second value="350.0" units="Millimeters"/>
-            <acceleration-per-second-2 value="700.0" units="Millimeters"/>
-            <jerk-per-second-3 value="0.0" units="Millimeters"/>
+            <feedrate-per-second value="750.0" units="Millimeters"/>
+            <acceleration-per-second-2 value="3000.0" units="Millimeters"/>
+            <jerk-per-second-3 value="15000.0" units="Millimeters"/>
             <resolution>1.0E-4</resolution>
          </axis>
          <axis class="org.openpnp.machine.reference.axis.ReferenceControllerAxis" id="AXS165bcf97384b4ce8" name="Y" type="Y" driver-id="DRV165c19964c7c2824" letter="Y" backlash-compensation-method="None" backlash-speed-factor="0.1" limit-rotation="false" wrap-around-rotation="false" invert-linear-rotational="false" soft-limit-low-enabled="true" soft-limit-high-enabled="true" safe-zone-low-enabled="false" safe-zone-high-enabled="false">
             <home-coordinate value="0.0" units="Millimeters"/>
             <backlash-offset value="0.0" units="Millimeters"/>
-            <soft-limit-low value="0.0" units="Millimeters"/>
-            <soft-limit-high value="405.0" units="Millimeters"/>
+            <soft-limit-low value="4.0" units="Millimeters"/>
+            <soft-limit-high value="416.0" units="Millimeters"/>
             <safe-zone-low value="0.0" units="Millimeters"/>
             <safe-zone-high value="0.0" units="Millimeters"/>
-            <feedrate-per-second value="350.0" units="Millimeters"/>
-            <acceleration-per-second-2 value="700.0" units="Millimeters"/>
-            <jerk-per-second-3 value="0.0" units="Millimeters"/>
+            <feedrate-per-second value="750.0" units="Millimeters"/>
+            <acceleration-per-second-2 value="3000.0" units="Millimeters"/>
+            <jerk-per-second-3 value="15000.0" units="Millimeters"/>
             <resolution>1.0E-4</resolution>
          </axis>
          <axis class="org.openpnp.machine.reference.axis.ReferenceVirtualAxis" id="AXS165bcf97384e03d4" name="VirtualZ" type="Z">
@@ -75,7 +75,7 @@
          </axis>
       </axes>
       <heads>
-         <head class="org.openpnp.machine.reference.ReferenceHead" id="H1" name="H1" visual-homing-method="ResetToHomeLocation">
+         <head class="org.openpnp.machine.reference.ReferenceHead" id="H1" name="H1" visual-homing-method="ResetToFiducialLocation">
             <nozzles>
                <nozzle class="org.openpnp.machine.reference.ReferenceNozzle" axis-X-id="AXS165bcf973840e3ac" axis-Y-id="AXS165bcf97384b4ce8" axis-Z-id="AXS165c09d6f9b871c0" axis-rotation-id="AXS165bcf9738505c9c" id="N1" name="Nozzle1" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" current-nozzle-tip-id="NT1" changer-enabled="false" nozzle-tip-changed-on-manual-feed="false" enable-dynamic-safe-z="false" limit-rotation="true">
                   <compatible-nozzle-tip-ids class="java.util.ArrayList">
@@ -96,27 +96,17 @@
                </actuator>
             </actuators>
             <cameras>
-               <camera class="org.openpnp.machine.reference.camera.ImageCamera" axis-X-id="AXS165bcf973840e3ac" axis-Y-id="AXS165bcf97384b4ce8" axis-Z-id="AXS165bcf97384e03d4" axis-rotation-id="AXS165bcf97384eed08" id="C1" name="Top" looking="Down" settle-method="FixedTime" settle-time-ms="250" settle-timeout-ms="500" settle-threshold="0.0" settle-debounce="0" settle-full-color="false" settle-gaussian-blur="0" settle-gradients="false" settle-mask-circle="0.0" settle-contrast-enhance="0.0" settle-diagnostics="false" rotation="0.0" flip-x="false" flip-y="false" offset-x="0" offset-y="0" crop-width="0" crop-height="0" scale-width="0" scale-height="0" deinterlace="false" fps="24" width="640" height="480" pick-location-tolerance-mm="0.1" pick-location-minimum-score="0.87" place-location-tolerance-mm="0.1" place-location-minimum-score="0.58" filter-test-image-vision="true" sub-pixel-rendering="true">
-                  <units-per-pixel units="Millimeters" x="0.04233" y="0.04233" z="0.0" rotation="0.0"/>
+               <camera class="org.openpnp.machine.reference.camera.OpenPnpCaptureCamera" axis-X-id="AXS165bcf973840e3ac" axis-Y-id="AXS165bcf97384b4ce8" axis-Z-id="AXS165bcf97384e03d4" axis-rotation-id="AXS165bcf97384eed08" id="CAM165ce07569ca1d18" name="TopCamera" looking="Down" settle-method="FixedTime" settle-time-ms="400" settle-timeout-ms="500" settle-threshold="0.0" settle-debounce="0" settle-full-color="false" settle-gaussian-blur="0" settle-gradients="false" settle-mask-circle="0.0" settle-contrast-enhance="0.0" settle-diagnostics="false" rotation="0.0" flip-x="true" flip-y="true" offset-x="0" offset-y="0" crop-width="0" crop-height="0" scale-width="0" scale-height="0" deinterlace="false" unique-id="HD USB Camera \\?\usb#vid_32e4&amp;pid_9230&amp;mi_00#6&amp;1a7641e8&amp;0&amp;0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\global" format-id="0" fps="10.0">
+                  <units-per-pixel units="Millimeters" x="0.02444988" y="0.02421308" z="0.0" rotation="0.0"/>
                   <vision-provider class="org.openpnp.machine.reference.vision.OpenCvVisionProvider"/>
                   <head-offsets units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-                  <calibration enabled="false">
-                     <camera-matrix length="9">0.0, 3.81E-321, 0.0, 0.0, 0.0, 2.43340105E-315, 2.43340034E-315, 6.9522865409391E-310, 6.9522865409391E-310</camera-matrix>
-                     <distortion-coefficients length="5">0.0, 0.0, 0.0, 0.0, 2.433434253E-315</distortion-coefficients>
-                  </calibration>
-                  <source-uri>classpath://samples/pnp-test/pnp-test.png</source-uri>
-               </camera>
-               <camera class="org.openpnp.machine.reference.camera.OpenPnpCaptureCamera" axis-X-id="AXS165bcf973840e3ac" axis-Y-id="AXS165bcf97384b4ce8" axis-Z-id="AXS165bcf97384e03d4" axis-rotation-id="AXS165bcf97384eed08" id="CAM165ce07569ca1d18" name="TopCamera" looking="Down" settle-method="FixedTime" settle-time-ms="250" settle-timeout-ms="500" settle-threshold="0.0" settle-debounce="0" settle-full-color="false" settle-gaussian-blur="0" settle-gradients="false" settle-mask-circle="0.0" settle-contrast-enhance="0.0" settle-diagnostics="false" rotation="0.0" flip-x="true" flip-y="true" offset-x="0" offset-y="0" crop-width="0" crop-height="0" scale-width="0" scale-height="0" deinterlace="false" unique-id="HD USB Camera \\?\usb#vid_32e4&amp;pid_9230&amp;mi_00#6&amp;1a7641e8&amp;0&amp;0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\global" format-id="0" fps="10.0">
-                  <units-per-pixel units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-                  <vision-provider class="org.openpnp.machine.reference.vision.OpenCvVisionProvider"/>
-                  <head-offsets units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-                  <calibration enabled="false">
-                     <camera-matrix length="9">1.04260657E-316, 7.8389147E-317, 1.0377497E-316, 7.8519284E-317, 1.03289285E-316, 7.8389147E-317, 1.02933735E-316, 7.80336E-317, 1.028036E-316</camera-matrix>
-                     <distortion-coefficients length="5">2.447635570273665E-307, 1.6911933005114767E-306, 9.346070740522925E-307, 1.4241966602692605E-306, 9.346070737207306E-307</distortion-coefficients>
+                  <calibration enabled="true">
+                     <camera-matrix length="9">15026.734553504033, 0.0, 927.6390959756865, 0.0, 14972.556246339513, 611.6916515311976, 0.0, 0.0, 1.0</camera-matrix>
+                     <distortion-coefficients length="5">-20.434562911942965, 597.5562399128121, -0.0509614533293566, 0.0845996722103182, -9183.480285394575</distortion-coefficients>
                   </calibration>
                   <back-light-compensation property="BackLightCompensation" value="1" auto="false"/>
                   <brightness property="Brightness" value="0" auto="false"/>
-                  <contrast property="Contrast" value="38" auto="false"/>
+                  <contrast property="Contrast" value="45" auto="false"/>
                   <exposure property="Exposure" value="-8" auto="false"/>
                   <focus property="Focus"/>
                   <gain property="Gain" value="0" auto="false"/>
@@ -129,9 +119,9 @@
                   <zoom property="Zoom"/>
                </camera>
             </cameras>
-            <park-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+            <park-location units="Millimeters" x="9.77" y="4.022" z="0.0" rotation="0.0"/>
             <soft-limits-enabled>false</soft-limits-enabled>
-            <homing-fiducial-location units="Millimeters" x="5.736" y="6.112" z="0.0" rotation="0.0"/>
+            <homing-fiducial-location units="Millimeters" x="9.77" y="4.022" z="0.0" rotation="0.0"/>
          </head>
       </heads>
       <signalers/>
@@ -383,13 +373,13 @@
          </part-alignment>
       </part-alignments>
       <drivers>
-         <driver class="org.openpnp.machine.reference.driver.GcodeAsyncDriver" id="DRV165c19964c7c2824" name="GcodeAsyncDriver" motion-control-type="Simulated3rdOrderControl" communications="serial" connection-keep-alive="false" units="Millimeters" max-feed-rate="0" backlash-offset-x="-1.0" backlash-offset-y="-1.0" backlash-offset-z="0.0" backlash-offset-r="0.0" non-squareness-factor="0.0" backlash-feed-rate-factor="0.1" timeout-milliseconds="10000" connect-wait-time-milliseconds="3000" visual-homing-enabled="true" backslash-escaped-characters-enabled="false" remove-comments="true" compress-gcode="true" logging-gcode="false" supporting-pre-move="false" using-letter-variables="true" infinity-timeout-milliseconds="60000" writer-polling-interval="100" writer-queue-timeout="60000" max-commands-queued="1000" confirmation-flow-control="false" reported-location-confirmation="true" interpolation-max-steps="32" interpolation-jerk-steps="4" interpolation-time-step="0.001" interpolation-min-step="16">
+         <driver class="org.openpnp.machine.reference.driver.GcodeAsyncDriver" id="DRV165c19964c7c2824" name="GcodeAsyncDriver" motion-control-type="Simulated3rdOrderControl" communications="serial" connection-keep-alive="false" units="Millimeters" max-feed-rate="0" backlash-offset-x="-1.0" backlash-offset-y="-1.0" backlash-offset-z="0.0" backlash-offset-r="0.0" non-squareness-factor="0.0" backlash-feed-rate-factor="0.1" timeout-milliseconds="15000" connect-wait-time-milliseconds="3000" visual-homing-enabled="true" backslash-escaped-characters-enabled="false" remove-comments="true" compress-gcode="true" logging-gcode="false" supporting-pre-move="false" using-letter-variables="true" infinity-timeout-milliseconds="60000" writer-polling-interval="100" writer-queue-timeout="60000" max-commands-queued="1000" confirmation-flow-control="false" reported-location-confirmation="true" interpolation-max-steps="32" interpolation-jerk-steps="4" interpolation-time-step="0.001" interpolation-min-step="16">
             <serial line-ending-type="LF" port-name="COM3" baud="115200" flow-control="RtsCts" data-bits="Eight" stop-bits="One" parity="None" set-dtr="false" set-rts="false" name="SerialPortCommunications"/>
             <tcp line-ending-type="LF" ip-address="127.0.0.1" port="23" name="TcpCommunications"/>
             <simulated line-ending-type="LF"/>
             <homing-fiducial-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
             <detected-firmware><![CDATA[FIRMWARE_NAME:Smoothieware, FIRMWARE_URL:http%3A//smoothieware.org, X-SOURCE_CODE_URL:https%3A//github.com/markmaker/Smoothieware/tree/feature/best-for-pnp, FIRMWARE_VERSION:feature/best-for-pnp-c82d0b45, X-FIRMWARE_BUILD_DATE:Oct 22 2020 21:21:58, X-SYSTEM_CLOCK:120MHz, X-AXES:5, X-PAXES:5, X-GRBL_MODE:0, X-CNC:0, X-MSD:1]]></detected-firmware>
-            <reported-axes><![CDATA[ok C: X:300.0000 Y:10.0000 Z:0.0000 A:170.0000 B:0.0000]]></reported-axes>
+            <reported-axes><![CDATA[ok C: X:0.0000 Y:0.0000 Z:0.0000 A:0.0000 B:0.0000]]></reported-axes>
             <command type="HOME_COMMAND">
                <text><![CDATA[M117 Homing, Please wait...]]></text>
                <text><![CDATA[G28 ; Home all axes.]]></text>
@@ -407,7 +397,7 @@
                <text><![CDATA[M400 ; Wait for moves to complete before returning.]]></text>
             </command>
             <command type="DISABLE_COMMAND">
-               <text><![CDATA[M802 ; Top light off.  Needs to be before power off.]]></text>
+               <text><![CDATA[M999 M802 M807 M84 ; Top light off.  Needs to be before power off.]]></text>
                <text><![CDATA[M84  ; Power off motors.]]></text>
                <text><![CDATA[M999 ; Reset.  This is used to reset in case of an issue.  Note, to use this, you must have a home command in the ENABLE_COMMAND.]]></text>
             </command>
@@ -429,6 +419,9 @@
             </command>
             <command type="ENABLE_COMMAND">
                <text><![CDATA[M803 ; Top light on.]]></text>
+            </command>
+            <command head-mountable-id="ACT165d075d2d206188" type="ACTUATE_BOOLEAN_COMMAND">
+               <text><![CDATA[{False:M806}{True:M807}]]></text>
             </command>
             <junction-deviation value="0.02" units="Millimeters"/>
          </driver>
@@ -545,11 +538,11 @@
             <board-location-tolerance value="5.0" units="Millimeters"/>
          </tolerances>
       </fiducial-locator>
-      <motion-planner class="org.openpnp.machine.reference.driver.ReferenceAdvancedMotionPlanner" maximum-plan-history="60.0" allow-continuous-motion="true" allow-uncoordinated="false" diagnostics-enabled="true" interpolation-retiming="true" show-approximation="true" to-mid-1-speed="2.0" to-mid-2-speed="2.0" to-end-speed="2.0" start-location-enabled="true" mid-1-location-enabled="true" mid-2-location-enabled="true" end-location-enabled="true" to-mid-1-safe-z="true" to-mid-2-safe-z="true" to-end-safe-z="true">
-         <start-location units="Millimeters" x="10.0" y="10.0" z="-15.0" rotation="0.0"/>
-         <mid-location-1 units="Millimeters" x="300.0" y="375.0" z="-15.0" rotation="170.0"/>
-         <mid-location-2 units="Millimeters" x="10.0" y="350.0" z="-15.0" rotation="0.0"/>
-         <end-location units="Millimeters" x="300.0" y="10.0" z="-15.0" rotation="170.0"/>
+      <motion-planner class="org.openpnp.machine.reference.driver.ReferenceAdvancedMotionPlanner" maximum-plan-history="60.0" allow-continuous-motion="true" allow-uncoordinated="false" diagnostics-enabled="true" interpolation-retiming="true" show-approximation="true" to-mid-1-speed="1.0" to-mid-2-speed="1.0" to-end-speed="1.0" start-location-enabled="true" mid-1-location-enabled="true" mid-2-location-enabled="true" end-location-enabled="true" to-mid-1-safe-z="true" to-mid-2-safe-z="true" to-end-safe-z="true">
+         <start-location units="Millimeters" x="300.0" y="390.0" z="0.0" rotation="0.0"/>
+         <mid-location-1 units="Millimeters" x="10.0" y="350.0" z="0.0" rotation="0.0"/>
+         <mid-location-2 units="Millimeters" x="300.0" y="50.0" z="0.0" rotation="0.0"/>
+         <end-location units="Millimeters" x="9.77" y="4.022" z="0.0" rotation="0.0"/>
       </motion-planner>
       <home-after-enabled>true</home-after-enabled>
       <dismissed-solutions class="java.util.HashSet"/>
