@@ -1,11 +1,11 @@
 # OpenPnP Smoothieboard configuration.
 # Configuration for 5 Axis Build and Z homing.
-#-------------------------------------------- 
+# -------------------------------------------- 
 
 # Smoothieboard configuration file, see http://smoothieware.org/configuring-smoothie.
 # NOTE Lines must not exceed 132 characters, and '#' characters mean what follows is ignored.
 
-#Fix for incorrect Digipots used on Smoothieboard Clones
+# Fix for incorrect Digipots used on Smoothieboard Clones.
 digipot_factor                                     36.6
 digipot_max_current                                2.0                    # Maximum current that can be set.
 
@@ -249,9 +249,11 @@ home_z_first 	                                   true                   # Do not
 # Please find your panel on the wiki and copy/paste the right configuration here.
 panel.enable                                       true                   # Set to true to enable the panel code.
 
-# Example for reprap discount GLCD.
-# on GLCD EXP1 is to left and EXP2 is to right, pin 1 is bottom left, pin 2 is top left etc.
-# +5v is EXP1 pin 10, Gnd is EXP1 pin 9
+# Example for RepRapDiscount Full Graphic Smart Controller.
+# On GLCD EXP1 is to left and EXP2 is to right (when looking at the back).
+# Pin 1 is bottom left, pin 2 is top left etc.
+# +5V is pin 10 on EXP1.
+# Gnd is pin 9 on EXP1 and EXP2.
 panel.lcd                                          reprap_discount_glcd
 panel.spi_channel                                  0                      # SPI channel to use:  ; GLCD EXP1 Pins 3,5 (MOSI, SCLK)
 panel.spi_cs_pin                                   0.16                   # SPI chip select:     ; GLCD EXP1 Pin 4
@@ -281,19 +283,19 @@ custom_menu.reset.command                          reset                  #
 
 custom_menu.top_on.enable                          true                   #
 custom_menu.top_on.name                            Top_LED_on             # Turn Top Camera LED on.
-custom_menu.top_on.command                         M801                   #
+custom_menu.top_on.command                         M803                   #
 
 custom_menu.top_off.enable                         true                   #
 custom_menu.top_off.name                           Top_LED_off            # Turn Top Camera LED off.
-custom_menu.top_off.command                        M800                   #
+custom_menu.top_off.command                        M802                   #
 
 custom_menu.bottom_on.enable                       true                   #
 custom_menu.bottom_on.name                         Bottom_LED_on          # Turn Bottom Camera LED on.
-custom_menu.bottom_on.command                      M803                   #
+custom_menu.bottom_on.command                      M807                   #
 
 custom_menu.bottom_off.enable                      true                   #
 custom_menu.bottom_off.name                        Bottom_LED_off         # Turn Bottom Camera LED off.
-custom_menu.bottom_off.command                     M802                   #
+custom_menu.bottom_off.command                     M806                   #
 
 custom_menu.n1_vac_on.enable                       true                   #
 custom_menu.n1_vac_on.name                         N1_Vac_on              # Turn Nozzle 1 Vacuum On.
