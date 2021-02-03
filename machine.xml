@@ -397,7 +397,7 @@
                <text><![CDATA[M400 ; Wait for moves to complete before returning.]]></text>
             </command>
             <command type="DISABLE_COMMAND">
-               <text><![CDATA[M999 M802 M807 M84 ; Top light off.  Needs to be before power off.]]></text>
+               <text><![CDATA[M999 M802 M806 M84 ; Top light off.  Needs to be before power off.]]></text>
                <text><![CDATA[M84  ; Power off motors.]]></text>
                <text><![CDATA[M999 ; Reset.  This is used to reset in case of an issue.  Note, to use this, you must have a home command in the ENABLE_COMMAND.]]></text>
             </command>
