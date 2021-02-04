@@ -96,7 +96,7 @@
                </actuator>
             </actuators>
             <cameras>
-               <camera class="org.openpnp.machine.reference.camera.OpenPnpCaptureCamera" axis-X-id="AXS165bcf973840e3ac" axis-Y-id="AXS165bcf97384b4ce8" axis-Z-id="AXS165bcf97384e03d4" axis-rotation-id="AXS165bcf97384eed08" id="CAM165ce07569ca1d18" name="TopCamera" looking="Down" settle-method="FixedTime" settle-time-ms="400" settle-timeout-ms="500" settle-threshold="0.0" settle-debounce="0" settle-full-color="false" settle-gaussian-blur="0" settle-gradients="false" settle-mask-circle="0.0" settle-contrast-enhance="0.0" settle-diagnostics="false" rotation="0.0" flip-x="true" flip-y="true" offset-x="0" offset-y="0" crop-width="0" crop-height="0" scale-width="0" scale-height="0" deinterlace="false" unique-id="HD USB Camera \\?\usb#vid_32e4&amp;pid_9230&amp;mi_00#6&amp;1a7641e8&amp;0&amp;0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\global" format-id="0" fps="10.0">
+               <camera class="org.openpnp.machine.reference.camera.OpenPnpCaptureCamera" axis-X-id="AXS165bcf973840e3ac" axis-Y-id="AXS165bcf97384b4ce8" axis-Z-id="AXS165bcf97384e03d4" axis-rotation-id="AXS165bcf97384eed08" id="CAM165ce07569ca1d18" name="TopCamera" looking="Down" settle-method="FixedTime" settle-time-ms="400" settle-timeout-ms="500" settle-threshold="0.0" settle-debounce="0" settle-full-color="false" settle-gaussian-blur="0" settle-gradients="false" settle-mask-circle="0.0" settle-contrast-enhance="0.0" settle-diagnostics="false" rotation="0.0" flip-x="true" flip-y="true" offset-x="0" offset-y="0" crop-width="0" crop-height="0" scale-width="0" scale-height="0" deinterlace="false" unique-id="HD USB Camera \\?\usb#vid_32e4&amp;pid_9230&amp;mi_00#6&amp;1a7641e8&amp;0&amp;0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\global" format-id="0" fps="5.0">
                   <units-per-pixel units="Millimeters" x="0.02444988" y="0.02421308" z="0.0" rotation="0.0"/>
                   <vision-provider class="org.openpnp.machine.reference.vision.OpenCvVisionProvider"/>
                   <head-offsets units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
@@ -304,29 +304,18 @@
          </feeder>
       </feeders>
       <cameras>
-         <camera class="org.openpnp.machine.reference.camera.SimulatedUpCamera" id="C2" name="Bottom" looking="Up" settle-method="FixedTime" settle-time-ms="250" settle-timeout-ms="500" settle-threshold="0.0" settle-debounce="0" settle-full-color="false" settle-gaussian-blur="0" settle-gradients="false" settle-mask-circle="0.0" settle-contrast-enhance="0.0" settle-diagnostics="false" rotation="0.0" flip-x="false" flip-y="false" offset-x="0" offset-y="0" crop-width="0" crop-height="0" scale-width="0" scale-height="0" deinterlace="false">
-            <units-per-pixel units="Millimeters" x="0.0134375" y="0.0134375" z="0.0" rotation="0.0"/>
-            <vision-provider class="org.openpnp.machine.reference.vision.OpenCvVisionProvider"/>
-            <head-offsets units="Millimeters" x="118.799" y="7.117" z="0.0" rotation="0.0"/>
-            <safe-z value="0.0" units="Millimeters"/>
-            <calibration enabled="false">
-               <camera-matrix length="9">3.5E-323, 0.0, 2.5E-323, NaN, 6.93224685617292E-310, 6.932247478583E-310, 0.0, 0.0, 0.0</camera-matrix>
-               <distortion-coefficients length="5">NaN, 0.0, 0.0, 0.0, 0.0</distortion-coefficients>
-            </calibration>
-            <error-offsets units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-         </camera>
-         <camera class="org.openpnp.machine.reference.camera.OpenPnpCaptureCamera" id="CAM165d05be57df7828" name="BottomCamera" looking="Up" settle-method="FixedTime" settle-time-ms="250" settle-timeout-ms="500" settle-threshold="0.0" settle-debounce="0" settle-full-color="false" settle-gaussian-blur="0" settle-gradients="false" settle-mask-circle="0.0" settle-contrast-enhance="0.0" settle-diagnostics="false" rotation="0.0" flip-x="false" flip-y="false" offset-x="0" offset-y="0" crop-width="0" crop-height="0" scale-width="0" scale-height="0" deinterlace="false" unique-id="HD USB Camera \\?\usb#vid_32e4&amp;pid_9230&amp;mi_00#6&amp;2d2ff28d&amp;0&amp;0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\global" format-id="0" fps="10.0">
-            <units-per-pixel units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+         <camera class="org.openpnp.machine.reference.camera.OpenPnpCaptureCamera" id="CAM165d05be57df7828" name="BottomCamera" looking="Up" settle-method="FixedTime" settle-time-ms="250" settle-timeout-ms="500" settle-threshold="0.0" settle-debounce="0" settle-full-color="false" settle-gaussian-blur="0" settle-gradients="false" settle-mask-circle="0.0" settle-contrast-enhance="0.0" settle-diagnostics="false" rotation="0.0" flip-x="true" flip-y="false" offset-x="0" offset-y="0" crop-width="0" crop-height="0" scale-width="0" scale-height="0" deinterlace="false" unique-id="HD USB Camera \\?\usb#vid_32e4&amp;pid_9230&amp;mi_00#6&amp;2d2ff28d&amp;0&amp;0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\global" format-id="0" fps="10.0">
+            <units-per-pixel units="Millimeters" x="0.02145923" y="0.02155172" z="0.0" rotation="0.0"/>
             <vision-provider class="org.openpnp.machine.reference.vision.OpenCvVisionProvider"/>
             <head-offsets units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-            <calibration enabled="false">
-               <camera-matrix length="9">0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0</camera-matrix>
-               <distortion-coefficients length="5">1.8325555675064E-310, -1.534217329607229E287, 2.3427491934851446E22, -2.950994708218264E-65, 0.0</distortion-coefficients>
+            <calibration enabled="true">
+               <camera-matrix length="9">1917.7521942476444, 0.0, 1003.1928798214884, 0.0, 1911.8950217106167, 574.9866419597122, 0.0, 0.0, 1.0</camera-matrix>
+               <distortion-coefficients length="5">-0.38533356905294225, 0.41939204995375545, -0.0033381035994221636, 0.007901488440676611, -0.48620047784805437</distortion-coefficients>
             </calibration>
             <back-light-compensation property="BackLightCompensation" value="1" auto="false"/>
             <brightness property="Brightness" value="0" auto="false"/>
             <contrast property="Contrast" value="32" auto="false"/>
-            <exposure property="Exposure" value="-3" auto="false"/>
+            <exposure property="Exposure" value="-7" auto="false"/>
             <focus property="Focus"/>
             <gain property="Gain" value="0" auto="false"/>
             <gamma property="Gamma" value="72" auto="false"/>
