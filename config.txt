@@ -94,25 +94,25 @@ epsilon_acceleration                               50000.0                # In m
 
 # VACUUM AND EJECTION
 # http://smoothieware.org/mosfets
-# Nozzle 1 vacuum (right).
+# Nozzle 1 vacuum (left).
 # First large mosfet.
-switch.vacnozzleright.enable                       true                   # Enable this module.
-switch.vacnozzleright.startup_state                false                  # Turned off at start.
-switch.vacnozzleright.input_off_command            M812                   # Command that will turn this switch off.
-switch.vacnozzleright.input_on_command             M813                   # Command that will turn this switch on.
-switch.vacnozzleright.output_pin                   2.7                    # Pin to control first big mosfet.
-switch.vacnozzleright.output_type                  digital                # Digital means this is just an on or off pin.
+switch.vacnozzleleft.enable                        true                   # Enable this module.
+switch.vacnozzleleft.startup_state                 false                  # Turned off at start.
+switch.vacnozzleleft.input_off_command             M800                   # Command that will turn this switch off.
+switch.vacnozzleleft.input_on_command              M801                   # Command that will turn this switch on.
+switch.vacnozzleleft.output_pin                    2.7                    # Pin to control first big mosfet.
+switch.vacnozzleleft.output_type                   digital                # Digital means this is just an on or off pin.
 
-# Nozzle 1 puff (left).
+# Nozzle 1 ejection (left).
 # Second large mosfet.
 switch.pressnozzleleft.enable                      true                   # Enable this module.
 switch.pressnozzleleft.startup_state               false                  # Turned off at start.
-switch.pressnozzleleft.input_off_command           M810                   # Command that will turn this switch off.
-switch.pressnozzleleft.input_on_command            M811                   # Command that will turn this switch on.
+switch.pressnozzleleft.input_off_command           M802                   # Command that will turn this switch off.
+switch.pressnozzleleft.input_on_command            M803                   # Command that will turn this switch on.
 switch.pressnozzleleft.output_pin                  2.5                    # Pin to control second big mosfet.
 switch.pressnozzleleft.output_type                 digital                # Digital means this is just an on or off pin.
 
-# Nozzle 2 vacuum (left).
+# Nozzle 2 vacuum (rigt).
 # Third large mosfet.
 switch.vacnozzleright.enable                       true                   # Enable this module.
 switch.vacnozzleright.startup_state                false                  # Turned off at start.
@@ -121,12 +121,12 @@ switch.vacnozzleright.input_on_command             M805                   # Comm
 switch.vacnozzleright.output_pin                   1.23                   # Pin to control third big mosfet.
 switch.vacnozzleright.output_type                  digital                # Digital means this is just an on or off pin.
 
-# Nozzle 2 puff (right).
+# Nozzle 2 ejection (right).
 # First small mosfet.
 switch.pressnozzleright.enable                     true                   # Enable this module.
 switch.pressnozzleright.startup_state              false                  # Turned off at start.
-switch.pressnozzleright.input_off_command          M800                   # Command that will turn this switch off.
-switch.pressnozzleright.input_on_command           M801                   # Command that will turn this switch on.
+switch.pressnozzleright.input_off_command          M806                   # Command that will turn this switch off.
+switch.pressnozzleright.input_on_command           M807                   # Command that will turn this switch on.
 switch.pressnozzleright.output_pin                 2.4                    # Pin to control first small mosfet.
 switch.pressnozzleright.output_type                digital                # Digital means this is just an on or off pin.
 
@@ -136,8 +136,8 @@ switch.pressnozzleright.output_type                digital                # Digi
 # Second small mosfet.
 switch.toplight.enable                             true                   # Enable this module.
 switch.toplight.startup_state                      false                  # Turned off at start.
-switch.toplight.input_off_command                  M802                   # Command that will turn this switch off.
-switch.toplight.input_on_command                   M803                   # Command that will turn this switch on.
+switch.toplight.input_off_command                  M808                   # Command that will turn this switch off.
+switch.toplight.input_on_command                   M809                   # Command that will turn this switch on.
 switch.toplight.output_pin                         2.6                    # Pin to control second small mosfet.
 switch.toplight.output_type                        digital                # Digital means this is just an on or off pin.
 
@@ -145,8 +145,8 @@ switch.toplight.output_type                        digital                # Digi
 # Third small mosfet.
 switch.bottomlight.enable                          true                   # Enable this module.
 switch.bottomlight.startup_state                   false                  # Turned off at start.
-switch.bottomlight.input_off_command               M806                   # Command that will turn this switch off.
-switch.bottomlight.input_on_command                M807                   # Command that will turn this switch on.
+switch.bottomlight.input_off_command               M809                   # Command that will turn this switch off.
+switch.bottomlight.input_on_command                M810                   # Command that will turn this switch on.
 switch.bottomlight.output_pin                      1.22                   # Pin to control third small mosfet.
 switch.bottomlight.output_type                     digital                # Digital means this is just an on or off pin.
 
