@@ -94,25 +94,25 @@ epsilon_acceleration                               50000.0                # In m
 
 # VACUUM AND EJECTION
 # http://smoothieware.org/mosfets
-# Nozzle 1 vacuum (right).
+# Nozzle 1 vacuum (left).
 # First large mosfet.
-switch.vacnozzleright.enable                       true                   # Enable this module.
-switch.vacnozzleright.startup_state                false                  # Turned off at start.
-switch.vacnozzleright.input_off_command            M812                   # Command that will turn this switch off.
-switch.vacnozzleright.input_on_command             M813                   # Command that will turn this switch on.
-switch.vacnozzleright.output_pin                   2.7                    # Pin to control first big mosfet.
-switch.vacnozzleright.output_type                  digital                # Digital means this is just an on or off pin.
+switch.vacnozzleleft.enable                       true                   # Enable this module.
+switch.vacnozzleleft.startup_state                false                  # Turned off at start.
+switch.vacnozzleleft.input_off_command            M800                   # Command that will turn this switch off.
+switch.vacnozzleleft.input_on_command             M801                   # Command that will turn this switch on.
+switch.vacnozzleleft.output_pin                   2.7                    # Pin to control first big mosfet.
+switch.vacnozzleleft.output_type                  digital                # Digital means this is just an on or off pin.
 
 # Nozzle 1 puff (left).
 # Second large mosfet.
 switch.pressnozzleleft.enable                      true                   # Enable this module.
 switch.pressnozzleleft.startup_state               false                  # Turned off at start.
-switch.pressnozzleleft.input_off_command           M810                   # Command that will turn this switch off.
-switch.pressnozzleleft.input_on_command            M811                   # Command that will turn this switch on.
+switch.pressnozzleleft.input_off_command           M802                   # Command that will turn this switch off.
+switch.pressnozzleleft.input_on_command            M803                   # Command that will turn this switch on.
 switch.pressnozzleleft.output_pin                  2.5                    # Pin to control second big mosfet.
 switch.pressnozzleleft.output_type                 digital                # Digital means this is just an on or off pin.
 
-# Nozzle 2 vacuum (left).
+# Nozzle 2 vacuum (right).
 # Third large mosfet.
 switch.vacnozzleright.enable                       true                   # Enable this module.
 switch.vacnozzleright.startup_state                false                  # Turned off at start.
@@ -125,8 +125,8 @@ switch.vacnozzleright.output_type                  digital                # Digi
 # First small mosfet.
 switch.pressnozzleright.enable                     true                   # Enable this module.
 switch.pressnozzleright.startup_state              false                  # Turned off at start.
-switch.pressnozzleright.input_off_command          M800                   # Command that will turn this switch off.
-switch.pressnozzleright.input_on_command           M801                   # Command that will turn this switch on.
+switch.pressnozzleright.input_off_command          M806                   # Command that will turn this switch off.
+switch.pressnozzleright.input_on_command           M807                   # Command that will turn this switch on.
 switch.pressnozzleright.output_pin                 2.4                    # Pin to control first small mosfet.
 switch.pressnozzleright.output_type                digital                # Digital means this is just an on or off pin.
 
@@ -136,8 +136,8 @@ switch.pressnozzleright.output_type                digital                # Digi
 # Second small mosfet.
 switch.toplight.enable                             true                   # Enable this module.
 switch.toplight.startup_state                      false                  # Turned off at start.
-switch.toplight.input_off_command                  M802                   # Command that will turn this switch off.
-switch.toplight.input_on_command                   M803                   # Command that will turn this switch on.
+switch.toplight.input_off_command                  M808                   # Command that will turn this switch off.
+switch.toplight.input_on_command                   M809                   # Command that will turn this switch on.
 switch.toplight.output_pin                         2.6                    # Pin to control second small mosfet.
 switch.toplight.output_type                        digital                # Digital means this is just an on or off pin.
 
@@ -145,8 +145,8 @@ switch.toplight.output_type                        digital                # Digi
 # Third small mosfet.
 switch.bottomlight.enable                          true                   # Enable this module.
 switch.bottomlight.startup_state                   false                  # Turned off at start.
-switch.bottomlight.input_off_command               M806                   # Command that will turn this switch off.
-switch.bottomlight.input_on_command                M807                   # Command that will turn this switch on.
+switch.bottomlight.input_off_command               M810                   # Command that will turn this switch off.
+switch.bottomlight.input_on_command                M811                   # Command that will turn this switch on.
 switch.bottomlight.output_pin                      1.22                   # Pin to control third small mosfet.
 switch.bottomlight.output_type                     digital                # Digital means this is just an on or off pin.
 
@@ -281,37 +281,37 @@ custom_menu.reset.enable                           true                   #
 custom_menu.reset.name                             REBOOT                 # Reboot the Smoothie.
 custom_menu.reset.command                          reset                  #
 
-custom_menu.top_on.enable                          true                   #
-custom_menu.top_on.name                            Top_LED_on             # Turn Top Camera LED on.
-custom_menu.top_on.command                         M803                   #
-
 custom_menu.top_off.enable                         true                   #
 custom_menu.top_off.name                           Top_LED_off            # Turn Top Camera LED off.
-custom_menu.top_off.command                        M802                   #
+custom_menu.top_off.command                        M808                   #
 
-custom_menu.bottom_on.enable                       true                   #
-custom_menu.bottom_on.name                         Bottom_LED_on          # Turn Bottom Camera LED on.
-custom_menu.bottom_on.command                      M807                   #
+custom_menu.top_on.enable                          true                   #
+custom_menu.top_on.name                            Top_LED_on             # Turn Top Camera LED on.
+custom_menu.top_on.command                         M809                   #
 
 custom_menu.bottom_off.enable                      true                   #
 custom_menu.bottom_off.name                        Bottom_LED_off         # Turn Bottom Camera LED off.
-custom_menu.bottom_off.command                     M806                   #
+custom_menu.bottom_off.command                     M810                   #
 
-custom_menu.n1_vac_on.enable                       true                   #
-custom_menu.n1_vac_on.name                         N1_Vac_on              # Turn Nozzle 1 Vacuum On.
-custom_menu.n1_vac_on.command                      M811                   #
+custom_menu.bottom_on.enable                       true                   #
+custom_menu.bottom_on.name                         Bottom_LED_on          # Turn Bottom Camera LED on.
+custom_menu.bottom_on.command                      M811                   #
 
 custom_menu.n1_vac_off.enable                      true                   #
 custom_menu.n1_vac_off.name                        N1_Vac_Off             # Turn Nozzle 1 Vacuum Off.
-custom_menu.n1_vac_off.command                     M810                   #
+custom_menu.n1_vac_off.command                     M800                   #
 
-custom_menu.n2_vac_on.enable                       true                   #
-custom_menu.n2_vac_on.name                         N2_Vac_on              # Turn Nozzle 2 Vacuum On.
-custom_menu.n2_vac_on.command                      M813                   #
+custom_menu.n1_vac_on.enable                       true                   #
+custom_menu.n1_vac_on.name                         N1_Vac_on              # Turn Nozzle 1 Vacuum On.
+custom_menu.n1_vac_on.command                      M801                   #
 
 custom_menu.n2_vac_off.enable                      true                   #
 custom_menu.n2_vac_off.name                        N2_Vac_Off             # Turn Nozzle 2 Vacuum Off.
-custom_menu.n2_vac_off.command                     M812                   #
+custom_menu.n2_vac_off.command                     M804                   #
+
+custom_menu.n2_vac_on.enable                       true                   #
+custom_menu.n2_vac_on.name                         N2_Vac_on              # Turn Nozzle 2 Vacuum On.
+custom_menu.n2_vac_on.command                      M805                   #
 
 ## System configuration
 
