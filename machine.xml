@@ -124,7 +124,7 @@
                   <back-light-compensation property="BackLightCompensation" value="1" auto="false"/>
                   <brightness property="Brightness" value="0" auto="false"/>
                   <contrast property="Contrast" value="45" auto="false"/>
-                  <exposure property="Exposure" value="-7" auto="false"/>
+                  <exposure property="Exposure" value="-8" auto="false"/>
                   <focus property="Focus"/>
                   <gain property="Gain" value="0" auto="false"/>
                   <gamma property="Gamma" value="72" auto="false"/>
