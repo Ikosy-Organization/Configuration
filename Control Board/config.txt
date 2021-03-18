@@ -96,39 +96,39 @@ epsilon_acceleration                               50000.0                # In m
 # http://smoothieware.org/mosfets
 # Nozzle 1 vacuum (left).
 # First large mosfet.
-switch.vacnozzleleft.enable                       true                   # Enable this module.
-switch.vacnozzleleft.startup_state                false                  # Turned off at start.
-switch.vacnozzleleft.input_off_command            M800                   # Command that will turn this switch off.
-switch.vacnozzleleft.input_on_command             M801                   # Command that will turn this switch on.
-switch.vacnozzleleft.output_pin                   2.7                    # Pin to control first big mosfet.
-switch.vacnozzleleft.output_type                  digital                # Digital means this is just an on or off pin.
+switch.vacuumnozzle1.enable                        true                   # Enable this module.
+switch.vacuumnozzle1.startup_state                 false                  # Turned off at start.
+switch.vacuumnozzle1.input_off_command             M800                   # Command that will turn this switch off.
+switch.vacuumnozzle1.input_on_command              M801                   # Command that will turn this switch on.
+switch.vacuumnozzle1.output_pin                    2.7                    # Pin to control first big mosfet.
+switch.vacuumnozzle1.output_type                   digital                # Digital means this is just an on or off pin.
 
 # Nozzle 1 puff (left).
 # Second large mosfet.
-switch.pressnozzleleft.enable                      true                   # Enable this module.
-switch.pressnozzleleft.startup_state               false                  # Turned off at start.
-switch.pressnozzleleft.input_off_command           M802                   # Command that will turn this switch off.
-switch.pressnozzleleft.input_on_command            M803                   # Command that will turn this switch on.
-switch.pressnozzleleft.output_pin                  2.5                    # Pin to control second big mosfet.
-switch.pressnozzleleft.output_type                 digital                # Digital means this is just an on or off pin.
+switch.blowoffnozzle1.enable                       true                   # Enable this module.
+switch.blowoffnozzle1.startup_state                false                  # Turned off at start.
+switch.blowoffnozzle1.input_off_command            M802                   # Command that will turn this switch off.
+switch.blowoffnozzle1.input_on_command             M803                   # Command that will turn this switch on.
+switch.blowoffnozzle1.output_pin                   2.5                    # Pin to control second big mosfet.
+switch.blowoffnozzle1.output_type                  digital                # Digital means this is just an on or off pin.
 
 # Nozzle 2 vacuum (right).
 # Third large mosfet.
-switch.vacnozzleright.enable                       true                   # Enable this module.
-switch.vacnozzleright.startup_state                false                  # Turned off at start.
-switch.vacnozzleright.input_off_command            M804                   # Command that will turn this switch off.
-switch.vacnozzleright.input_on_command             M805                   # Command that will turn this switch on.
-switch.vacnozzleright.output_pin                   1.23                   # Pin to control third big mosfet.
-switch.vacnozzleright.output_type                  digital                # Digital means this is just an on or off pin.
+switch.vacuumnozzle2.enable                        true                   # Enable this module.
+switch.vacuumnozzle2.startup_state                 false                  # Turned off at start.
+switch.vacuumnozzle2.input_off_command             M804                   # Command that will turn this switch off.
+switch.vacuumnozzle2.input_on_command              M805                   # Command that will turn this switch on.
+switch.vacuumnozzle2.output_pin                    1.23                   # Pin to control third big mosfet.
+switch.vacuumnozzle2.output_type                   digital                # Digital means this is just an on or off pin.
 
 # Nozzle 2 puff (right).
 # First small mosfet.
-switch.pressnozzleright.enable                     true                   # Enable this module.
-switch.pressnozzleright.startup_state              false                  # Turned off at start.
-switch.pressnozzleright.input_off_command          M806                   # Command that will turn this switch off.
-switch.pressnozzleright.input_on_command           M807                   # Command that will turn this switch on.
-switch.pressnozzleright.output_pin                 2.4                    # Pin to control first small mosfet.
-switch.pressnozzleright.output_type                digital                # Digital means this is just an on or off pin.
+switch.blowoffnozzle2.enable                       true                   # Enable this module.
+switch.blowoffnozzle2.startup_state                false                  # Turned off at start.
+switch.blowoffnozzle2.input_off_command            M806                   # Command that will turn this switch off.
+switch.blowoffnozzle2.input_on_command             M807                   # Command that will turn this switch on.
+switch.blowoffnozzle2.output_pin                   2.4                    # Pin to control first small mosfet.
+switch.blowoffnozzle2.output_type                  digital                # Digital means this is just an on or off pin.
 
 # LIGHTS
 # http://smoothieware.org/mosfets
