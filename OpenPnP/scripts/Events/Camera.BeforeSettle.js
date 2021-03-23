@@ -3,8 +3,8 @@
  * for the up camera and down camera are turned on and off based on which camera
  * needs to capture.
  */
- var bottomLight = machine.getActuatorByName("BottomLightActuator");
- var topLight = machine.getActuatorByName("TopLightActuator");
+ var bottomLight	= machine.getActuatorByName("BottomLightActuator");
+ var topLight		= machine.getHead("H1").getActuatorByName("TopLightActuator");
 
 if (camera.looking == Packages.org.openpnp.spi.Camera.Looking.Up) {
 	bottomLight.actuate(true);
