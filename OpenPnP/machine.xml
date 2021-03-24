@@ -192,11 +192,11 @@
                </stages>
             </pipeline>
          </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR166eab9efb39fe5c" name=" Blinds Feeder - 01-01" enabled="true" part-id="R0603-1K" feed-retry-count="0" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="2" feeder-no="1" feeders-total="1" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR166eab9efb39fe5c" name=" Blinds Feeder - 01-01" enabled="true" part-id="R0603-1K" retry-count="3" feed-retry-count="0" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="0" feeder-no="2" feeders-total="2" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
             <location units="Millimeters" x="0.0" y="0.0" z="-15.74" rotation="0.0"/>
-            <fiducial-1-location units="Millimeters" x="96.9731136822534" y="244.6480077319226" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="17.12321692144043" y="245.44443580418334" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="96.52489435439266" y="199.7095276576487" z="0.0" rotation="0.0"/>
+            <fiducial-1-location units="Millimeters" x="97.08031199511473" y="244.05943676517455" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="17.25600081644043" y="245.22048693918333" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="96.42613651315956" y="199.08368256779085" z="0.0" rotation="0.0"/>
             <tape-length value="80.0" units="Millimeters"/>
             <feeder-extent value="45.0" units="Millimeters"/>
             <pocket-centerline value="9.0" units="Millimeters"/>
@@ -207,6 +207,37 @@
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRead" name="00" enabled="false" file="test.png" color-space="Bgr"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="5"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="65" hue-max="115" saturation-min="50" saturation-max="255" value-min="40" value-max="255" invert="false" binary-mask="true"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MinAreaRectContours" name="results" enabled="true" contours-stage-name="8"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="10" enabled="true" image-stage-name="0"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="12" enabled="false" rotated-rects-stage-name="results" thickness="3" draw-rect-center="true" rect-center-radius="20" show-orientation="false"/>
+               </stages>
+            </pipeline>
+            <sprocket-pitch value="4.0" units="Millimeters"/>
+            <edge-open-distance value="2.0" units="Millimeters"/>
+            <edge-closed-distance value="2.0" units="Millimeters"/>
+            <push-Z-offset value="0.25" units="Millimeters"/>
+         </feeder>
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR166f69a2049923e4" name="BlindsFeeder - 01-02" enabled="true" part-id="R0603-1K" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="0" feeder-no="1" feeders-total="2" pocket-count="0" first-pocket="1" last-pocket="0" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+            <location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+            <fiducial-1-location units="Millimeters" x="97.08031199511473" y="244.05943676517455" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="17.25600081644043" y="245.22048693918333" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="96.42613651315956" y="199.08368256779085" z="0.0" rotation="0.0"/>
+            <tape-length value="80.0" units="Millimeters"/>
+            <feeder-extent value="45.0" units="Millimeters"/>
+            <pocket-centerline value="0.0" units="Millimeters"/>
+            <pocket-pitch value="0.0" units="Millimeters"/>
+            <pocket-size value="0.0" units="Millimeters"/>
+            <pipeline>
+               <stages>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRead" name="00" enabled="false" file="test.png" color-space="Bgr"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="65" hue-max="115" saturation-min="50" saturation-max="255" value-min="40" value-max="255" invert="false" binary-mask="true"/>
@@ -408,10 +439,10 @@
                <text><![CDATA[{False:M802}{True:M803]]></text>
             </command>
             <command head-mountable-id="ACT166b076f8df96728" type="ACTUATE_BOOLEAN_COMMAND">
-               <text><![CDATA[{False:M802}{True:M803}]]></text>
+               <text><![CDATA[{False:M812}{True:M813}]]></text>
             </command>
             <command head-mountable-id="A1" type="ACTUATOR_READ_COMMAND">
-               <text><![CDATA[switch \u0020 toplight]]></text>
+               <text><![CDATA[switch \u0020 top_light]]></text>
             </command>
             <command head-mountable-id="A1" type="ACTUATOR_READ_REGEX">
                <text><![CDATA[^.*(?<Value>-?\d+)]]></text>
@@ -435,22 +466,22 @@
                <text><![CDATA[^.*(?<Value>-?\d+)]]></text>
             </command>
             <command head-mountable-id="ACT165d075d2d206188" type="ACTUATOR_READ_COMMAND">
-               <text><![CDATA[switch \u0020 bottomlight]]></text>
+               <text><![CDATA[switch \u0020 bottom_light]]></text>
             </command>
             <command head-mountable-id="ACT166b076f8df96728" type="ACTUATOR_READ_COMMAND">
-               <text><![CDATA[switch \u0020 blowoffnozzle1]]></text>
+               <text><![CDATA[switch \u0020 vacuum_pump]]></text>
             </command>
             <command head-mountable-id="ACT1668b34cf7d02034" type="ACTUATOR_READ_COMMAND">
-               <text><![CDATA[switch \u0020 vacuumnozzle1]]></text>
+               <text><![CDATA[switch \u0020 vacuum_nozzle_1]]></text>
             </command>
             <command head-mountable-id="ACT1668b3582ccc3574" type="ACTUATOR_READ_COMMAND">
-               <text><![CDATA[switch \u0020 blowoffnozzle1]]></text>
+               <text><![CDATA[switch \u0020 blow_off_nozzle_1]]></text>
             </command>
             <command head-mountable-id="ACT1668b35d1c965c98" type="ACTUATOR_READ_COMMAND">
-               <text><![CDATA[switch \u0020 vacuumnozzle2]]></text>
+               <text><![CDATA[switch \u0020 vacuum_nozzle_2]]></text>
             </command>
             <command head-mountable-id="ACT1668b3627d78794c" type="ACTUATOR_READ_COMMAND">
-               <text><![CDATA[switch \u0020 blowoffnozzle2]]></text>
+               <text><![CDATA[switch \u0020 blow_off_nozzle_2]]></text>
             </command>
             <junction-deviation value="0.02" units="Millimeters"/>
          </driver>
