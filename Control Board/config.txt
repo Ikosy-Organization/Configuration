@@ -96,77 +96,86 @@ epsilon_acceleration                               50000.0                # In m
 # http://smoothieware.org/mosfets
 # Nozzle 1 vacuum (left).
 # First large mosfet.
-switch.vacuumnozzle1.enable                        true                   # Enable this module.
-switch.vacuumnozzle1.startup_state                 false                  # Turned off at start.
-switch.vacuumnozzle1.input_off_command             M800                   # Command that will turn this switch off.
-switch.vacuumnozzle1.input_on_command              M801                   # Command that will turn this switch on.
-switch.vacuumnozzle1.output_pin                    2.7                    # Pin to control first big mosfet.
-switch.vacuumnozzle1.output_type                   digital                # Digital means this is just an on or off pin.
+switch.vacuum_nozzle_1.enable                      true                   # Enable this module.
+switch.vacuum_nozzle_1.startup_state               false                  # Turned off at start.
+switch.vacuum_nozzle_1.input_off_command           M800                   # Command that will turn this switch off.
+switch.vacuum_nozzle_1.input_on_command            M801                   # Command that will turn this switch on.
+switch.vacuum_nozzle_1.output_pin                  2.7                    # Pin to control first big mosfet.
+switch.vacuum_nozzle_1.output_type                 digital                # Digital means this is just an on or off pin.
 
 # Nozzle 1 puff (left).
 # Second large mosfet.
-switch.blowoffnozzle1.enable                       true                   # Enable this module.
-switch.blowoffnozzle1.startup_state                false                  # Turned off at start.
-switch.blowoffnozzle1.input_off_command            M802                   # Command that will turn this switch off.
-switch.blowoffnozzle1.input_on_command             M803                   # Command that will turn this switch on.
-switch.blowoffnozzle1.output_pin                   2.5                    # Pin to control second big mosfet.
-switch.blowoffnozzle1.output_type                  digital                # Digital means this is just an on or off pin.
+switch.blow_off_nozzle_1.enable                    true                   # Enable this module.
+switch.blow_off_nozzle_1.startup_state             false                  # Turned off at start.
+switch.blow_off_nozzle_1.input_off_command         M802                   # Command that will turn this switch off.
+switch.blow_off_nozzle_1.input_on_command          M803                   # Command that will turn this switch on.
+switch.blow_off_nozzle_1.output_pin                2.5                    # Pin to control second big mosfet.
+switch.blow_off_nozzle_1.output_type               digital                # Digital means this is just an on or off pin.
 
 # Nozzle 2 vacuum (right).
 # Third large mosfet.
-switch.vacuumnozzle2.enable                        true                   # Enable this module.
-switch.vacuumnozzle2.startup_state                 false                  # Turned off at start.
-switch.vacuumnozzle2.input_off_command             M804                   # Command that will turn this switch off.
-switch.vacuumnozzle2.input_on_command              M805                   # Command that will turn this switch on.
-switch.vacuumnozzle2.output_pin                    1.23                   # Pin to control third big mosfet.
-switch.vacuumnozzle2.output_type                   digital                # Digital means this is just an on or off pin.
+switch.vacuum_nozzle_2.enable                      true                   # Enable this module.
+switch.vacuum_nozzle_2.startup_state               false                  # Turned off at start.
+switch.vacuum_nozzle_2.input_off_command           M804                   # Command that will turn this switch off.
+switch.vacuum_nozzle_2.input_on_command            M805                   # Command that will turn this switch on.
+switch.vacuum_nozzle_2.output_pin                  1.23                   # Pin to control third big mosfet.
+switch.vacuum_nozzle_2.output_type                 digital                # Digital means this is just an on or off pin.
 
 # Nozzle 2 puff (right).
 # First small mosfet.
-switch.blowoffnozzle2.enable                       true                   # Enable this module.
-switch.blowoffnozzle2.startup_state                false                  # Turned off at start.
-switch.blowoffnozzle2.input_off_command            M806                   # Command that will turn this switch off.
-switch.blowoffnozzle2.input_on_command             M807                   # Command that will turn this switch on.
-switch.blowoffnozzle2.output_pin                   2.4                    # Pin to control first small mosfet.
-switch.blowoffnozzle2.output_type                  digital                # Digital means this is just an on or off pin.
+switch.blow_off_nozzle_2.enable                    true                   # Enable this module.
+switch.blow_off_nozzle_2.startup_state             false                  # Turned off at start.
+switch.blow_off_nozzle_2.input_off_command         M806                   # Command that will turn this switch off.
+switch.blow_off_nozzle_2.input_on_command          M807                   # Command that will turn this switch on.
+switch.blow_off_nozzle_2.output_pin                2.4                    # Pin to control first small mosfet.
+switch.blow_off_nozzle_2.output_type               digital                # Digital means this is just an on or off pin.
+
+# External vacuum switch.
+# GPIO pin at edge of board.
+switch.vacuum_pump.enable                          true                   # Enable this module.
+switch.vacuum_pump.startup_state                   false                  # Turned off at start.
+switch.vacuum_pump.input_off_command               M812                   # Command that will turn this switch off.
+switch.vacuum_pump.input_on_command                M813                   # Command that will turn this switch on.
+switch.vacuum_pump.output_pin                      0.26                   # Pin to control first small mosfet.
+switch.vacuum_pump.output_type                     digital                # Digital means this is just an on or off pin.
 
 # LIGHTS
 # http://smoothieware.org/mosfets
 # Top (down looking) light control.
 # Second small mosfet.
-switch.toplight.enable                             true                   # Enable this module.
-switch.toplight.startup_state                      false                  # Turned off at start.
-switch.toplight.input_off_command                  M808                   # Command that will turn this switch off.
-switch.toplight.input_on_command                   M809                   # Command that will turn this switch on.
-switch.toplight.output_pin                         2.6                    # Pin to control second small mosfet.
-switch.toplight.output_type                        digital                # Digital means this is just an on or off pin.
+switch.top_light.enable                            true                   # Enable this module.
+switch.top_light.startup_state                     false                  # Turned off at start.
+switch.top_light.input_off_command                 M808                   # Command that will turn this switch off.
+switch.top_light.input_on_command                  M809                   # Command that will turn this switch on.
+switch.top_light.output_pin                        2.6                    # Pin to control second small mosfet.
+switch.top_light.output_type                       digital                # Digital means this is just an on or off pin.
 
 # Bottom (up looking) light control.
 # Third small mosfet.
-switch.bottomlight.enable                          true                   # Enable this module.
-switch.bottomlight.startup_state                   false                  # Turned off at start.
-switch.bottomlight.input_off_command               M810                   # Command that will turn this switch off.
-switch.bottomlight.input_on_command                M811                   # Command that will turn this switch on.
-switch.bottomlight.output_pin                      1.22                   # Pin to control third small mosfet.
-switch.bottomlight.output_type                     digital                # Digital means this is just an on or off pin.
+switch.bottom_light.enable                         true                   # Enable this module.
+switch.bottom_light.startup_state                  false                  # Turned off at start.
+switch.bottom_light.input_off_command              M810                   # Command that will turn this switch off.
+switch.bottom_light.input_on_command               M811                   # Command that will turn this switch on.
+switch.bottom_light.output_pin                     1.22                   # Pin to control third small mosfet.
+switch.bottom_light.output_type                    digital                # Digital means this is just an on or off pin.
 
 
 # VACUUM SENSORS
 # Nozzle 1.
-temperature_control.nozzle1.enable                 true
-temperature_control.nozzle1.sensor                 ad8495                 # Nozzle 1 vacuum.
-temperature_control.nozzle1.ad8495_pin	           0.24	                  # Pin to read.
-temperature_control.nozzle1.ad8495_offset   	   100
-temperature_control.nozzle1.readings_per_second	   50
-temperature_control.nozzle1.get_m_code	           831	                  # M code to get this temp i.e. M831.
+temperature_control.nozzle_1.enable                true
+temperature_control.nozzle_1.sensor                ad8495                 # Nozzle 1 vacuum.
+temperature_control.nozzle_1.ad8495_pin            0.24                   # Pin to read.
+temperature_control.nozzle_1.ad8495_offset         100
+temperature_control.nozzle_1.readings_per_second   50
+temperature_control.nozzle_1.get_m_code            831                    # M code to get this temp i.e. M831.
 
 # Nozzle 2.
-temperature_control.nozzle2.enable                 true
-temperature_control.nozzle2.sensor                 ad8495                 # Nozzle 2 vacuum.
-temperature_control.nozzle2.ad8495_pin	           0.23	                  # Pin to read.
-temperature_control.nozzle2.ad8495_offset          100
-temperature_control.nozzle2.readings_per_second	   50
-temperature_control.nozzle2.get_m_code	           832	                  # M code to get this temp i.e. M832.
+temperature_control.nozzle_2.enable                true
+temperature_control.nozzle_2.sensor                ad8495                 # Nozzle 2 vacuum.
+temperature_control.nozzle_2.ad8495_pin            0.23                   # Pin to read.
+temperature_control.nozzle_2.ad8495_offset         100
+temperature_control.nozzle_2.readings_per_second   50
+temperature_control.nozzle_2.get_m_code            832                    # M code to get this temp i.e. M832.
 
 
 # HARD ENDSTOPS
@@ -228,12 +237,12 @@ endstop.minz.release_first                         true                   # Firs
 
 # SOFT ENDSTOPS
 # Use soft endstops to prevent illegal moves beyond the actual endstops
-soft_endstop.enable                                false                   # Enable soft endstops.
+soft_endstop.enable                                false                  # Enable soft endstops.
 soft_endstop.x_min                                 0                      # Minimum X position.
 soft_endstop.x_max                                 347                    # Maximum X position. Set slightly higher than the soft limit in OpenPnP.
 
 soft_endstop.y_min                                 0                      # Minimum Y position
-soft_endstop.y_max                                 412	                  # Maximum Y position. Set slightly higher than the soft limit in OpenPnP.
+soft_endstop.y_max                                 412                    # Maximum Y position. Set slightly higher than the soft limit in OpenPnP.
 
 #soft_endstop.z_min                                -60                    # Minimum Z position. Set slightly higher than the soft limit in OpenPnP.
 #soft_endstop.z_max                                +60                    # Maximum Z position. Set slightly higher than the soft limit in OpenPnP.
@@ -242,7 +251,7 @@ soft_endstop.halt                                  true                   # Whet
 
 # Optional order in which axis will home.  The default is they all home at the same time,
 # if this is set it will force each axis to home one at a time in the specified order.
-home_z_first 	                                   true                   # Do not set this to false otherwise you might drag the nozzle across the table.
+home_z_first                                       true                   # Do not set this to false otherwise you might drag the nozzle across the table.
 
 # CONTROL PANEL
 # See: http://smoothieware.org/panel
