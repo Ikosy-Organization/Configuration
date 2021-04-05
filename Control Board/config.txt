@@ -130,7 +130,7 @@ switch.blow_off_nozzle_2.input_on_command          M807                   # Comm
 switch.blow_off_nozzle_2.output_pin                2.4                    # Pin to control first small mosfet.
 switch.blow_off_nozzle_2.output_type               digital                # Digital means this is just an on or off pin.
 
-# External vacuum switch.
+# External vacuum pump switch.
 # GPIO pin at edge of board.
 switch.vacuum_pump.enable                          true                   # Enable this module.
 switch.vacuum_pump.startup_state                   false                  # Turned off at start.
@@ -138,6 +138,15 @@ switch.vacuum_pump.input_off_command               M812                   # Comm
 switch.vacuum_pump.input_on_command                M813                   # Command that will turn this switch on.
 switch.vacuum_pump.output_pin                      0.26                   # Pin to control first small mosfet.
 switch.vacuum_pump.output_type                     digital                # Digital means this is just an on or off pin.
+
+# External compressor pump switch.
+# GPIO pin at edge of board.
+switch.compressor_pump.enable                      true                   # Enable this module.
+switch.compressor_pump.startup_state               false                  # Turned off at start.
+switch.compressor_pump.input_off_command           M814                   # Command that will turn this switch off.
+switch.compressor_pump.input_on_command            M815                   # Command that will turn this switch on.
+switch.compressor_pump.output_pin                  0.25                   # Pin to control first small mosfet.
+switch.compressor_pump.output_type                 digital                # Digital means this is just an on or off pin.
 
 # LIGHTS
 # http://smoothieware.org/mosfets
@@ -231,7 +240,7 @@ endstop.minz.homing_direction                      home_to_max            # Dire
 endstop.minz.homing_position                       0                      # the cartesian coordinate this is set to when it homes.
 endstop.minz.fast_rate                             50                     # Fast homing rate in mm/sec.
 endstop.minz.slow_rate                             10                     # Slow homing rate in mm/sec.
-endstop.minz.retract                               -10.677                # Bounce off endstop in mm.
+endstop.minz.retract                               -9.100                 # Bounce off endstop in mm.
 endstop.minz.release_first                         true                   # First move away from endstop until released.
 
 
