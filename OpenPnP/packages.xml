@@ -12,6 +12,7 @@
       </footprint>
       <compatible-nozzle-tip-ids class="java.util.ArrayList">
          <string>NT1</string>
+         <string>TIP167306fe44857b40</string>
          <string>TIP166cd382351142bc</string>
       </compatible-nozzle-tip-ids>
    </package>
@@ -22,6 +23,7 @@
       </footprint>
       <compatible-nozzle-tip-ids class="java.util.ArrayList">
          <string>NT1</string>
+         <string>TIP167306fe44857b40</string>
          <string>TIP166cd382351142bc</string>
       </compatible-nozzle-tip-ids>
    </package>

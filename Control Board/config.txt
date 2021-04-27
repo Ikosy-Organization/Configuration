@@ -240,7 +240,7 @@ endstop.minz.homing_direction                      home_to_max            # Dire
 endstop.minz.homing_position                       0                      # the cartesian coordinate this is set to when it homes.
 endstop.minz.fast_rate                             50                     # Fast homing rate in mm/sec.
 endstop.minz.slow_rate                             10                     # Slow homing rate in mm/sec.
-endstop.minz.retract                               -9.100                 # Bounce off endstop in mm.
+endstop.minz.retract                               -10.1034               # Bounce off endstop in mm.
 endstop.minz.release_first                         true                   # First move away from endstop until released.
 
 
