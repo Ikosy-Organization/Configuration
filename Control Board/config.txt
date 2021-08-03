@@ -69,7 +69,7 @@ gamma_step_pin                                     2.2                    # Pin 
 gamma_dir_pin                                      0.20                   # Pin for gamma stepper direction, add '!' to reverse direction.
 gamma_en_pin                                       0.19                   # Pin for gamma enable.
 gamma_current                                      1.3                    # Z stepper motor current - Max 1.7.
-gamma_max_rate                                     20000                  # Maximum rate in mm/min.
+gamma_max_rate                                     80000                  # Maximum rate in mm/min.
 gamma_acceleration                                 10000                  # In mm/sec^2.
 z_axis_max_speed                                   20000                  # In mm/min.
 
@@ -79,7 +79,7 @@ delta_step_pin                                     2.3                    # Pin 
 delta_dir_pin                                      0.22                   # Pin for delta stepper direction.
 delta_en_pin                                       0.21                   # Pin for delta enable.
 delta_current                                      0.6                    # Stepper motor current.
-delta_max_rate                                     30000.0                # In mm/min.
+delta_max_rate                                     80000.0                # In mm/min.
 delta_acceleration                                 50000.0                # In mm/sec^2.
 
 # B AXIS
@@ -88,7 +88,7 @@ epsilon_step_pin                                   2.8                    # Pin 
 epsilon_dir_pin                                    2.13                   # Pin for delta stepper direction.
 epsilon_en_pin                                     4.29                   # Pin for delta enable.
 epsilon_current                                    0.6                    # Stepper motor current.
-epsilon_max_rate                                   30000.0                # In mm/min.
+epsilon_max_rate                                   80000.0                # In mm/min.
 epsilon_acceleration                               50000.0                # In mm/sec^2.
 
 
@@ -197,7 +197,7 @@ endstop.minx.enable                                true                   # Enab
 endstop.minx.limit_enable                          true                   # Set to true to enable the limit on this endstop.
 endstop.minx.pin                                   1.24^                  # Pin.
 endstop.minx.axis                                  X                      # The axis designator.
-endstop.minx.max_travel                            355                    # The maximum travel in mm before it times out.
+endstop.minx.max_travel                            370                    # The maximum travel in mm before it times out.
 endstop.minx.homing_direction                      home_to_min            # Direction it moves to the endstop.
 endstop.minx.homing_position                       0                      # The cartesian coordinate this is set to when it homes.
 endstop.minx.fast_rate                             70                     # Fast homing rate in mm/sec.
@@ -216,7 +216,7 @@ endstop.miny.enable                                true                   # Enab
 endstop.miny.limit_enable                          true                   # Set to true to enable the limit on this endstop.
 endstop.miny.pin                                   1.26^                  # Pin.
 endstop.miny.axis                                  Y                      # The axis designator.
-endstop.miny.max_travel                            430                    # The maximum travel in mm before it times out.
+endstop.miny.max_travel                            450                    # The maximum travel in mm before it times out.
 endstop.miny.homing_direction                      home_to_min            # Direction it moves to the endstop.
 endstop.miny.homing_position                       0                      # The cartesian coordinate this is set to when it homes.
 endstop.miny.fast_rate                             70                     # Fast homing rate in mm/sec.
