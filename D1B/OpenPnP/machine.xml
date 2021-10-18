@@ -1,9 +1,9 @@
 <openpnp-machine>
-   <machine class="org.openpnp.machine.reference.ReferenceMachine" speed="0.5" auto-tool-select="true">
+   <machine class="org.openpnp.machine.reference.ReferenceMachine" speed="1.0" auto-tool-select="true">
       <axes>
-         <axis class="org.openpnp.machine.reference.axis.ReferenceControllerAxis" id="AXS165bcf973840e3ac" name="X" type="X" driver-id="DRV165c19964c7c2824" letter="X" backlash-compensation-method="None" backlash-speed-factor="0.1" limit-rotation="false" wrap-around-rotation="false" invert-linear-rotational="false" soft-limit-low-enabled="true" soft-limit-high-enabled="true" safe-zone-low-enabled="false" safe-zone-high-enabled="false">
+         <axis class="org.openpnp.machine.reference.axis.ReferenceControllerAxis" id="AXS165bcf973840e3ac" name="X" type="X" driver-id="DRV165c19964c7c2824" letter="X" backlash-compensation-method="DirectionalCompensation" backlash-speed-factor="0.1" limit-rotation="false" wrap-around-rotation="false" invert-linear-rotational="false" soft-limit-low-enabled="true" soft-limit-high-enabled="true" safe-zone-low-enabled="false" safe-zone-high-enabled="false">
             <home-coordinate value="0.0" units="Millimeters"/>
-            <backlash-offset value="0.25" units="Millimeters"/>
+            <backlash-offset value="0.03" units="Millimeters"/>
             <soft-limit-low value="4.0" units="Millimeters"/>
             <soft-limit-high value="355.5" units="Millimeters"/>
             <safe-zone-low value="0.0" units="Millimeters"/>
@@ -13,9 +13,9 @@
             <jerk-per-second-3 value="15000.0" units="Millimeters"/>
             <resolution>0.00625</resolution>
          </axis>
-         <axis class="org.openpnp.machine.reference.axis.ReferenceControllerAxis" id="AXS165bcf97384b4ce8" name="Y" type="Y" driver-id="DRV165c19964c7c2824" letter="Y" backlash-compensation-method="None" backlash-speed-factor="0.1" limit-rotation="false" wrap-around-rotation="false" invert-linear-rotational="false" soft-limit-low-enabled="true" soft-limit-high-enabled="true" safe-zone-low-enabled="false" safe-zone-high-enabled="false">
+         <axis class="org.openpnp.machine.reference.axis.ReferenceControllerAxis" id="AXS165bcf97384b4ce8" name="Y" type="Y" driver-id="DRV165c19964c7c2824" letter="Y" backlash-compensation-method="DirectionalCompensation" backlash-speed-factor="0.1" limit-rotation="false" wrap-around-rotation="false" invert-linear-rotational="false" soft-limit-low-enabled="true" soft-limit-high-enabled="true" safe-zone-low-enabled="false" safe-zone-high-enabled="false">
             <home-coordinate value="0.0" units="Millimeters"/>
-            <backlash-offset value="0.25" units="Millimeters"/>
+            <backlash-offset value="0.03" units="Millimeters"/>
             <soft-limit-low value="4.0" units="Millimeters"/>
             <soft-limit-high value="434.0" units="Millimeters"/>
             <safe-zone-low value="0.0" units="Millimeters"/>
@@ -46,6 +46,7 @@
          <axis class="org.openpnp.machine.reference.axis.ReferenceCamClockwiseAxis" id="AXS165c09d6f9b871c0" name="CamClockwiseAxis" type="Z" input-axis-id="AXS165c099017b6c81c"/>
          <axis class="org.openpnp.machine.reference.axis.ReferenceCamCounterClockwiseAxis" id="AXS165c099017b6c81c" name="CamCounterClockwiseAxis" type="Z" input-axis-id="AXS165bcf97384fc124">
             <cam-radius value="22.0" units="Millimeters"/>
+            <cam-arms-angle>180.0</cam-arms-angle>
             <cam-wheel-radius value="0.0" units="Millimeters"/>
             <cam-wheel-gap value="0.0" units="Millimeters"/>
          </axis>
@@ -77,7 +78,7 @@
       <heads>
          <head class="org.openpnp.machine.reference.ReferenceHead" id="H1" name="H1" visual-homing-method="ResetToFiducialLocation" nozzle-solutions-multiplier="1">
             <nozzles>
-               <nozzle class="org.openpnp.machine.reference.ReferenceNozzle" axis-X-id="AXS165bcf973840e3ac" axis-Y-id="AXS165bcf97384b4ce8" axis-Z-id="AXS165c09d6f9b871c0" axis-rotation-id="AXS165bcf9738505c9c" id="N1" name="Nozzle1" pick-dwell-milliseconds="500" place-dwell-milliseconds="0" current-nozzle-tip-id="NT1" changer-enabled="false" nozzle-tip-changed-on-manual-feed="false" enable-dynamic-safe-z="false" version="200" limit-rotation="true">
+               <nozzle class="org.openpnp.machine.reference.ReferenceNozzle" axis-X-id="AXS165bcf973840e3ac" axis-Y-id="AXS165bcf97384b4ce8" axis-Z-id="AXS165c09d6f9b871c0" axis-rotation-id="AXS165bcf9738505c9c" id="N1" name="Nozzle1" pick-dwell-milliseconds="75" place-dwell-milliseconds="0" current-nozzle-tip-id="NT1" changer-enabled="false" nozzle-tip-changed-on-manual-feed="false" enable-dynamic-safe-z="false" version="200" limit-rotation="true">
                   <compatible-nozzle-tip-ids class="java.util.ArrayList">
                      <string>TIP1682fbff8ff0ca20</string>
                      <string>TIP166cd382351142bc</string>
@@ -88,12 +89,12 @@
                      <string>TIP167306fe44857b40</string>
                      <string>TIP1682fbfac32bdc40</string>
                   </compatible-nozzle-tip-ids>
-                  <head-offsets units="Millimeters" x="-15.0" y="-55.993" z="0.0" rotation="0.0"/>
+                  <head-offsets units="Millimeters" x="-15.42" y="-56.133" z="0.0" rotation="0.0"/>
                   <manual-nozzle-tip-change-location units="Millimeters" x="335.0" y="25.0" z="0.0" rotation="0.0"/>
                   <vacuum-actuator-name>Nozzle1VacuumActuator</vacuum-actuator-name>
                   <blow-off-actuator-name>Nozzle1BlowOffActuator</blow-off-actuator-name>
                </nozzle>
-               <nozzle class="org.openpnp.machine.reference.ReferenceNozzle" axis-X-id="AXS165bcf973840e3ac" axis-Y-id="AXS165bcf97384b4ce8" axis-Z-id="AXS165c099017b6c81c" axis-rotation-id="AXS165c09ca09bc48ec" id="NOZ165c09f01317c92c" name="Nozzle2" pick-dwell-milliseconds="500" place-dwell-milliseconds="500" current-nozzle-tip-id="TIP1682fbfac32bdc40" changer-enabled="false" nozzle-tip-changed-on-manual-feed="false" enable-dynamic-safe-z="false" version="200" limit-rotation="true">
+               <nozzle class="org.openpnp.machine.reference.ReferenceNozzle" axis-X-id="AXS165bcf973840e3ac" axis-Y-id="AXS165bcf97384b4ce8" axis-Z-id="AXS165c099017b6c81c" axis-rotation-id="AXS165c09ca09bc48ec" id="NOZ165c09f01317c92c" name="Nozzle2" pick-dwell-milliseconds="75" place-dwell-milliseconds="0" current-nozzle-tip-id="TIP1682fbfac32bdc40" changer-enabled="false" nozzle-tip-changed-on-manual-feed="false" enable-dynamic-safe-z="false" version="200" limit-rotation="true">
                   <compatible-nozzle-tip-ids class="java.util.ArrayList">
                      <string>TIP1682fbff8ff0ca20</string>
                      <string>TIP166cd382351142bc</string>
@@ -104,7 +105,7 @@
                      <string>TIP167306fe44857b40</string>
                      <string>TIP1682fbfac32bdc40</string>
                   </compatible-nozzle-tip-ids>
-                  <head-offsets units="Millimeters" x="15.38" y="-55.523" z="0.0" rotation="0.0"/>
+                  <head-offsets units="Millimeters" x="15.368" y="-54.153" z="0.0" rotation="0.0"/>
                   <manual-nozzle-tip-change-location units="Millimeters" x="335.0" y="25.0" z="0.0" rotation="0.0"/>
                   <vacuum-actuator-name>Nozzle2VacuumActuator</vacuum-actuator-name>
                   <blow-off-actuator-name>Nozzle2BlowOffActuator</blow-off-actuator-name>
@@ -134,7 +135,7 @@
                </actuator>
             </actuators>
             <cameras>
-               <camera class="org.openpnp.machine.reference.camera.OpenPnpCaptureCamera" axis-X-id="AXS165bcf973840e3ac" axis-Y-id="AXS165bcf97384b4ce8" axis-Z-id="AXS165bcf97384e03d4" axis-rotation-id="AXS165bcf97384eed08" id="CAM165ce07569ca1d18" name="TopCamera" looking="Down" auto-visible="true" shown-in-multi-camera-view="true" before-capture-light-on="true" user-action-light-on="false" after-capture-light-off="false" anti-glare-light-off="false" enable-units-per-pixel-3-d="false" auto-view-plane-z="false" settle-method="FixedTime" settle-time-ms="400" settle-timeout-ms="500" settle-threshold="0.0" settle-debounce="0" settle-full-color="false" settle-gaussian-blur="0" settle-gradients="false" settle-mask-circle="0.0" settle-contrast-enhance="0.0" settle-diagnostics="false" fps="5.0" suspend-preview-in-tasks="true" capture-try-count="4" capture-try-timeout-ms="2000" rotation="0.0" flip-x="false" flip-y="false" offset-x="0" offset-y="0" crop-width="0" crop-height="0" scale-width="0" scale-height="0" deinterlace="false" light-actuator-id="A1" allow-machine-actuators="false" focus-sensing-method="None" unique-id="HD USB Camera \\?\usb#vid_32e4&amp;pid_9230&amp;mi_00#6&amp;387a323a&amp;0&amp;0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\global" format-id="0">
+               <camera class="org.openpnp.machine.reference.camera.OpenPnpCaptureCamera" axis-X-id="AXS165bcf973840e3ac" axis-Y-id="AXS165bcf97384b4ce8" axis-Z-id="AXS165bcf97384e03d4" axis-rotation-id="AXS165bcf97384eed08" id="CAM165ce07569ca1d18" name="TopCamera" looking="Down" auto-visible="true" shown-in-multi-camera-view="true" before-capture-light-on="true" user-action-light-on="true" after-capture-light-off="false" anti-glare-light-off="true" enable-units-per-pixel-3-d="false" auto-view-plane-z="false" settle-method="FixedTime" settle-time-ms="400" settle-timeout-ms="500" settle-threshold="0.0" settle-debounce="0" settle-full-color="false" settle-gaussian-blur="0" settle-gradients="false" settle-mask-circle="0.0" settle-contrast-enhance="0.0" settle-diagnostics="false" fps="5.0" suspend-preview-in-tasks="true" capture-try-count="4" capture-try-timeout-ms="2000" rotation="0.0" flip-x="false" flip-y="false" offset-x="0" offset-y="0" crop-width="0" crop-height="0" scale-width="0" scale-height="0" deinterlace="false" light-actuator-id="A1" allow-machine-actuators="false" focus-sensing-method="None" unique-id="HD USB Camera \\?\usb#vid_32e4&amp;pid_9230&amp;mi_00#6&amp;25c08195&amp;0&amp;0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\global" format-id="0">
                   <units-per-pixel units="Millimeters" x="0.0209205" y="0.0209205" z="0.0" rotation="0.0"/>
                   <vision-provider class="org.openpnp.machine.reference.vision.OpenCvVisionProvider"/>
                   <head-offsets units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
@@ -168,11 +169,11 @@
       </heads>
       <signalers/>
       <feeders>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR166eab9efb39fe5c" name="Blinds Feeder - 01-01 - 4Y - 12mm" enabled="true" part-id="Diode-Schotty" retry-count="3" feed-retry-count="0" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="1" feeder-no="1" feeders-total="3" feeder-group-name="Default" pocket-count="9" first-pocket="1" last-pocket="9" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR166eab9efb39fe5c" name="BlindsFeeder - 01-01 - 4Y - 12mm" enabled="true" part-id="Diode-Schotty" retry-count="3" feed-retry-count="0" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="3" feeder-no="1" feeders-total="3" feeder-group-name="Default" pocket-count="9" first-pocket="1" last-pocket="9" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
             <location units="Millimeters" x="0.0" y="0.0" z="-16.2" rotation="0.0"/>
-            <fiducial-1-location units="Millimeters" x="104.88825407629395" y="373.57313726156616" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="28.81248180633545" y="373.98398186160284" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="28.471352595658857" y="310.8173535458209" z="0.0" rotation="0.0"/>
+            <fiducial-1-location units="Millimeters" x="103.46497288540648" y="176.06986547454844" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="27.38333389489746" y="175.96093711398314" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="103.55530160619915" y="112.97925169722467" z="0.0" rotation="0.0"/>
             <tape-length value="76.0" units="Millimeters"/>
             <feeder-extent value="63.0" units="Millimeters"/>
             <pocket-centerline value="11.4" units="Millimeters"/>
@@ -185,7 +186,7 @@
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="40" hue-max="100" saturation-min="50" saturation-max="255" value-min="40" value-max="255" invert="false" binary-mask="true"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="20" hue-max="60" saturation-min="0" saturation-max="255" value-min="100" value-max="255" invert="false" binary-mask="true"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
@@ -199,16 +200,16 @@
             <edge-closed-distance value="2.0" units="Millimeters"/>
             <push-Z-offset value="0.25" units="Millimeters"/>
          </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR166f69a2049923e4" name="Blinds Feeder - 01-02 - 4Y - 12mm" enabled="true" part-id="Charger IC" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="0" feeder-no="2" feeders-total="3" feeder-group-name="Default" pocket-count="9" first-pocket="1" last-pocket="9" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
-            <location units="Millimeters" x="0.0" y="0.0" z="-16.2" rotation="0.0"/>
-            <fiducial-1-location units="Millimeters" x="104.88825407629395" y="373.57313726156616" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="28.81248180633545" y="373.98398186160284" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="28.471352595658857" y="310.8173535458209" z="0.0" rotation="0.0"/>
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR166f69a2049923e4" name="BlindsFeeder - 01-02 - 4Y - 12mm" enabled="true" part-id="Charger IC" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="3" feeder-no="2" feeders-total="3" feeder-group-name="Default" pocket-count="9" first-pocket="1" last-pocket="9" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+            <location units="Millimeters" x="0.0" y="0.0" z="-17.5" rotation="0.0"/>
+            <fiducial-1-location units="Millimeters" x="103.46497288540648" y="176.06986547454844" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="27.38333389489746" y="175.96093711398314" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="103.55530160619915" y="112.97925169722467" z="0.0" rotation="0.0"/>
             <tape-length value="76.0" units="Millimeters"/>
             <feeder-extent value="63.0" units="Millimeters"/>
-            <pocket-centerline value="25.5" units="Millimeters"/>
+            <pocket-centerline value="25.4" units="Millimeters"/>
             <pocket-pitch value="8.0" units="Millimeters"/>
-            <pocket-size value="6.0" units="Millimeters"/>
+            <pocket-size value="2.9000000000000057" units="Millimeters"/>
             <pipeline>
                <stages>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRead" name="00" enabled="false" file="test.png" color-space="Bgr"/>
@@ -216,7 +217,7 @@
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="40" hue-max="255" saturation-min="0" saturation-max="255" value-min="25" value-max="255" invert="false" binary-mask="true"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="20" hue-max="60" saturation-min="0" saturation-max="255" value-min="100" value-max="255" invert="false" binary-mask="true"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
@@ -230,11 +231,11 @@
             <edge-closed-distance value="2.0" units="Millimeters"/>
             <push-Z-offset value="0.25" units="Millimeters"/>
          </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR1682780d8affcc94" name="BlindsFeeder - 03-01 - 4G - 24mm" enabled="true" part-id="ELECTRO-SMD-E-7.8MM" retry-count="3" feed-retry-count="0" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="2" feeder-no="1" feeders-total="4" feeder-group-name="Default" pocket-count="4" first-pocket="1" last-pocket="4" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR1682780d8affcc94" name="BlindsFeeder - 03-01 - 4G - 24mm" enabled="true" part-id="ELECTRO-SMD-E-7.8MM" retry-count="3" feed-retry-count="0" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="3" feeder-no="1" feeders-total="4" feeder-group-name="Default" pocket-count="4" first-pocket="1" last-pocket="4" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
             <location units="Millimeters" x="0.0" y="0.0" z="-18.4" rotation="90.0"/>
-            <fiducial-1-location units="Millimeters" x="259.5598788073425" y="52.544308125823974" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="335.6294004664917" y="51.76458776336672" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="336.7561808672042" y="161.69328813356543" z="0.0" rotation="0.0"/>
+            <fiducial-1-location units="Millimeters" x="255.60679841033934" y="24.123760785827642" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="331.69572500140373" y="23.70811074057007" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="256.20764991914047" y="134.11568035116437" z="0.0" rotation="0.0"/>
             <tape-length value="76.0" units="Millimeters"/>
             <feeder-extent value="110.0" units="Millimeters"/>
             <pocket-centerline value="17.0" units="Millimeters"/>
@@ -247,7 +248,7 @@
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="40" hue-max="255" saturation-min="0" saturation-max="255" value-min="25" value-max="255" invert="false" binary-mask="true"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="40" hue-max="150" saturation-min="0" saturation-max="255" value-min="25" value-max="255" invert="false" binary-mask="true"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
@@ -261,11 +262,11 @@
             <edge-closed-distance value="2.0" units="Millimeters"/>
             <push-Z-offset value="0.25" units="Millimeters"/>
          </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR1682ed5d51d9ce2c" name="BlindsFeeder - 03-02 - 4G - 24mm" enabled="true" part-id="Inductor-6.8uh" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="0" feeder-no="2" feeders-total="4" feeder-group-name="Default" pocket-count="4" first-pocket="1" last-pocket="4" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
-            <location units="Millimeters" x="0.0" y="0.0" z="-18.4" rotation="90.0"/>
-            <fiducial-1-location units="Millimeters" x="259.5598788073425" y="52.544308125823974" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="335.6294004664917" y="51.76458776336672" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="336.7561808672042" y="161.69328813356543" z="0.0" rotation="0.0"/>
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR1682ed5d51d9ce2c" name="BlindsFeeder - 03-02 - 4G - 24mm" enabled="true" part-id="Inductor-6.8uh" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="3" feeder-no="2" feeders-total="4" feeder-group-name="Default" pocket-count="4" first-pocket="1" last-pocket="4" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+            <location units="Millimeters" x="0.0" y="0.0" z="-18.4" rotation="-90.0"/>
+            <fiducial-1-location units="Millimeters" x="255.60679841033934" y="24.123760785827642" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="331.69572500140373" y="23.70811074057007" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="256.20764991914047" y="134.11568035116437" z="0.0" rotation="0.0"/>
             <tape-length value="76.0" units="Millimeters"/>
             <feeder-extent value="110.0" units="Millimeters"/>
             <pocket-centerline value="43.0" units="Millimeters"/>
@@ -292,11 +293,11 @@
             <edge-closed-distance value="2.0" units="Millimeters"/>
             <push-Z-offset value="0.25" units="Millimeters"/>
          </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR1689b9278f4844f4" name="BlindsFeeder - 05-01 - 4G - 8mm" enabled="true" part-id="Thermistor-10k" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="0" feeder-no="1" feeders-total="3" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
-            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="0.0"/>
-            <fiducial-1-location units="Millimeters" x="259.16260511749266" y="169.14861280993654" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="338.9247802253723" y="167.6595808721008" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="339.7660147095694" y="212.72153725487885" z="0.0" rotation="0.0"/>
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR1689b9278f4844f4" name="BlindsFeeder - 05-01 - 4G - 8mm" enabled="true" part-id="Thermistor-10k" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="3" feeder-no="1" feeders-total="3" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="-90.0"/>
+            <fiducial-1-location units="Millimeters" x="256.30267879577633" y="143.7229721305542" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="336.1496305201721" y="143.40557640789794" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="256.48120861680235" y="188.63555595975527" z="0.0" rotation="0.0"/>
             <tape-length value="80.0" units="Millimeters"/>
             <feeder-extent value="45.0" units="Millimeters"/>
             <pocket-centerline value="9.0" units="Millimeters"/>
@@ -323,14 +324,76 @@
             <edge-closed-distance value="2.0" units="Millimeters"/>
             <push-Z-offset value="0.25" units="Millimeters"/>
          </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR168a980c0f5183b8" name="BlindsFeeder - 04-01 - 18G - 8mm" enabled="true" part-id="R0603-1K" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="0" feeder-no="1" feeders-total="15" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="1" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
-            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="0.0"/>
-            <fiducial-1-location units="Millimeters" x="104.83671374765015" y="305.0403685124817" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="24.764222313201905" y="305.1594982943421" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="24.489244668836836" y="120.33463981447946" z="0.0" rotation="0.0"/>
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR168a980c0f5183b8" name="BlindsFeeder - 06-18 - 18Y - 8mm" enabled="false" part-id="R0603-1K" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="false" vision-enabled="true" feed-count="15" feeder-no="18" feeders-total="18" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="-90.0"/>
+            <fiducial-1-location units="Millimeters" x="104.02922121841434" y="369.06045790307616" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="24.158556285797115" y="368.870988349701" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="104.029" y="184.24747312163856" z="0.0" rotation="0.0"/>
             <tape-length value="80.0" units="Millimeters"/>
             <feeder-extent value="185.0" units="Millimeters"/>
-            <pocket-centerline value="0.0" units="Millimeters"/>
+            <pocket-centerline value="179.0" units="Millimeters"/>
+            <pocket-pitch value="4.0" units="Millimeters"/>
+            <pocket-size value="2.3000000000000007" units="Millimeters"/>
+            <pipeline>
+               <stages>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRead" name="00" enabled="false" file="test.png" color-space="Bgr"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="60" hue-max="120" saturation-min="0" saturation-max="255" value-min="30" value-max="255" invert="false" binary-mask="true"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MinAreaRectContours" name="results" enabled="true" contours-stage-name="8"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="10" enabled="true" image-stage-name="0"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="12" enabled="true" rotated-rects-stage-name="results" thickness="3" draw-rect-center="true" rect-center-radius="20" show-orientation="false"/>
+               </stages>
+            </pipeline>
+            <sprocket-pitch value="4.0" units="Millimeters"/>
+            <edge-open-distance value="2.0" units="Millimeters"/>
+            <edge-closed-distance value="2.0" units="Millimeters"/>
+            <push-Z-offset value="0.25" units="Millimeters"/>
+         </feeder>
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16910e01c27547ec" name="BlindsFeeder - 06-17 - 18Y - 8mm" enabled="true" part-id="R0603-10K" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="false" vision-enabled="true" feed-count="7" feeder-no="17" feeders-total="18" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="-90.0"/>
+            <fiducial-1-location units="Millimeters" x="104.02922121841434" y="369.06045790307616" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="24.158556285797115" y="368.870988349701" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="104.029" y="184.24747312163856" z="0.0" rotation="0.0"/>
+            <tape-length value="80.0" units="Millimeters"/>
+            <feeder-extent value="185.0" units="Millimeters"/>
+            <pocket-centerline value="169.0" units="Millimeters"/>
+            <pocket-pitch value="4.0" units="Millimeters"/>
+            <pocket-size value="2.6000000000000014" units="Millimeters"/>
+            <pipeline>
+               <stages>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRead" name="00" enabled="false" file="test.png" color-space="Bgr"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="20" hue-max="60" saturation-min="0" saturation-max="255" value-min="100" value-max="255" invert="false" binary-mask="true"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MinAreaRectContours" name="results" enabled="true" contours-stage-name="8"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="10" enabled="true" image-stage-name="0"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="12" enabled="true" rotated-rects-stage-name="results" thickness="3" draw-rect-center="true" rect-center-radius="20" show-orientation="false"/>
+               </stages>
+            </pipeline>
+            <sprocket-pitch value="4.0" units="Millimeters"/>
+            <edge-open-distance value="2.0" units="Millimeters"/>
+            <edge-closed-distance value="2.0" units="Millimeters"/>
+            <push-Z-offset value="0.25" units="Millimeters"/>
+         </feeder>
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16910ed155efa664" name="BlindsFeeder - 06-16 - 18Y - 8mm" enabled="true" part-id="R0603-1.54K" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="false" vision-enabled="true" feed-count="3" feeder-no="16" feeders-total="18" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="-90.0"/>
+            <fiducial-1-location units="Millimeters" x="104.02922121841434" y="369.06045790307616" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="24.158556285797115" y="368.870988349701" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="104.029" y="184.24747312163856" z="0.0" rotation="0.0"/>
+            <tape-length value="80.0" units="Millimeters"/>
+            <feeder-extent value="185.0" units="Millimeters"/>
+            <pocket-centerline value="159.0" units="Millimeters"/>
             <pocket-pitch value="4.0" units="Millimeters"/>
             <pocket-size value="2.3" units="Millimeters"/>
             <pipeline>
@@ -340,7 +403,7 @@
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="40" hue-max="255" saturation-min="0" saturation-max="255" value-min="25" value-max="255" invert="false" binary-mask="true"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="20" hue-max="60" saturation-min="0" saturation-max="255" value-min="100" value-max="255" invert="false" binary-mask="true"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
@@ -354,45 +417,14 @@
             <edge-closed-distance value="2.0" units="Millimeters"/>
             <push-Z-offset value="0.25" units="Millimeters"/>
          </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16910e01c27547ec" name="BlindsFeeder - 04-02 - 18G - 8mm" enabled="true" part-id="R0603-10K" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="0" feeder-no="2" feeders-total="15" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="1" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
-            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="0.0"/>
-            <fiducial-1-location units="Millimeters" x="104.83671374765015" y="305.0403685124817" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="24.764222313201905" y="305.1594982943421" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="24.489244668836836" y="120.33463981447946" z="0.0" rotation="0.0"/>
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16910ed258d00238" name="BlindsFeeder - 06-15 - 18Y - 8mm" enabled="true" part-id="R0603-2.7K" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="false" vision-enabled="true" feed-count="3" feeder-no="15" feeders-total="18" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="-90.0"/>
+            <fiducial-1-location units="Millimeters" x="104.02922121841434" y="369.06045790307616" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="24.158556285797115" y="368.870988349701" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="104.029" y="184.24747312163856" z="0.0" rotation="0.0"/>
             <tape-length value="80.0" units="Millimeters"/>
             <feeder-extent value="185.0" units="Millimeters"/>
-            <pocket-centerline value="5.0" units="Millimeters"/>
-            <pocket-pitch value="4.0" units="Millimeters"/>
-            <pocket-size value="2.7" units="Millimeters"/>
-            <pipeline>
-               <stages>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRead" name="00" enabled="false" file="test.png" color-space="Bgr"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="40" hue-max="255" saturation-min="0" saturation-max="255" value-min="25" value-max="255" invert="false" binary-mask="true"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MinAreaRectContours" name="results" enabled="true" contours-stage-name="8"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="10" enabled="true" image-stage-name="0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="12" enabled="true" rotated-rects-stage-name="results" thickness="3" draw-rect-center="true" rect-center-radius="20" show-orientation="false"/>
-               </stages>
-            </pipeline>
-            <sprocket-pitch value="4.0" units="Millimeters"/>
-            <edge-open-distance value="2.0" units="Millimeters"/>
-            <edge-closed-distance value="2.0" units="Millimeters"/>
-            <push-Z-offset value="0.25" units="Millimeters"/>
-         </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16910ed155efa664" name="BlindsFeeder - 04-03 - 18G - 8mm" enabled="true" part-id="R0603-1.54K" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="0" feeder-no="3" feeders-total="15" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
-            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="0.0"/>
-            <fiducial-1-location units="Millimeters" x="104.83671374765015" y="305.0403685124817" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="24.764222313201905" y="305.1594982943421" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="24.489244668836836" y="120.33463981447946" z="0.0" rotation="0.0"/>
-            <tape-length value="80.0" units="Millimeters"/>
-            <feeder-extent value="185.0" units="Millimeters"/>
-            <pocket-centerline value="7.0" units="Millimeters"/>
+            <pocket-centerline value="149.0" units="Millimeters"/>
             <pocket-pitch value="4.0" units="Millimeters"/>
             <pocket-size value="2.3" units="Millimeters"/>
             <pipeline>
@@ -402,7 +434,7 @@
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="40" hue-max="255" saturation-min="0" saturation-max="255" value-min="25" value-max="255" invert="false" binary-mask="true"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="20" hue-max="60" saturation-min="0" saturation-max="255" value-min="100" value-max="255" invert="false" binary-mask="true"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
@@ -416,14 +448,14 @@
             <edge-closed-distance value="2.0" units="Millimeters"/>
             <push-Z-offset value="0.25" units="Millimeters"/>
          </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16910ed258d00238" name="BlindsFeeder - 04-04 - 18G - 8mm" enabled="true" part-id="R0603-2.7K" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="0" feeder-no="4" feeders-total="15" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
-            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="0.0"/>
-            <fiducial-1-location units="Millimeters" x="104.83671374765015" y="305.0403685124817" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="24.764222313201905" y="305.1594982943421" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="24.489244668836836" y="120.33463981447946" z="0.0" rotation="0.0"/>
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16910ed3161a3b4c" name="BlindsFeeder - 06-14 - 18Y - 8mm" enabled="true" part-id="R0603-30K" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="false" vision-enabled="true" feed-count="3" feeder-no="14" feeders-total="18" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="-90.0"/>
+            <fiducial-1-location units="Millimeters" x="104.02922121841434" y="369.06045790307616" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="24.158556285797115" y="368.870988349701" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="104.029" y="184.24747312163856" z="0.0" rotation="0.0"/>
             <tape-length value="80.0" units="Millimeters"/>
             <feeder-extent value="185.0" units="Millimeters"/>
-            <pocket-centerline value="10.0" units="Millimeters"/>
+            <pocket-centerline value="139.0" units="Millimeters"/>
             <pocket-pitch value="4.0" units="Millimeters"/>
             <pocket-size value="2.3" units="Millimeters"/>
             <pipeline>
@@ -433,7 +465,7 @@
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="40" hue-max="255" saturation-min="0" saturation-max="255" value-min="25" value-max="255" invert="false" binary-mask="true"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="20" hue-max="60" saturation-min="0" saturation-max="255" value-min="100" value-max="255" invert="false" binary-mask="true"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
@@ -447,14 +479,14 @@
             <edge-closed-distance value="2.0" units="Millimeters"/>
             <push-Z-offset value="0.25" units="Millimeters"/>
          </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16910ed3161a3b4c" name="BlindsFeeder - 04-05 - 18G - 8mm" enabled="true" part-id="R0603-30K" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="0" feeder-no="5" feeders-total="15" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
-            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="0.0"/>
-            <fiducial-1-location units="Millimeters" x="104.83671374765015" y="305.0403685124817" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="24.764222313201905" y="305.1594982943421" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="24.489244668836836" y="120.33463981447946" z="0.0" rotation="0.0"/>
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16910ed415baf8fc" name="BlindsFeeder - 06-13 - 18Y - 8mm" enabled="true" part-id="R0603-330" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="false" vision-enabled="true" feed-count="6" feeder-no="13" feeders-total="18" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="-90.0"/>
+            <fiducial-1-location units="Millimeters" x="104.02922121841434" y="369.06045790307616" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="24.158556285797115" y="368.870988349701" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="104.029" y="184.24747312163856" z="0.0" rotation="0.0"/>
             <tape-length value="80.0" units="Millimeters"/>
             <feeder-extent value="185.0" units="Millimeters"/>
-            <pocket-centerline value="14.0" units="Millimeters"/>
+            <pocket-centerline value="129.0" units="Millimeters"/>
             <pocket-pitch value="4.0" units="Millimeters"/>
             <pocket-size value="2.3" units="Millimeters"/>
             <pipeline>
@@ -464,7 +496,7 @@
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="40" hue-max="255" saturation-min="0" saturation-max="255" value-min="25" value-max="255" invert="false" binary-mask="true"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="20" hue-max="60" saturation-min="0" saturation-max="255" value-min="100" value-max="255" invert="false" binary-mask="true"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
@@ -478,14 +510,14 @@
             <edge-closed-distance value="2.0" units="Millimeters"/>
             <push-Z-offset value="0.25" units="Millimeters"/>
          </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16910ed415baf8fc" name="BlindsFeeder - 04-06 - 18G - 8mm" enabled="true" part-id="R0603-330" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="0" feeder-no="6" feeders-total="15" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
-            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="0.0"/>
-            <fiducial-1-location units="Millimeters" x="104.83671374765015" y="305.0403685124817" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="24.764222313201905" y="305.1594982943421" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="24.489244668836836" y="120.33463981447946" z="0.0" rotation="0.0"/>
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16910ed9f91f17cc" name="BlindsFeeder - 06-12 - 18Y - 8mm" enabled="true" part-id="R0603-51K" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="false" vision-enabled="true" feed-count="3" feeder-no="12" feeders-total="18" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="-90.0"/>
+            <fiducial-1-location units="Millimeters" x="104.02922121841434" y="369.06045790307616" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="24.158556285797115" y="368.870988349701" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="104.029" y="184.24747312163856" z="0.0" rotation="0.0"/>
             <tape-length value="80.0" units="Millimeters"/>
             <feeder-extent value="185.0" units="Millimeters"/>
-            <pocket-centerline value="17.0" units="Millimeters"/>
+            <pocket-centerline value="119.0" units="Millimeters"/>
             <pocket-pitch value="4.0" units="Millimeters"/>
             <pocket-size value="2.3" units="Millimeters"/>
             <pipeline>
@@ -495,7 +527,7 @@
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="40" hue-max="255" saturation-min="0" saturation-max="255" value-min="25" value-max="255" invert="false" binary-mask="true"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="20" hue-max="60" saturation-min="0" saturation-max="255" value-min="100" value-max="255" invert="false" binary-mask="true"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
@@ -509,14 +541,14 @@
             <edge-closed-distance value="2.0" units="Millimeters"/>
             <push-Z-offset value="0.25" units="Millimeters"/>
          </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16910ed9f91f17cc" name="BlindsFeeder - 04-07 - 18G - 8mm" enabled="true" part-id="R0603-51K" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="0" feeder-no="7" feeders-total="15" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
-            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="0.0"/>
-            <fiducial-1-location units="Millimeters" x="104.83671374765015" y="305.0403685124817" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="24.764222313201905" y="305.1594982943421" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="24.489244668836836" y="120.33463981447946" z="0.0" rotation="0.0"/>
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16910f1a91685774" name="BlindsFeeder - 06-11 - 18Y - 8mm" enabled="true" part-id="R0603-69.8K" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="false" vision-enabled="true" feed-count="3" feeder-no="11" feeders-total="18" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="-90.0"/>
+            <fiducial-1-location units="Millimeters" x="104.02922121841434" y="369.06045790307616" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="24.158556285797115" y="368.870988349701" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="104.029" y="184.24747312163856" z="0.0" rotation="0.0"/>
             <tape-length value="80.0" units="Millimeters"/>
             <feeder-extent value="185.0" units="Millimeters"/>
-            <pocket-centerline value="18.0" units="Millimeters"/>
+            <pocket-centerline value="109.0" units="Millimeters"/>
             <pocket-pitch value="4.0" units="Millimeters"/>
             <pocket-size value="2.3" units="Millimeters"/>
             <pipeline>
@@ -526,7 +558,7 @@
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="40" hue-max="255" saturation-min="0" saturation-max="255" value-min="25" value-max="255" invert="false" binary-mask="true"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="20" hue-max="60" saturation-min="0" saturation-max="255" value-min="100" value-max="255" invert="false" binary-mask="true"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
@@ -540,73 +572,11 @@
             <edge-closed-distance value="2.0" units="Millimeters"/>
             <push-Z-offset value="0.25" units="Millimeters"/>
          </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16910f1a91685774" name="BlindsFeeder - 04-08 - 18G - 8mm" enabled="true" part-id="R0603-69.8K" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="0" feeder-no="8" feeders-total="15" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
-            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="0.0"/>
-            <fiducial-1-location units="Millimeters" x="104.83671374765015" y="305.0403685124817" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="24.764222313201905" y="305.1594982943421" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="24.489244668836836" y="120.33463981447946" z="0.0" rotation="0.0"/>
-            <tape-length value="80.0" units="Millimeters"/>
-            <feeder-extent value="185.0" units="Millimeters"/>
-            <pocket-centerline value="24.0" units="Millimeters"/>
-            <pocket-pitch value="4.0" units="Millimeters"/>
-            <pocket-size value="2.3" units="Millimeters"/>
-            <pipeline>
-               <stages>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRead" name="00" enabled="false" file="test.png" color-space="Bgr"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="40" hue-max="255" saturation-min="0" saturation-max="255" value-min="25" value-max="255" invert="false" binary-mask="true"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MinAreaRectContours" name="results" enabled="true" contours-stage-name="8"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="10" enabled="true" image-stage-name="0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="12" enabled="true" rotated-rects-stage-name="results" thickness="3" draw-rect-center="true" rect-center-radius="20" show-orientation="false"/>
-               </stages>
-            </pipeline>
-            <sprocket-pitch value="4.0" units="Millimeters"/>
-            <edge-open-distance value="2.0" units="Millimeters"/>
-            <edge-closed-distance value="2.0" units="Millimeters"/>
-            <push-Z-offset value="0.25" units="Millimeters"/>
-         </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16910ffbb3fcd9a4" name="BlindsFeeder - 04-09 - 18G - 8mm" enabled="true" part-id="CAP0603-0.1uF" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="0" feeder-no="9" feeders-total="15" feeder-group-name="Default" pocket-count="41" first-pocket="1" last-pocket="41" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
-            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="0.0"/>
-            <fiducial-1-location units="Millimeters" x="104.83671374765015" y="305.0403685124817" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="24.764222313201905" y="305.1594982943421" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="24.489244668836836" y="120.33463981447946" z="0.0" rotation="0.0"/>
-            <tape-length value="80.0" units="Millimeters"/>
-            <feeder-extent value="185.0" units="Millimeters"/>
-            <pocket-centerline value="89.0" units="Millimeters"/>
-            <pocket-pitch value="2.0" units="Millimeters"/>
-            <pocket-size value="2.5999999999999943" units="Millimeters"/>
-            <pipeline>
-               <stages>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRead" name="00" enabled="false" file="test.png" color-space="Bgr"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="40" hue-max="255" saturation-min="0" saturation-max="255" value-min="25" value-max="255" invert="false" binary-mask="true"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MinAreaRectContours" name="results" enabled="true" contours-stage-name="8"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="10" enabled="true" image-stage-name="0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="12" enabled="true" rotated-rects-stage-name="results" thickness="3" draw-rect-center="true" rect-center-radius="20" show-orientation="false"/>
-               </stages>
-            </pipeline>
-            <sprocket-pitch value="4.0" units="Millimeters"/>
-            <edge-open-distance value="2.0" units="Millimeters"/>
-            <edge-closed-distance value="2.0" units="Millimeters"/>
-            <push-Z-offset value="0.25" units="Millimeters"/>
-         </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16910ffe1cbfc56c" name="BlindsFeeder - 04-10 - 18G - 8mm" enabled="true" part-id="CAP0603-10nF" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="0" feeder-no="10" feeders-total="15" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
-            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="0.0"/>
-            <fiducial-1-location units="Millimeters" x="104.83671374765015" y="305.0403685124817" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="24.764222313201905" y="305.1594982943421" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="24.489244668836836" y="120.33463981447946" z="0.0" rotation="0.0"/>
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16910ffbb3fcd9a4" name="BlindsFeeder - 06-10 - 18Y - 8mm" enabled="true" part-id="CAP0603-0.1uF" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="false" vision-enabled="true" feed-count="3" feeder-no="10" feeders-total="18" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="-90.0"/>
+            <fiducial-1-location units="Millimeters" x="104.02922121841434" y="369.06045790307616" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="24.158556285797115" y="368.870988349701" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="104.029" y="184.24747312163856" z="0.0" rotation="0.0"/>
             <tape-length value="80.0" units="Millimeters"/>
             <feeder-extent value="185.0" units="Millimeters"/>
             <pocket-centerline value="99.0" units="Millimeters"/>
@@ -619,7 +589,7 @@
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="40" hue-max="255" saturation-min="0" saturation-max="255" value-min="25" value-max="255" invert="false" binary-mask="true"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="20" hue-max="60" saturation-min="0" saturation-max="255" value-min="100" value-max="255" invert="false" binary-mask="true"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
@@ -633,14 +603,14 @@
             <edge-closed-distance value="2.0" units="Millimeters"/>
             <push-Z-offset value="0.25" units="Millimeters"/>
          </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16910ffee08bf664" name="BlindsFeeder - 04-11 - 18G - 8mm" enabled="true" part-id="CAP0603-10uF" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="0" feeder-no="11" feeders-total="15" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
-            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="0.0"/>
-            <fiducial-1-location units="Millimeters" x="104.83671374765015" y="305.0403685124817" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="24.764222313201905" y="305.1594982943421" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="24.489244668836836" y="120.33463981447946" z="0.0" rotation="0.0"/>
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16910ffe1cbfc56c" name="BlindsFeeder - 06-09 - 18Y - 8mm" enabled="true" part-id="CAP0603-10nF" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="false" vision-enabled="true" feed-count="3" feeder-no="9" feeders-total="18" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="-90.0"/>
+            <fiducial-1-location units="Millimeters" x="104.02922121841434" y="369.06045790307616" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="24.158556285797115" y="368.870988349701" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="104.029" y="184.24747312163856" z="0.0" rotation="0.0"/>
             <tape-length value="80.0" units="Millimeters"/>
             <feeder-extent value="185.0" units="Millimeters"/>
-            <pocket-centerline value="109.0" units="Millimeters"/>
+            <pocket-centerline value="89.0" units="Millimeters"/>
             <pocket-pitch value="4.0" units="Millimeters"/>
             <pocket-size value="2.5999999999999943" units="Millimeters"/>
             <pipeline>
@@ -650,7 +620,7 @@
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="40" hue-max="255" saturation-min="0" saturation-max="255" value-min="25" value-max="255" invert="false" binary-mask="true"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="20" hue-max="60" saturation-min="0" saturation-max="255" value-min="100" value-max="255" invert="false" binary-mask="true"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
@@ -664,14 +634,45 @@
             <edge-closed-distance value="2.0" units="Millimeters"/>
             <push-Z-offset value="0.25" units="Millimeters"/>
          </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16910fffa9767cac" name="BlindsFeeder - 04-12 - 18G - 8mm" enabled="true" part-id="CAP0603-1uF" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="0" feeder-no="12" feeders-total="15" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
-            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="0.0"/>
-            <fiducial-1-location units="Millimeters" x="104.83671374765015" y="305.0403685124817" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="24.764222313201905" y="305.1594982943421" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="24.489244668836836" y="120.33463981447946" z="0.0" rotation="0.0"/>
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16910ffee08bf664" name="BlindsFeeder - 06-08 - 18Y - 8mm" enabled="true" part-id="CAP0603-10uF" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="false" vision-enabled="true" feed-count="6" feeder-no="8" feeders-total="18" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="-90.0"/>
+            <fiducial-1-location units="Millimeters" x="104.02922121841434" y="369.06045790307616" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="24.158556285797115" y="368.870988349701" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="104.029" y="184.24747312163856" z="0.0" rotation="0.0"/>
             <tape-length value="80.0" units="Millimeters"/>
             <feeder-extent value="185.0" units="Millimeters"/>
-            <pocket-centerline value="119.0" units="Millimeters"/>
+            <pocket-centerline value="79.0" units="Millimeters"/>
+            <pocket-pitch value="4.0" units="Millimeters"/>
+            <pocket-size value="2.5999999999999943" units="Millimeters"/>
+            <pipeline>
+               <stages>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRead" name="00" enabled="false" file="test.png" color-space="Bgr"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="20" hue-max="60" saturation-min="0" saturation-max="255" value-min="100" value-max="255" invert="false" binary-mask="true"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MinAreaRectContours" name="results" enabled="true" contours-stage-name="8"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="10" enabled="true" image-stage-name="0"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="12" enabled="true" rotated-rects-stage-name="results" thickness="3" draw-rect-center="true" rect-center-radius="20" show-orientation="false"/>
+               </stages>
+            </pipeline>
+            <sprocket-pitch value="4.0" units="Millimeters"/>
+            <edge-open-distance value="2.0" units="Millimeters"/>
+            <edge-closed-distance value="2.0" units="Millimeters"/>
+            <push-Z-offset value="0.25" units="Millimeters"/>
+         </feeder>
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16910fffa9767cac" name="BlindsFeeder - 06-07 - 18Y - 8mm" enabled="true" part-id="CAP0603-1uF" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="false" vision-enabled="true" feed-count="3" feeder-no="7" feeders-total="18" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="-90.0"/>
+            <fiducial-1-location units="Millimeters" x="104.02922121841434" y="369.06045790307616" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="24.158556285797115" y="368.870988349701" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="104.029" y="184.24747312163856" z="0.0" rotation="0.0"/>
+            <tape-length value="80.0" units="Millimeters"/>
+            <feeder-extent value="185.0" units="Millimeters"/>
+            <pocket-centerline value="69.0" units="Millimeters"/>
             <pocket-pitch value="4.0" units="Millimeters"/>
             <pocket-size value="2.3999999999999915" units="Millimeters"/>
             <pipeline>
@@ -681,7 +682,7 @@
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="40" hue-max="255" saturation-min="0" saturation-max="255" value-min="25" value-max="255" invert="false" binary-mask="true"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="20" hue-max="60" saturation-min="0" saturation-max="255" value-min="100" value-max="255" invert="false" binary-mask="true"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
@@ -695,14 +696,14 @@
             <edge-closed-distance value="2.0" units="Millimeters"/>
             <push-Z-offset value="0.25" units="Millimeters"/>
          </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR169110007b2f000c" name="BlindsFeeder - 04-13 - 18G - 8mm" enabled="true" part-id="CAP0603-2.2nF" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="0" feeder-no="13" feeders-total="15" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
-            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="0.0"/>
-            <fiducial-1-location units="Millimeters" x="104.83671374765015" y="305.0403685124817" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="24.764222313201905" y="305.1594982943421" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="24.489244668836836" y="120.33463981447946" z="0.0" rotation="0.0"/>
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR169110007b2f000c" name="BlindsFeeder - 06-06 - 18Y - 8mm" enabled="true" part-id="CAP0603-2.2nF" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="false" vision-enabled="true" feed-count="3" feeder-no="6" feeders-total="18" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="-90.0"/>
+            <fiducial-1-location units="Millimeters" x="104.02922121841434" y="369.06045790307616" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="24.158556285797115" y="368.870988349701" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="104.029" y="184.24747312163856" z="0.0" rotation="0.0"/>
             <tape-length value="80.0" units="Millimeters"/>
             <feeder-extent value="185.0" units="Millimeters"/>
-            <pocket-centerline value="129.0" units="Millimeters"/>
+            <pocket-centerline value="59.0" units="Millimeters"/>
             <pocket-pitch value="4.0" units="Millimeters"/>
             <pocket-size value="2.3999999999999915" units="Millimeters"/>
             <pipeline>
@@ -712,7 +713,7 @@
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="40" hue-max="255" saturation-min="0" saturation-max="255" value-min="25" value-max="255" invert="false" binary-mask="true"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="20" hue-max="60" saturation-min="0" saturation-max="255" value-min="100" value-max="255" invert="false" binary-mask="true"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
@@ -726,14 +727,14 @@
             <edge-closed-distance value="2.0" units="Millimeters"/>
             <push-Z-offset value="0.25" units="Millimeters"/>
          </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR169110015f8a1890" name="BlindsFeeder - 04-14 - 18G - 8mm" enabled="true" part-id="CAP0603-22uF" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="0" feeder-no="14" feeders-total="15" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
-            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="0.0"/>
-            <fiducial-1-location units="Millimeters" x="104.83671374765015" y="305.0403685124817" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="24.764222313201905" y="305.1594982943421" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="24.489244668836836" y="120.33463981447946" z="0.0" rotation="0.0"/>
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR169110015f8a1890" name="BlindsFeeder - 06-05 - 18Y - 8mm" enabled="true" part-id="CAP0603-22uF" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="false" vision-enabled="true" feed-count="6" feeder-no="5" feeders-total="18" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="-90.0"/>
+            <fiducial-1-location units="Millimeters" x="104.02922121841434" y="369.06045790307616" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="24.158556285797115" y="368.870988349701" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="104.029" y="184.24747312163856" z="0.0" rotation="0.0"/>
             <tape-length value="80.0" units="Millimeters"/>
             <feeder-extent value="185.0" units="Millimeters"/>
-            <pocket-centerline value="139.0" units="Millimeters"/>
+            <pocket-centerline value="49.0" units="Millimeters"/>
             <pocket-pitch value="4.0" units="Millimeters"/>
             <pocket-size value="2.3999999999999773" units="Millimeters"/>
             <pipeline>
@@ -743,7 +744,7 @@
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="40" hue-max="255" saturation-min="0" saturation-max="255" value-min="25" value-max="255" invert="false" binary-mask="true"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="20" hue-max="60" saturation-min="0" saturation-max="255" value-min="100" value-max="255" invert="false" binary-mask="true"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
@@ -757,15 +758,15 @@
             <edge-closed-distance value="2.0" units="Millimeters"/>
             <push-Z-offset value="0.25" units="Millimeters"/>
          </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR1691100238f18474" name="BlindsFeeder - 04-15 - 18G - 8mm" enabled="true" part-id="CAP0603-47pF" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="0" feeder-no="15" feeders-total="15" feeder-group-name="Default" pocket-count="41" first-pocket="1" last-pocket="41" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
-            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="0.0"/>
-            <fiducial-1-location units="Millimeters" x="104.83671374765015" y="305.0403685124817" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="24.764222313201905" y="305.1594982943421" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="24.489244668836836" y="120.33463981447946" z="0.0" rotation="0.0"/>
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR1691100238f18474" name="BlindsFeeder - 06-04 - 18Y - 8mm" enabled="true" part-id="CAP0603-47pF" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="false" vision-enabled="true" feed-count="3" feeder-no="4" feeders-total="18" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="-90.0"/>
+            <fiducial-1-location units="Millimeters" x="104.02922121841434" y="369.06045790307616" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="24.158556285797115" y="368.870988349701" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="104.029" y="184.24747312163856" z="0.0" rotation="0.0"/>
             <tape-length value="80.0" units="Millimeters"/>
             <feeder-extent value="185.0" units="Millimeters"/>
-            <pocket-centerline value="149.0" units="Millimeters"/>
-            <pocket-pitch value="2.0" units="Millimeters"/>
+            <pocket-centerline value="39.0" units="Millimeters"/>
+            <pocket-pitch value="4.0" units="Millimeters"/>
             <pocket-size value="2.4000000000000057" units="Millimeters"/>
             <pipeline>
                <stages>
@@ -774,7 +775,7 @@
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="40" hue-max="255" saturation-min="0" saturation-max="255" value-min="25" value-max="255" invert="false" binary-mask="true"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="20" hue-max="60" saturation-min="0" saturation-max="255" value-min="100" value-max="255" invert="false" binary-mask="true"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
@@ -788,11 +789,104 @@
             <edge-closed-distance value="2.0" units="Millimeters"/>
             <push-Z-offset value="0.25" units="Millimeters"/>
          </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16911a44877a6678" name="BlindsFeeder - 03-03 - 4G - 24mm" enabled="true" part-id="Switch" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="0" feeder-no="3" feeders-total="4" feeder-group-name="Default" pocket-count="6" first-pocket="1" last-pocket="6" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16911a904041359c" name="BlindsFeeder - 06-03 - 18Y - 8mm" enabled="true" part-id="Green-LED" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="false" vision-enabled="true" feed-count="6" feeder-no="3" feeders-total="18" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="-90.0"/>
+            <fiducial-1-location units="Millimeters" x="104.02922121841434" y="369.06045790307616" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="24.158556285797115" y="368.870988349701" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="104.029" y="184.24747312163856" z="0.0" rotation="0.0"/>
+            <tape-length value="80.0" units="Millimeters"/>
+            <feeder-extent value="185.0" units="Millimeters"/>
+            <pocket-centerline value="29.0" units="Millimeters"/>
+            <pocket-pitch value="4.0" units="Millimeters"/>
+            <pocket-size value="0.0" units="Millimeters"/>
+            <pipeline>
+               <stages>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRead" name="00" enabled="false" file="test.png" color-space="Bgr"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="20" hue-max="60" saturation-min="0" saturation-max="255" value-min="100" value-max="255" invert="false" binary-mask="true"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MinAreaRectContours" name="results" enabled="true" contours-stage-name="8"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="10" enabled="true" image-stage-name="0"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="12" enabled="true" rotated-rects-stage-name="results" thickness="3" draw-rect-center="true" rect-center-radius="20" show-orientation="false"/>
+               </stages>
+            </pipeline>
+            <sprocket-pitch value="4.0" units="Millimeters"/>
+            <edge-open-distance value="2.0" units="Millimeters"/>
+            <edge-closed-distance value="2.0" units="Millimeters"/>
+            <push-Z-offset value="0.25" units="Millimeters"/>
+         </feeder>
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16911a9c518289bc" name="BlindsFeeder - 06-02 - 18Y - 8mm" enabled="true" part-id="Red-LED" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="false" vision-enabled="true" feed-count="6" feeder-no="2" feeders-total="18" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="-90.0"/>
+            <fiducial-1-location units="Millimeters" x="104.02922121841434" y="369.06045790307616" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="24.158556285797115" y="368.870988349701" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="104.029" y="184.24747312163856" z="0.0" rotation="0.0"/>
+            <tape-length value="80.0" units="Millimeters"/>
+            <feeder-extent value="185.0" units="Millimeters"/>
+            <pocket-centerline value="19.0" units="Millimeters"/>
+            <pocket-pitch value="4.0" units="Millimeters"/>
+            <pocket-size value="0.0" units="Millimeters"/>
+            <pipeline>
+               <stages>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRead" name="00" enabled="false" file="test.png" color-space="Bgr"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="20" hue-max="60" saturation-min="0" saturation-max="255" value-min="100" value-max="255" invert="false" binary-mask="true"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MinAreaRectContours" name="results" enabled="true" contours-stage-name="8"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="10" enabled="true" image-stage-name="0"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="12" enabled="true" rotated-rects-stage-name="results" thickness="3" draw-rect-center="true" rect-center-radius="20" show-orientation="false"/>
+               </stages>
+            </pipeline>
+            <sprocket-pitch value="4.0" units="Millimeters"/>
+            <edge-open-distance value="2.0" units="Millimeters"/>
+            <edge-closed-distance value="2.0" units="Millimeters"/>
+            <push-Z-offset value="0.25" units="Millimeters"/>
+         </feeder>
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16911ab1b64a6e54" name="BlindsFeeder - 06-01 - 18Y - 8mm" enabled="true" part-id="NChannel-MOSFET" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="false" vision-enabled="true" feed-count="3" feeder-no="1" feeders-total="18" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+            <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="-90.0"/>
+            <fiducial-1-location units="Millimeters" x="104.02922121841434" y="369.06045790307616" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="24.158556285797115" y="368.870988349701" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="104.029" y="184.24747312163856" z="0.0" rotation="0.0"/>
+            <tape-length value="80.0" units="Millimeters"/>
+            <feeder-extent value="185.0" units="Millimeters"/>
+            <pocket-centerline value="9.0" units="Millimeters"/>
+            <pocket-pitch value="4.0" units="Millimeters"/>
+            <pocket-size value="0.0" units="Millimeters"/>
+            <pipeline>
+               <stages>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRead" name="00" enabled="false" file="test.png" color-space="Bgr"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="20" hue-max="60" saturation-min="0" saturation-max="255" value-min="100" value-max="255" invert="false" binary-mask="true"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MinAreaRectContours" name="results" enabled="true" contours-stage-name="8"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="10" enabled="true" image-stage-name="0"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="12" enabled="true" rotated-rects-stage-name="results" thickness="3" draw-rect-center="true" rect-center-radius="20" show-orientation="false"/>
+               </stages>
+            </pipeline>
+            <sprocket-pitch value="4.0" units="Millimeters"/>
+            <edge-open-distance value="2.0" units="Millimeters"/>
+            <edge-closed-distance value="2.0" units="Millimeters"/>
+            <push-Z-offset value="0.25" units="Millimeters"/>
+         </feeder>
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16911a44877a6678" name="BlindsFeeder - 03-03 - 4G - 24mm" enabled="true" part-id="Switch" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="3" feeder-no="3" feeders-total="4" feeder-group-name="Default" pocket-count="6" first-pocket="1" last-pocket="6" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
             <location units="Millimeters" x="0.0" y="0.0" z="-18.4" rotation="0.0"/>
-            <fiducial-1-location units="Millimeters" x="259.5598788073425" y="52.544308125823974" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="335.6294004664917" y="51.76458776336672" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="336.7561808672042" y="161.69328813356543" z="0.0" rotation="0.0"/>
+            <fiducial-1-location units="Millimeters" x="255.60679841033934" y="24.123760785827642" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="331.69572500140373" y="23.70811074057007" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="256.20764991914047" y="134.11568035116437" z="0.0" rotation="0.0"/>
             <tape-length value="76.0" units="Millimeters"/>
             <feeder-extent value="110.0" units="Millimeters"/>
             <pocket-centerline value="69.0" units="Millimeters"/>
@@ -821,9 +915,9 @@
          </feeder>
          <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16911a47ef416614" name="BlindsFeeder - 03-04 - 4G - 24mm" enabled="true" part-id="usb" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="1" feeder-no="4" feeders-total="4" feeder-group-name="Default" pocket-count="6" first-pocket="1" last-pocket="4" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
             <location units="Millimeters" x="0.0" y="0.0" z="-18.4" rotation="90.0"/>
-            <fiducial-1-location units="Millimeters" x="259.5598788073425" y="52.544308125823974" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="335.6294004664917" y="51.76458776336672" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="336.7561808672042" y="161.69328813356543" z="0.0" rotation="0.0"/>
+            <fiducial-1-location units="Millimeters" x="255.60679841033934" y="24.123760785827642" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="331.69572500140373" y="23.70811074057007" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="256.20764991914047" y="134.11568035116437" z="0.0" rotation="0.0"/>
             <tape-length value="76.0" units="Millimeters"/>
             <feeder-extent value="110.0" units="Millimeters"/>
             <pocket-centerline value="95.0" units="Millimeters"/>
@@ -850,107 +944,14 @@
             <edge-closed-distance value="2.0" units="Millimeters"/>
             <push-Z-offset value="0.25" units="Millimeters"/>
          </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16911a904041359c" name="BlindsFeeder - 04-16 - 18G - 8mm" enabled="true" part-id="Green-LED" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="0" feeder-no="0" feeders-total="0" feeder-group-name="Default" pocket-count="0" first-pocket="1" last-pocket="0" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
-            <location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-            <fiducial-1-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-            <tape-length value="0.0" units="Millimeters"/>
-            <feeder-extent value="0.0" units="Millimeters"/>
-            <pocket-centerline value="0.0" units="Millimeters"/>
-            <pocket-pitch value="0.0" units="Millimeters"/>
-            <pocket-size value="0.0" units="Millimeters"/>
-            <pipeline>
-               <stages>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRead" name="00" enabled="false" file="test.png" color-space="Bgr"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="65" hue-max="115" saturation-min="50" saturation-max="255" value-min="40" value-max="255" invert="false" binary-mask="true"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MinAreaRectContours" name="results" enabled="true" contours-stage-name="8"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="10" enabled="true" image-stage-name="0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="12" enabled="false" rotated-rects-stage-name="results" thickness="3" draw-rect-center="true" rect-center-radius="20" show-orientation="false"/>
-               </stages>
-            </pipeline>
-            <sprocket-pitch value="4.0" units="Millimeters"/>
-            <edge-open-distance value="2.0" units="Millimeters"/>
-            <edge-closed-distance value="2.0" units="Millimeters"/>
-            <push-Z-offset value="0.25" units="Millimeters"/>
-         </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16911a9c518289bc" name="BlindsFeeder - 04-17 - 18G - 8mm" enabled="true" part-id="Red-LED" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="0" feeder-no="0" feeders-total="0" feeder-group-name="Default" pocket-count="0" first-pocket="1" last-pocket="0" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
-            <location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-            <fiducial-1-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-            <tape-length value="0.0" units="Millimeters"/>
-            <feeder-extent value="0.0" units="Millimeters"/>
-            <pocket-centerline value="0.0" units="Millimeters"/>
-            <pocket-pitch value="0.0" units="Millimeters"/>
-            <pocket-size value="0.0" units="Millimeters"/>
-            <pipeline>
-               <stages>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRead" name="00" enabled="false" file="test.png" color-space="Bgr"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="65" hue-max="115" saturation-min="50" saturation-max="255" value-min="40" value-max="255" invert="false" binary-mask="true"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MinAreaRectContours" name="results" enabled="true" contours-stage-name="8"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="10" enabled="true" image-stage-name="0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="12" enabled="false" rotated-rects-stage-name="results" thickness="3" draw-rect-center="true" rect-center-radius="20" show-orientation="false"/>
-               </stages>
-            </pipeline>
-            <sprocket-pitch value="4.0" units="Millimeters"/>
-            <edge-open-distance value="2.0" units="Millimeters"/>
-            <edge-closed-distance value="2.0" units="Millimeters"/>
-            <push-Z-offset value="0.25" units="Millimeters"/>
-         </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16911ab1b64a6e54" name="BlindsFeeder - 04-18 - 18G - 8mm" enabled="true" part-id="NChannel-MOSFET" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="0" feeder-no="0" feeders-total="0" feeder-group-name="Default" pocket-count="0" first-pocket="1" last-pocket="0" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
-            <location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-            <fiducial-1-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
-            <tape-length value="0.0" units="Millimeters"/>
-            <feeder-extent value="0.0" units="Millimeters"/>
-            <pocket-centerline value="0.0" units="Millimeters"/>
-            <pocket-pitch value="0.0" units="Millimeters"/>
-            <pocket-size value="0.0" units="Millimeters"/>
-            <pipeline>
-               <stages>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRead" name="00" enabled="false" file="test.png" color-space="Bgr"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="65" hue-max="115" saturation-min="50" saturation-max="255" value-min="40" value-max="255" invert="false" binary-mask="true"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MinAreaRectContours" name="results" enabled="true" contours-stage-name="8"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="10" enabled="true" image-stage-name="0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="12" enabled="false" rotated-rects-stage-name="results" thickness="3" draw-rect-center="true" rect-center-radius="20" show-orientation="false"/>
-               </stages>
-            </pipeline>
-            <sprocket-pitch value="4.0" units="Millimeters"/>
-            <edge-open-distance value="2.0" units="Millimeters"/>
-            <edge-closed-distance value="2.0" units="Millimeters"/>
-            <push-Z-offset value="0.25" units="Millimeters"/>
-         </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16911af79bed88ac" name="BlindsFeeder - 01-03 - 4Y - 12mm" enabled="true" part-id="Regulator IC" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="1" feeder-no="3" feeders-total="3" feeder-group-name="Default" pocket-count="9" first-pocket="1" last-pocket="9" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
-            <location units="Millimeters" x="0.0" y="0.0" z="-16.2" rotation="0.0"/>
-            <fiducial-1-location units="Millimeters" x="104.88825407629395" y="373.57313726156616" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="28.81248180633545" y="373.98398186160284" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="28.471352595658857" y="310.8173535458209" z="0.0" rotation="0.0"/>
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16911af79bed88ac" name="BlindsFeeder - 01-03 - 4Y - 12mm" enabled="true" part-id="Regulator IC" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="3" feeder-no="3" feeders-total="3" feeder-group-name="Default" pocket-count="9" first-pocket="1" last-pocket="9" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+            <location units="Millimeters" x="0.0" y="0.0" z="-17.5" rotation="0.0"/>
+            <fiducial-1-location units="Millimeters" x="103.46497288540648" y="176.06986547454844" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="27.38333389489746" y="175.96093711398314" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="103.55530160619915" y="112.97925169722467" z="0.0" rotation="0.0"/>
             <tape-length value="76.0" units="Millimeters"/>
             <feeder-extent value="63.0" units="Millimeters"/>
-            <pocket-centerline value="39.5" units="Millimeters"/>
+            <pocket-centerline value="39.4" units="Millimeters"/>
             <pocket-pitch value="8.0" units="Millimeters"/>
             <pocket-size value="6.0" units="Millimeters"/>
             <pipeline>
@@ -960,13 +961,13 @@
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="65" hue-max="115" saturation-min="50" saturation-max="255" value-min="40" value-max="255" invert="false" binary-mask="true"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="20" hue-max="60" saturation-min="0" saturation-max="255" value-min="100" value-max="255" invert="false" binary-mask="true"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.MinAreaRectContours" name="results" enabled="true" contours-stage-name="8"/>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="10" enabled="true" image-stage-name="0"/>
-                  <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="12" enabled="false" rotated-rects-stage-name="results" thickness="3" draw-rect-center="true" rect-center-radius="20" show-orientation="false"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="12" enabled="true" rotated-rects-stage-name="results" thickness="3" draw-rect-center="true" rect-center-radius="20" show-orientation="false"/>
                </stages>
             </pipeline>
             <sprocket-pitch value="4.0" units="Millimeters"/>
@@ -974,11 +975,11 @@
             <edge-closed-distance value="2.0" units="Millimeters"/>
             <push-Z-offset value="0.25" units="Millimeters"/>
          </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16911b136e858380" name="BlindsFeeder - 05-02 - 4G - 8mm" enabled="true" part-id="NChannel-MOSFET 11A" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="0" feeder-no="2" feeders-total="3" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16911b136e858380" name="BlindsFeeder - 05-02 - 4G - 8mm" enabled="true" part-id="NChannel-MOSFET 11A" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="3" feeder-no="2" feeders-total="3" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
             <location units="Millimeters" x="0.0" y="0.0" z="-15.8" rotation="-90.0"/>
-            <fiducial-1-location units="Millimeters" x="259.16260511749266" y="169.14861280993654" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="338.9247802253723" y="167.6595808721008" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="339.7660147095694" y="212.72153725487885" z="0.0" rotation="0.0"/>
+            <fiducial-1-location units="Millimeters" x="256.30267879577633" y="143.7229721305542" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="336.1496305201721" y="143.40557640789794" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="256.48120861680235" y="188.63555595975527" z="0.0" rotation="0.0"/>
             <tape-length value="80.0" units="Millimeters"/>
             <feeder-extent value="45.0" units="Millimeters"/>
             <pocket-centerline value="19.0" units="Millimeters"/>
@@ -1005,16 +1006,78 @@
             <edge-closed-distance value="2.0" units="Millimeters"/>
             <push-Z-offset value="0.25" units="Millimeters"/>
          </feeder>
-         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16911b23c42ce9d0" name="BlindsFeeder - 05-03 - 4G - 8mm" enabled="true" part-id="Protection IC" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="1" feeder-no="3" feeders-total="3" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16911b23c42ce9d0" name="BlindsFeeder - 05-03 - 4G - 8mm" enabled="true" part-id="Protection IC" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="3" feeder-no="3" feeders-total="3" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
             <location units="Millimeters" x="0.0" y="0.0" z="-16.0" rotation="90.0"/>
-            <fiducial-1-location units="Millimeters" x="259.16260511749266" y="169.14861280993654" z="0.0" rotation="0.0"/>
-            <fiducial-2-location units="Millimeters" x="338.9247802253723" y="167.6595808721008" z="0.0" rotation="0.0"/>
-            <fiducial-3-location units="Millimeters" x="339.7660147095694" y="212.72153725487885" z="0.0" rotation="0.0"/>
+            <fiducial-1-location units="Millimeters" x="256.30267879577633" y="143.7229721305542" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="336.1496305201721" y="143.40557640789794" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="256.48120861680235" y="188.63555595975527" z="0.0" rotation="0.0"/>
             <tape-length value="80.0" units="Millimeters"/>
             <feeder-extent value="45.0" units="Millimeters"/>
             <pocket-centerline value="29.0" units="Millimeters"/>
             <pocket-pitch value="4.0" units="Millimeters"/>
             <pocket-size value="3.5" units="Millimeters"/>
+            <pipeline>
+               <stages>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRead" name="00" enabled="false" file="test.png" color-space="Bgr"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="65" hue-max="115" saturation-min="40" saturation-max="255" value-min="40" value-max="255" invert="false" binary-mask="true"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MinAreaRectContours" name="results" enabled="true" contours-stage-name="8"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="10" enabled="true" image-stage-name="0"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="12" enabled="false" rotated-rects-stage-name="results" thickness="3" draw-rect-center="true" rect-center-radius="20" show-orientation="false"/>
+               </stages>
+            </pipeline>
+            <sprocket-pitch value="4.0" units="Millimeters"/>
+            <edge-open-distance value="2.0" units="Millimeters"/>
+            <edge-closed-distance value="2.0" units="Millimeters"/>
+            <push-Z-offset value="0.25" units="Millimeters"/>
+         </feeder>
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16a1fe9fb250270b" name="BlindsFeeder - 04-02 - 18G - 8mm" enabled="true" part-id="Blue-LED" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="6" feeder-no="2" feeders-total="2" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+            <location units="Millimeters" x="0.0" y="0.0" z="-17.0" rotation="-90.0"/>
+            <fiducial-1-location units="Millimeters" x="253.41164494604493" y="161.88359001666262" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="333.465100080658" y="161.528157723114" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="334.28494540769793" y="346.18062824077845" z="0.0" rotation="0.0"/>
+            <tape-length value="80.0" units="Millimeters"/>
+            <feeder-extent value="185.0" units="Millimeters"/>
+            <pocket-centerline value="29.0" units="Millimeters"/>
+            <pocket-pitch value="4.0" units="Millimeters"/>
+            <pocket-size value="2.599999999999998" units="Millimeters"/>
+            <pipeline>
+               <stages>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRead" name="00" enabled="false" file="test.png" color-space="Bgr"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="1" enabled="true" kernel-size="3"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="2" enabled="true" conversion="Bgr2HsvFull"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.Normalize" name="3" enabled="false"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="4" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="80" hue-max="125" saturation-min="50" saturation-max="255" value-min="40" value-max="255" invert="false" binary-mask="true"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.BlurMedian" name="5" enabled="true" kernel-size="13"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="7" enabled="true" retrieval-mode="List" approximation-method="Simple"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="8" enabled="true" contours-stage-name="7" min-area="1000.0" max-area="100000.0"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.MinAreaRectContours" name="results" enabled="true" contours-stage-name="8"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="10" enabled="true" image-stage-name="0"/>
+                  <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="12" enabled="true" rotated-rects-stage-name="results" thickness="3" draw-rect-center="true" rect-center-radius="20" show-orientation="false"/>
+               </stages>
+            </pipeline>
+            <sprocket-pitch value="4.0" units="Millimeters"/>
+            <edge-open-distance value="2.0" units="Millimeters"/>
+            <edge-closed-distance value="2.0" units="Millimeters"/>
+            <push-Z-offset value="0.25" units="Millimeters"/>
+         </feeder>
+         <feeder class="org.openpnp.machine.reference.feeder.BlindsFeeder" version="1.1" id="FDR16a1fea9979ee4c0" name="BlindsFeeder - 04-03 - 18G - 8mm" enabled="true" part-id="R0603-1K" retry-count="3" feed-retry-count="3" pick-retry-count="0" normalize="true" vision-enabled="true" feed-count="5" feeder-no="1" feeders-total="2" feeder-group-name="Default" pocket-count="20" first-pocket="1" last-pocket="20" push-speed="0.025" fid-loc-max-passes="3" fid-loc-tolerance-mm="0.5" pocket-pos-tolerance-mm="0.1" cover-type="BlindsCover" cover-actuation="Manual">
+            <location units="Millimeters" x="0.0" y="0.0" z="-17.0" rotation="-90.0"/>
+            <fiducial-1-location units="Millimeters" x="253.41164494604493" y="161.88359001666262" z="0.0" rotation="0.0"/>
+            <fiducial-2-location units="Millimeters" x="333.465100080658" y="161.528157723114" z="0.0" rotation="0.0"/>
+            <fiducial-3-location units="Millimeters" x="334.28494540769793" y="346.18062824077845" z="0.0" rotation="0.0"/>
+            <tape-length value="80.0" units="Millimeters"/>
+            <feeder-extent value="185.0" units="Millimeters"/>
+            <pocket-centerline value="19.0" units="Millimeters"/>
+            <pocket-pitch value="4.0" units="Millimeters"/>
+            <pocket-size value="2.700000000000003" units="Millimeters"/>
             <pipeline>
                <stages>
                   <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRead" name="00" enabled="false" file="test.png" color-space="Bgr"/>
@@ -1038,10 +1101,10 @@
          </feeder>
       </feeders>
       <cameras>
-         <camera class="org.openpnp.machine.reference.camera.OpenPnpCaptureCamera" id="CAM165d05be57df7828" name="BottomCamera" looking="Up" auto-visible="true" shown-in-multi-camera-view="true" before-capture-light-on="true" user-action-light-on="true" after-capture-light-off="true" anti-glare-light-off="false" enable-units-per-pixel-3-d="false" auto-view-plane-z="false" settle-method="FixedTime" settle-time-ms="1000" settle-timeout-ms="500" settle-threshold="0.0" settle-debounce="0" settle-full-color="false" settle-gaussian-blur="0" settle-gradients="false" settle-mask-circle="0.0" settle-contrast-enhance="0.0" settle-diagnostics="false" fps="10.0" suspend-preview-in-tasks="true" capture-try-count="4" capture-try-timeout-ms="2000" rotation="0.0" flip-x="false" flip-y="true" offset-x="0" offset-y="0" crop-width="0" crop-height="0" scale-width="0" scale-height="0" deinterlace="false" light-actuator-id="ACT165d075d2d206188" allow-machine-actuators="false" focus-sensing-method="None" unique-id="HD USB Camera \\?\usb#vid_32e4&amp;pid_9230&amp;mi_00#6&amp;25c08195&amp;0&amp;0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\global" format-id="0">
+         <camera class="org.openpnp.machine.reference.camera.OpenPnpCaptureCamera" id="CAM165d05be57df7828" name="BottomCamera" looking="Up" auto-visible="true" shown-in-multi-camera-view="true" before-capture-light-on="true" user-action-light-on="true" after-capture-light-off="true" anti-glare-light-off="true" enable-units-per-pixel-3-d="false" auto-view-plane-z="false" settle-method="FixedTime" settle-time-ms="1000" settle-timeout-ms="500" settle-threshold="0.0" settle-debounce="0" settle-full-color="false" settle-gaussian-blur="0" settle-gradients="false" settle-mask-circle="0.0" settle-contrast-enhance="0.0" settle-diagnostics="false" fps="10.0" suspend-preview-in-tasks="true" capture-try-count="4" capture-try-timeout-ms="2000" rotation="0.0" flip-x="false" flip-y="true" offset-x="0" offset-y="0" crop-width="0" crop-height="0" scale-width="0" scale-height="0" deinterlace="false" light-actuator-id="ACT165d075d2d206188" allow-machine-actuators="false" focus-sensing-method="None" unique-id="HD USB Camera \\?\usb#vid_32e4&amp;pid_9230&amp;mi_00#6&amp;387a323a&amp;0&amp;0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\global" format-id="0">
             <units-per-pixel units="Millimeters" x="0.02666667" y="0.02624672" z="0.0" rotation="0.0"/>
             <vision-provider class="org.openpnp.machine.reference.vision.OpenCvVisionProvider"/>
-            <head-offsets units="Millimeters" x="177.361" y="293.39" z="-18.5" rotation="2.0"/>
+            <head-offsets units="Millimeters" x="177.431" y="293.585" z="-18.5" rotation="3.0"/>
             <calibration enabled="true">
                <camera-matrix length="9">1917.7521942476444, 0.0, 1003.1928798214884, 0.0, 1911.8950217106167, 574.9866419597122, 0.0, 0.0, 1.0</camera-matrix>
                <distortion-coefficients length="5">-0.38533356905294225, 0.41939204995375545, -0.0033381035994221636, 0.007901488440676611, -0.48620047784805437</distortion-coefficients>
@@ -1052,7 +1115,7 @@
             <back-light-compensation property="BackLightCompensation" value="1" auto="false"/>
             <brightness property="Brightness" value="0" auto="false"/>
             <contrast property="Contrast" value="32" auto="false"/>
-            <exposure property="Exposure" value="-9" auto="false"/>
+            <exposure property="Exposure" value="-8" auto="false"/>
             <focus property="Focus"/>
             <gain property="Gain" value="0" auto="false"/>
             <gamma property="Gamma" value="72" auto="false"/>
@@ -1098,7 +1161,7 @@
             <part-settings-by-part-id class="java.util.HashMap">
                <entry>
                   <string>Thermistor-10k</string>
-                  <part-settings enabled="true" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
+                  <part-settings enabled="false" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
                      <vision-offset units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
                      <pipeline>
                         <stages>
@@ -1475,7 +1538,7 @@
                </entry>
                <entry>
                   <string>Green-LED</string>
-                  <part-settings enabled="true" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
+                  <part-settings enabled="false" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
                      <vision-offset units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
                      <pipeline>
                         <stages>
@@ -1533,7 +1596,7 @@
                </entry>
                <entry>
                   <string>CAP0603-22uF</string>
-                  <part-settings enabled="true" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
+                  <part-settings enabled="false" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
                      <vision-offset units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
                      <pipeline>
                         <stages>
@@ -1562,7 +1625,7 @@
                </entry>
                <entry>
                   <string>R0603-10K</string>
-                  <part-settings enabled="true" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
+                  <part-settings enabled="false" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
                      <vision-offset units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
                      <pipeline>
                         <stages>
@@ -1591,7 +1654,7 @@
                </entry>
                <entry>
                   <string>R0603-30K</string>
-                  <part-settings enabled="true" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
+                  <part-settings enabled="false" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
                      <vision-offset units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
                      <pipeline>
                         <stages>
@@ -1678,7 +1741,7 @@
                </entry>
                <entry>
                   <string>Red-LED</string>
-                  <part-settings enabled="true" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
+                  <part-settings enabled="false" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
                      <vision-offset units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
                      <pipeline>
                         <stages>
@@ -1823,7 +1886,7 @@
                </entry>
                <entry>
                   <string>CAP0603-1uF</string>
-                  <part-settings enabled="true" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
+                  <part-settings enabled="false" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
                      <vision-offset units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
                      <pipeline>
                         <stages>
@@ -1997,7 +2060,7 @@
                </entry>
                <entry>
                   <string>CAP0603-2.2nF</string>
-                  <part-settings enabled="true" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
+                  <part-settings enabled="false" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
                      <vision-offset units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
                      <pipeline>
                         <stages>
@@ -2055,7 +2118,7 @@
                </entry>
                <entry>
                   <string>CAP0603-10uF</string>
-                  <part-settings enabled="true" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
+                  <part-settings enabled="false" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
                      <vision-offset units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
                      <pipeline>
                         <stages>
@@ -2142,7 +2205,7 @@
                </entry>
                <entry>
                   <string>R0603-51K</string>
-                  <part-settings enabled="true" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
+                  <part-settings enabled="false" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
                      <vision-offset units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
                      <pipeline>
                         <stages>
@@ -2200,7 +2263,7 @@
                </entry>
                <entry>
                   <string>CAP0603-0.1uF</string>
-                  <part-settings enabled="true" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
+                  <part-settings enabled="false" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
                      <vision-offset units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
                      <pipeline>
                         <stages>
@@ -2229,7 +2292,7 @@
                </entry>
                <entry>
                   <string>NChannel-MOSFET 11A</string>
-                  <part-settings enabled="true" pre-rotate-usage="AlwaysOff" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
+                  <part-settings enabled="true" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
                      <vision-offset units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
                      <pipeline>
                         <stages>
@@ -2258,7 +2321,7 @@
                </entry>
                <entry>
                   <string>R0603-1K</string>
-                  <part-settings enabled="true" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
+                  <part-settings enabled="false" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
                      <vision-offset units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
                      <pipeline>
                         <stages>
@@ -2346,7 +2409,7 @@
                            </cv-stage>
                            <cv-stage class="org.openpnp.vision.pipeline.stages.MinAreaRect" name="results" enabled="true" threshold-min="100" threshold-max="255"/>
                            <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="14" enabled="true" image-stage-name="0"/>
-                           <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="8" enabled="true" rotated-rects-stage-name="results" thickness="2" draw-rect-center="false" rect-center-radius="20" show-orientation="false"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="8" enabled="true" rotated-rects-stage-name="results" thickness="2" draw-rect-center="true" rect-center-radius="20" show-orientation="true"/>
                            <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="15" enabled="true" prefix="bv_result_" suffix=".png"/>
                         </stages>
                      </pipeline>
@@ -2383,7 +2446,7 @@
                </entry>
                <entry>
                   <string>R0603-1.54K</string>
-                  <part-settings enabled="true" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
+                  <part-settings enabled="false" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
                      <vision-offset units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
                      <pipeline>
                         <stages>
@@ -2447,7 +2510,7 @@
                </entry>
                <entry>
                   <string>R0603-69.8K</string>
-                  <part-settings enabled="true" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
+                  <part-settings enabled="false" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
                      <vision-offset units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
                      <pipeline>
                         <stages>
@@ -2555,7 +2618,7 @@
                            </cv-stage>
                            <cv-stage class="org.openpnp.vision.pipeline.stages.MinAreaRect" name="results" enabled="true" threshold-min="100" threshold-max="255"/>
                            <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="14" enabled="true" image-stage-name="0"/>
-                           <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="8" enabled="true" rotated-rects-stage-name="results" thickness="2" draw-rect-center="false" rect-center-radius="20" show-orientation="false"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="8" enabled="true" rotated-rects-stage-name="results" thickness="2" draw-rect-center="true" rect-center-radius="20" show-orientation="true"/>
                            <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="15" enabled="true" prefix="bv_result_" suffix=".png"/>
                         </stages>
                      </pipeline>
@@ -2650,7 +2713,7 @@
                </entry>
                <entry>
                   <string>CAP0603-10nF</string>
-                  <part-settings enabled="true" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
+                  <part-settings enabled="false" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
                      <vision-offset units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
                      <pipeline>
                         <stages>
@@ -2795,7 +2858,36 @@
                </entry>
                <entry>
                   <string>R0603-330</string>
-                  <part-settings enabled="true" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
+                  <part-settings enabled="false" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
+                     <vision-offset units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+                     <pipeline>
+                        <stages>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="13" enabled="true" prefix="bv_source_" suffix=".png"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.BlurGaussian" name="10" enabled="true" kernel-size="9"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.MaskCircle" name="4" enabled="true" diameter="525"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="1" enabled="true" conversion="Bgr2HsvFull"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.MaskHsv" name="2" enabled="true" auto="false" fraction-to-mask="0.0" hue-min="60" hue-max="130" saturation-min="0" saturation-max="255" value-min="0" value-max="255" invert="false" binary-mask="false"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="3" enabled="true" conversion="Hsv2BgrFull"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="6" enabled="true" conversion="Bgr2Gray"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.Threshold" name="12" enabled="true" threshold="100" auto="false" invert="false"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.FindContours" name="5" enabled="true" retrieval-mode="List" approximation-method="None"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.FilterContours" name="9" enabled="true" contours-stage-name="5" min-area="50.0" max-area="900000.0"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.MaskCircle" name="11" enabled="true" diameter="0"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.DrawContours" name="7" enabled="true" contours-stage-name="9" thickness="2" index="-1">
+                              <color r="255" g="255" b="255" a="255"/>
+                           </cv-stage>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.MinAreaRect" name="results" enabled="true" threshold-min="100" threshold-max="255"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="14" enabled="true" image-stage-name="0"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="8" enabled="true" rotated-rects-stage-name="results" thickness="2" draw-rect-center="false" rect-center-radius="20" show-orientation="false"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="15" enabled="true" prefix="bv_result_" suffix=".png"/>
+                        </stages>
+                     </pipeline>
+                  </part-settings>
+               </entry>
+               <entry>
+                  <string>Blue-LED</string>
+                  <part-settings enabled="false" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
                      <vision-offset units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
                      <pipeline>
                         <stages>
@@ -3027,7 +3119,7 @@
                </entry>
                <entry>
                   <string>CAP0603-47pF</string>
-                  <part-settings enabled="true" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
+                  <part-settings enabled="false" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
                      <vision-offset units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
                      <pipeline>
                         <stages>
@@ -3143,7 +3235,7 @@
                </entry>
                <entry>
                   <string>R0603-2.7K</string>
-                  <part-settings enabled="true" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
+                  <part-settings enabled="false" pre-rotate-usage="Default" check-part-size-method="Disabled" check-size-tolerance-percent="20" max-rotation="Adjust">
                      <vision-offset units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
                      <pipeline>
                         <stages>
@@ -3193,7 +3285,7 @@
                            </cv-stage>
                            <cv-stage class="org.openpnp.vision.pipeline.stages.MinAreaRect" name="results" enabled="true" threshold-min="100" threshold-max="255"/>
                            <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="14" enabled="true" image-stage-name="0"/>
-                           <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="8" enabled="true" rotated-rects-stage-name="results" thickness="2" draw-rect-center="false" rect-center-radius="20" show-orientation="false"/>
+                           <cv-stage class="org.openpnp.vision.pipeline.stages.DrawRotatedRects" name="8" enabled="true" rotated-rects-stage-name="results" thickness="2" draw-rect-center="true" rect-center-radius="20" show-orientation="true"/>
                            <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="15" enabled="true" prefix="bv_result_" suffix=".png"/>
                         </stages>
                      </pipeline>
@@ -3350,6 +3442,9 @@
             <command head-mountable-id="ACT1671c38b8d650018" type="ACTUATOR_READ_REGEX">
                <text><![CDATA[^.*(?<Value>-?\d+)]]></text>
             </command>
+            <command head-mountable-id="ACT1671c38b8d650018" type="ACTUATOR_READ_COMMAND">
+               <text><![CDATA[switch \u0020 compressor_pump]]></text>
+            </command>
             <junction-deviation value="0.02" units="Millimeters"/>
          </driver>
       </drivers>
@@ -3494,7 +3589,7 @@
             <vision-calibration-tolerance value="0.7" units="Millimeters"/>
             <max-part-diameter value="20.0" units="Millimeters"/>
             <max-part-height value="10.0" units="Millimeters"/>
-            <calibration angle-subdivisions="6" allow-misdetections="0" angle-start="-180.0" angle-stop="180.0" excenter-ratio="0.25" enabled="true" fail-homing="true" runout-compensation-algorithm="ModelCameraOffsetAffine" version="2.1" recalibration-trigger="NozzleTipChangeInJob" offset-threshold="0.0" detection-threshold-margin="0.4">
+            <calibration angle-subdivisions="6" allow-misdetections="0" angle-start="-180.0" angle-stop="180.0" excenter-ratio="0.25" enabled="false" fail-homing="true" runout-compensation-algorithm="ModelCameraOffsetAffine" version="2.1" recalibration-trigger="NozzleTipChangeInJob" offset-threshold="0.0" detection-threshold-margin="0.4">
                <pipeline>
                   <stages>
                      <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="0" enabled="true" default-light="true" settle-first="true" count="1"/>
@@ -5305,6 +5400,31 @@
                </part-settings>
             </entry>
             <entry>
+               <string>Blue-LED</string>
+               <part-settings enabled="false">
+                  <pipeline>
+                     <stages>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.CreateFootprintTemplateImage" name="template" enabled="true" footprint-view="Fiducial" minimal-image-size="false">
+                           <pads-color r="255" g="255" b="255" a="255"/>
+                           <body-color r="0" g="0" b="0" a="255"/>
+                           <background-color r="0" g="0" b="0" a="255"/>
+                        </cv-stage>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_template" enabled="true" prefix="fidloc_template_" suffix=".png"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="template_gray" enabled="true" conversion="Bgr2Gray"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageCapture" name="image" enabled="true" default-light="true" settle-first="true" count="1"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertColor" name="image_gray" enabled="true" conversion="Bgr2Gray"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_original" enabled="true" prefix="fidloc_original_" suffix=".png"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.MatchTemplate" name="match_template" enabled="true" template-stage-name="template_gray" threshold="0.699999988079071" corr="0.8500000238418579" normalize="true"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageRecall" name="recall_image" enabled="true" image-stage-name="image"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.DrawTemplateMatches" name="draw_matches" enabled="true" template-matches-stage-name="match_template"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ConvertModelToKeyPoints" name="results" enabled="true" model-stage-name="match_template"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.DrawKeyPoints" name="draw_keypoints" enabled="true" key-points-stage-name="results"/>
+                        <cv-stage class="org.openpnp.vision.pipeline.stages.ImageWriteDebug" name="debug_results" enabled="true" prefix="fidloc_results_" suffix=".png"/>
+                     </stages>
+                  </pipeline>
+               </part-settings>
+            </entry>
+            <entry>
                <string>WS2812B</string>
                <part-settings enabled="false">
                   <pipeline>
@@ -5671,8 +5791,10 @@
       <home-after-enabled>true</home-after-enabled>
       <solutions target-milestone="Advanced">
          <dismissed-solutions class="java.util.HashSet">
+            <string>3a9fe64bef9640244396dd3a1a062a84b06dc239</string>
             <string>567f8f48b3f0536bd7a92be3bb537ba422ba1f2f</string>
             <string>d04d6f3d6d5ef9972dc96b6ccfb1896edcabcd70</string>
+            <string>1a0a3aa83a8c363b9f23ec522e076b88dfe79217</string>
             <string>b976237bb425e44bb10455b4c0fa7888c7237f10</string>
             <string>0fbff738a52e4c46773ed0358e7245cbf6c5a893</string>
             <string>603f7df2562075736cd96619eda3f67740946a43</string>

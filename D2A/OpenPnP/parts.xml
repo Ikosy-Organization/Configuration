@@ -1,0 +1,34 @@
+<openpnp-parts>
+   <part id="FIDUCIAL-1X2-FIDUCIAL1X2" name="Fiducial" height-units="Millimeters" height="0.0" package-id="FIDUCIAL-1X2" speed="1.0" pick-retry-count="0"/>
+   <part id="R0603-1K" name="Chip Resistor" height-units="Millimeters" height="0.45" package-id="R0603" speed="1.0" pick-retry-count="0"/>
+   <part id="FIDUCIAL-HOME" name="Homing FID" height-units="Millimeters" height="0.0" package-id="FIDUCIAL-1X2" speed="1.0" pick-retry-count="0"/>
+   <part id="CAP0603-1uF" name="Ceramic Capacitor" height-units="Millimeters" height="0.8" package-id="CAP0603" speed="1.0" pick-retry-count="0"/>
+   <part id="CAP0603-0.1uF" name="Ceramic Capacitor" height-units="Millimeters" height="0.8" package-id="CAP0603" speed="1.0" pick-retry-count="0"/>
+   <part id="FIDUCIAL-1X2" name="Fiducial" height-units="Millimeters" height="0.0" package-id="FIDUCIAL-1X2" speed="1.0" pick-retry-count="0"/>
+   <part id="ELECTRO-SMD-E-7.8MM" name="Electrolytic Capacitor" height-units="Millimeters" height="10.4" package-id="ELECTRO-SMD-E-7.8MM" speed="1.0" pick-retry-count="0"/>
+   <part id="FIDUCIAL_1MM" name="Fiducial" height-units="Millimeters" height="0.0" package-id="FIDUCIAL_1MM" speed="1.0" pick-retry-count="0"/>
+   <part id="CAP0603-22uF" name="Ceramic Capacitor" height-units="Millimeters" height="0.8" package-id="CAP0603" speed="1.0" pick-retry-count="0"/>
+   <part id="CAP0603-10uF" name="Ceramic Capacitor" height-units="Millimeters" height="0.8" package-id="CAP0603" speed="1.0" pick-retry-count="0"/>
+   <part id="CAP0603-2.2nF" name="Ceramic Capacitor" height-units="Millimeters" height="0.8" package-id="CAP0603" speed="1.0" pick-retry-count="0"/>
+   <part id="CAP0603-47pF" name="Ceramic Capacitor" height-units="Millimeters" height="0.8" package-id="CAP0603" speed="1.0" pick-retry-count="0"/>
+   <part id="CAP0603-10nF" name="Ceramic Capacitor" height-units="Millimeters" height="0.8" package-id="CAP0603" speed="1.0" pick-retry-count="0"/>
+   <part id="R0603-330" name="Chip Resistor" height-units="Millimeters" height="0.45" package-id="R0603" speed="1.0" pick-retry-count="0"/>
+   <part id="R0603-2.7K" name="Chip Resistor" height-units="Millimeters" height="0.45" package-id="R0603" speed="1.0" pick-retry-count="0"/>
+   <part id="R0603-1.54K" name="Chip Resistor" height-units="Millimeters" height="0.45" package-id="R0603" speed="1.0" pick-retry-count="0"/>
+   <part id="R0603-69.8K" name="Chip Resistor" height-units="Millimeters" height="0.45" package-id="R0603" speed="1.0" pick-retry-count="0"/>
+   <part id="R0603-51K" name="Chip Resistor" height-units="Millimeters" height="0.45" package-id="R0603" speed="1.0" pick-retry-count="0"/>
+   <part id="R0603-30K" name="Chip Resistor" height-units="Millimeters" height="0.45" package-id="R0603" speed="1.0" pick-retry-count="0"/>
+   <part id="R0603-10K" name="Chip Resistor" height-units="Millimeters" height="0.45" package-id="R0603" speed="1.0" pick-retry-count="0"/>
+   <part id="Diode-Schotty" name="Diode Schottky 120V 12A" height-units="Millimeters" height="1.0" package-id="Diode-Schotty" speed="1.0" pick-retry-count="0"/>
+   <part id="Inductor-6.8uh" name="6.8µH Shielded Molded Inductor 8A 23.3mOhm " height-units="Millimeters" height="4.1" package-id="Inductor" speed="1.0" pick-retry-count="0"/>
+   <part id="Green-LED" name="Green 570nm LED Indication - Discrete 2V " height-units="Millimeters" height="0.7" package-id="LED" speed="1.0" pick-retry-count="0"/>
+   <part id="Red-LED" name="Red 625nm LED Indication - Discrete 2V" height-units="Millimeters" height="0.7" package-id="LED" speed="1.0" pick-retry-count="0"/>
+   <part id="NChannel-MOSFET" name="N-Channel 6A (Ta), 18A (Tc) 2W (Ta), 19W (Tc) Surface Mount DFN2020MD-6 " height-units="Millimeters" height="0.65" package-id="SOT1220" speed="1.0" pick-retry-count="0"/>
+   <part id="Switch" name="Slide Switch DPDT Surface Mount, Right Angle " height-units="Millimeters" height="3.6" package-id="Switch" speed="1.0" pick-retry-count="0"/>
+   <part id="Thermistor-10k" name="NTC Thermistor 10k " height-units="Millimeters" height="0.8" package-id="Thermistor" speed="1.0" pick-retry-count="0"/>
+   <part id="Protection IC" height-units="Millimeters" height="1.2" package-id="SOT26" speed="1.0" pick-retry-count="0"/>
+   <part id="NChannel-MOSFET 11A" name="2NChannel" height-units="Millimeters" height="0.9" package-id="SOT28FL" speed="1.0" pick-retry-count="0"/>
+   <part id="Charger IC" height-units="Millimeters" height="1.1" package-id="MSOP10" speed="1.0" pick-retry-count="0"/>
+   <part id="Regulator IC" height-units="Millimeters" height="1.55" package-id="SOP8" speed="1.0" pick-retry-count="0"/>
+   <part id="usb" height-units="Millimeters" height="3.16" package-id="usb" speed="1.0" pick-retry-count="0"/>
+</openpnp-parts>
