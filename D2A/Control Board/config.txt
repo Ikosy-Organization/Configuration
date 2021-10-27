@@ -50,7 +50,7 @@ base_stepping_frequency                            100000                 # Base
 # 200 steps/rev * 32 uSteps/step / 360 degrees/rev   =  17.77777777778 uSteps/degree
 
 # X AXIS
-alpha_steps_per_mm                                 160                    # 160 Steps per mm.
+alpha_steps_per_mm                                 160                    # 160 micro steps per mm.
 alpha_step_pin                                     2.0                    # Pin for alpha stepper step signal.
 alpha_dir_pin                                      0.5!                   # Pin for alpha stepper direction, add '!' to reverse direction.
 alpha_en_pin                                       0.4                    # Pin for alpha enable pin.
@@ -60,7 +60,7 @@ alpha_acceleration                                 10000                  # In m
 x_axis_max_speed                                   80000                  # In mm/min.
 
 # Y AXIS
-beta_steps_per_mm                                  160                    # 160 Steps per mm.
+beta_steps_per_mm                                  160                    # 160 micro steps per mm.
 beta_step_pin                                      2.1                    # Pin for beta stepper step signal.
 beta_dir_pin                                       0.11!                  # Pin for beta stepper direction, add '!' to reverse direction.
 beta_en_pin                                        0.10                   # Pin for beta enable.
@@ -71,7 +71,7 @@ y_axis_max_speed                                   80000                  # In m
 
 # Z AXIS
 17.777777777778
-gamma_steps_per_mm                                 127.32395447351        # Steps per mm.
+gamma_steps_per_mm                                 127.32395447351        # Mirco steps per mm.
 gamma_step_pin                                     2.2                    # Pin for gamma stepper step signal.
 gamma_dir_pin                                      0.20!                  # Pin for gamma stepper direction, add '!' to reverse direction.
 gamma_en_pin                                       0.19                   # Pin for gamma enable.
@@ -81,7 +81,7 @@ gamma_acceleration                                 10000                  # In d
 z_axis_max_speed                                   20000                  # In degree/min.
 
 # A AXIS
-delta_steps_per_mm                                 17.777777777778        # Steps per degree.
+delta_steps_per_mm                                 17.777777777778        # Micro steps per degree.
 delta_step_pin                                     2.3                    # Pin for delta stepper step signal.
 delta_dir_pin                                      0.22                   # Pin for delta stepper direction.
 delta_en_pin                                       0.21                   # Pin for delta enable.
@@ -90,7 +90,7 @@ delta_max_rate                                     80000.0                # In d
 delta_acceleration                                 50000.0                # In degree/sec^2.
 
 # B AXIS
-epsilon_steps_per_mm                               17.777777777778        # Steps per degree.
+epsilon_steps_per_mm                               17.777777777778        # Micro steps per degree.
 epsilon_step_pin                                   2.8                    # Pin for delta stepper step signal.
 epsilon_dir_pin                                    2.13                   # Pin for delta stepper direction.
 epsilon_en_pin                                     4.29                   # Pin for delta enable.
@@ -247,7 +247,7 @@ endstop.minz.homing_direction                      home_to_min            # Dire
 endstop.minz.homing_position                       0                      # The coordinate (degrees) this is set to when it homes.
 endstop.minz.fast_rate                             25                     # Fast homing rate in mm/sec.
 endstop.minz.slow_rate                             5                      # Slow homing rate in mm/sec.
-endstop.minz.retract                               -4.85                  # Bounce off endstop in mm.
+endstop.minz.retract                               0                      # Bounce off endstop in mm.
 endstop.minz.release_first                         true                   # First move away from endstop until released.
 
 
