@@ -1,5 +1,5 @@
 <openpnp-machine>
-   <machine class="org.openpnp.machine.reference.ReferenceMachine" speed="0.74" auto-tool-select="true">
+   <machine class="org.openpnp.machine.reference.ReferenceMachine" speed="0.73" auto-tool-select="true">
       <axes>
          <axis class="org.openpnp.machine.reference.axis.ReferenceControllerAxis" id="AXS165bcf973840e3ac" name="X" type="X" driver-id="DRV165c19964c7c2824" letter="X" backlash-compensation-method="None" backlash-speed-factor="0.1" limit-rotation="false" wrap-around-rotation="false" invert-linear-rotational="false" soft-limit-low-enabled="true" soft-limit-high-enabled="true" safe-zone-low-enabled="false" safe-zone-high-enabled="false">
             <home-coordinate value="0.0" units="Millimeters"/>
@@ -22,7 +22,7 @@
             <safe-zone-high value="0.0" units="Millimeters"/>
             <feedrate-per-second value="750.0" units="Millimeters"/>
             <acceleration-per-second-2 value="3000.0" units="Millimeters"/>
-            <jerk-per-second-3 value="15000.0" units="Millimeters"/>
+            <jerk-per-second-3 value="10000.0" units="Millimeters"/>
             <resolution>0.00625</resolution>
          </axis>
          <axis class="org.openpnp.machine.reference.axis.ReferenceControllerAxis" id="AXS16a8877b760b42fc" name="Z" type="Z" driver-id="DRV165c19964c7c2824" letter="Z" backlash-compensation-method="None" backlash-speed-factor="0.1" limit-rotation="false" wrap-around-rotation="false" invert-linear-rotational="false" soft-limit-low-enabled="true" soft-limit-high-enabled="true" safe-zone-low-enabled="true" safe-zone-high-enabled="true">
@@ -99,23 +99,17 @@
                      <string>NT1</string>
                      <string>TIP16af7b87c6db95cc</string>
                   </compatible-nozzle-tip-ids>
-                  <head-offsets units="Millimeters" x="-15.0" y="-55.993" z="0.0" rotation="0.0"/>
+                  <head-offsets units="Millimeters" x="-14.74" y="-60.2" z="0.0" rotation="0.0"/>
                   <manual-nozzle-tip-change-location units="Millimeters" x="242.0" y="-48.293" z="0.0" rotation="0.0"/>
                   <vacuum-actuator-name>Nozzle1VacuumActuator</vacuum-actuator-name>
                   <blow-off-actuator-name>Nozzle1BlowOffActuator</blow-off-actuator-name>
                </nozzle>
-               <nozzle class="org.openpnp.machine.reference.ReferenceNozzle" axis-X-id="AXS165bcf973840e3ac" axis-Y-id="AXS165bcf97384b4ce8" axis-Z-id="AXS16a8877b760b42fc" axis-rotation-id="AXS165c09ca09bc48ec" id="NOZ165c09f01317c92c" name="Nozzle2" pick-dwell-milliseconds="500" place-dwell-milliseconds="0" changer-enabled="false" nozzle-tip-changed-on-manual-feed="false" enable-dynamic-safe-z="false" version="200" limit-rotation="true">
+               <nozzle class="org.openpnp.machine.reference.ReferenceNozzle" axis-X-id="AXS165bcf973840e3ac" axis-Y-id="AXS165bcf97384b4ce8" axis-Z-id="AXS16a8877b760b42fc" axis-rotation-id="AXS165c09ca09bc48ec" id="NOZ165c09f01317c92c" name="Nozzle2" pick-dwell-milliseconds="500" place-dwell-milliseconds="0" current-nozzle-tip-id="TIP16af7b8fdcb1ae60" changer-enabled="true" nozzle-tip-changed-on-manual-feed="false" enable-dynamic-safe-z="false" version="200" limit-rotation="true">
                   <compatible-nozzle-tip-ids class="java.util.ArrayList">
-                     <string>TIP1682fbff8ff0ca20</string>
-                     <string>TIP166cd382351142bc</string>
-                     <string>TIP1682fbe94a65f658</string>
-                     <string>NT1</string>
-                     <string>TIP1675c9f79e153128</string>
-                     <string>TIP1682fc03698ef998</string>
-                     <string>TIP167306fe44857b40</string>
-                     <string>TIP1682fbfac32bdc40</string>
+                     <string>TIP16af7b96de4fa644</string>
+                     <string>TIP16af7b8fdcb1ae60</string>
                   </compatible-nozzle-tip-ids>
-                  <head-offsets units="Millimeters" x="15.38" y="-55.523" z="0.0" rotation="0.0"/>
+                  <head-offsets units="Millimeters" x="12.87" y="-60.449" z="0.0" rotation="0.0"/>
                   <manual-nozzle-tip-change-location units="Millimeters" x="272.38" y="-47.823" z="0.0" rotation="0.0"/>
                   <vacuum-actuator-name>Nozzle2VacuumActuator</vacuum-actuator-name>
                   <blow-off-actuator-name>Nozzle2BlowOffActuator</blow-off-actuator-name>
@@ -145,13 +139,13 @@
                </actuator>
             </actuators>
             <cameras>
-               <camera class="org.openpnp.machine.reference.camera.OpenPnpCaptureCamera" axis-X-id="AXS165bcf973840e3ac" axis-Y-id="AXS165bcf97384b4ce8" axis-Z-id="AXS165bcf97384e03d4" axis-rotation-id="AXS165bcf97384eed08" id="CAM165ce07569ca1d18" name="TopCamera" looking="Down" auto-visible="true" shown-in-multi-camera-view="true" before-capture-light-on="true" user-action-light-on="true" after-capture-light-off="false" anti-glare-light-off="true" enable-units-per-pixel-3-d="false" auto-view-plane-z="false" settle-method="FixedTime" settle-time-ms="400" settle-timeout-ms="500" settle-threshold="0.0" settle-debounce="0" settle-full-color="false" settle-gaussian-blur="0" settle-gradients="false" settle-mask-circle="0.0" settle-contrast-enhance="0.0" settle-diagnostics="false" fps="5.0" suspend-preview-in-tasks="true" capture-try-count="4" capture-try-timeout-ms="2000" rotation="0.0" flip-x="true" flip-y="true" offset-x="0" offset-y="0" crop-width="0" crop-height="0" scale-width="0" scale-height="0" red-balance="1.0" green-balance="1.0" blue-balance="1.0" deinterlace="false" light-actuator-id="A1" allow-machine-actuators="false" focus-sensing-method="None" white-balance-lead-fractile="0.8" white-balance-clip-fractile="0.99" unique-id="HD USB Camera \\?\usb#vid_05a3&amp;pid_9230&amp;mi_00#8&amp;27c0dad3&amp;0&amp;0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\global" format-id="0">
-                  <units-per-pixel units="Millimeters" x="0.0209205" y="0.0209205" z="0.0" rotation="0.0"/>
+               <camera class="org.openpnp.machine.reference.camera.OpenPnpCaptureCamera" axis-X-id="AXS165bcf973840e3ac" axis-Y-id="AXS165bcf97384b4ce8" axis-Z-id="AXS165bcf97384e03d4" axis-rotation-id="AXS165bcf97384eed08" id="CAM165ce07569ca1d18" name="TopCamera" looking="Down" auto-visible="true" shown-in-multi-camera-view="true" before-capture-light-on="true" user-action-light-on="true" after-capture-light-off="false" anti-glare-light-off="true" enable-units-per-pixel-3-d="false" auto-view-plane-z="false" settle-method="FixedTime" settle-time-ms="400" settle-timeout-ms="500" settle-threshold="0.0" settle-debounce="0" settle-full-color="false" settle-gaussian-blur="0" settle-gradients="false" settle-mask-circle="0.0" settle-contrast-enhance="0.0" settle-diagnostics="false" fps="5.0" suspend-preview-in-tasks="true" capture-try-count="4" capture-try-timeout-ms="2000" rotation="0.0" flip-x="true" flip-y="true" offset-x="0" offset-y="0" crop-width="0" crop-height="0" scale-width="0" scale-height="0" red-balance="1.0" green-balance="1.0" blue-balance="1.0" deinterlace="false" light-actuator-id="A1" allow-machine-actuators="false" focus-sensing-method="None" white-balance-lead-fractile="0.8" white-balance-clip-fractile="0.99" unique-id="HD USB Camera \\?\usb#vid_05a3&amp;pid_9230&amp;mi_00#8&amp;24d7989&amp;0&amp;0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\global" format-id="0">
+                  <units-per-pixel units="Millimeters" x="0.01926782" y="0.01926782" z="0.0" rotation="0.0"/>
                   <vision-provider class="org.openpnp.machine.reference.vision.OpenCvVisionProvider"/>
                   <head-offsets units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
                   <calibration enabled="true">
-                     <camera-matrix length="9">15026.734553504033, 0.0, 927.6390959756865, 0.0, 14972.556246339513, 611.6916515311976, 0.0, 0.0, 1.0</camera-matrix>
-                     <distortion-coefficients length="5">-20.434562911942965, 597.5562399128121, -0.0509614533293566, 0.0845996722103182, -9183.480285394575</distortion-coefficients>
+                     <camera-matrix length="9">1831.9982307873693, 0.0, 911.5050779248002, 0.0, 1831.6611873170575, 476.2703403595653, 0.0, 0.0, 1.0</camera-matrix>
+                     <distortion-coefficients length="5">-0.7436725161562049, 0.7983267431856699, 0.005196178056850718, 0.009349231593357467, -0.4898866918954744</distortion-coefficients>
                   </calibration>
                   <focus-provider class="org.openpnp.machine.reference.camera.AutoFocusProvider" averaged-frames="1" focus-speed="0.5" show-diagnostics="true">
                      <focal-resolution value="0.05" units="Millimeters"/>
@@ -167,14 +161,14 @@
                   <power-line-frequency property="PowerLineFrequency" value="0" auto="false"/>
                   <saturation property="Saturation" value="60" auto="false"/>
                   <sharpness property="Sharpness" value="2" auto="false"/>
-                  <white-balance property="WhiteBalance" value="4600" auto="false"/>
+                  <white-balance property="WhiteBalance" value="5504" auto="false"/>
                   <zoom property="Zoom"/>
                </camera>
             </cameras>
             <park-location units="Millimeters" x="255.0" y="330.0" z="0.0" rotation="0.0"/>
             <soft-limits-enabled>false</soft-limits-enabled>
             <pump-actuator-name>VacuumPumpActuator</pump-actuator-name>
-            <homing-fiducial-location units="Millimeters" x="113.008" y="6.711" z="0.0" rotation="0.0"/>
+            <homing-fiducial-location units="Millimeters" x="110.851" y="8.589" z="0.0" rotation="0.0"/>
          </head>
       </heads>
       <signalers/>
@@ -1049,13 +1043,13 @@
          </feeder>
       </feeders>
       <cameras>
-         <camera class="org.openpnp.machine.reference.camera.OpenPnpCaptureCamera" id="CAM165d05be57df7828" name="BottomCamera" looking="Up" auto-visible="false" shown-in-multi-camera-view="true" before-capture-light-on="false" user-action-light-on="false" after-capture-light-off="true" anti-glare-light-off="true" enable-units-per-pixel-3-d="false" auto-view-plane-z="false" settle-method="FixedTime" settle-time-ms="1000" settle-timeout-ms="500" settle-threshold="0.0" settle-debounce="0" settle-full-color="false" settle-gaussian-blur="0" settle-gradients="false" settle-mask-circle="0.0" settle-contrast-enhance="0.0" settle-diagnostics="false" fps="5.0" suspend-preview-in-tasks="false" capture-try-count="4" capture-try-timeout-ms="2000" rotation="0.0" flip-x="true" flip-y="false" offset-x="0" offset-y="0" crop-width="0" crop-height="0" scale-width="0" scale-height="0" red-balance="1.0" green-balance="1.0" blue-balance="1.0" deinterlace="false" light-actuator-id="ACT165d075d2d206188" allow-machine-actuators="false" focus-sensing-method="None" white-balance-lead-fractile="0.8" white-balance-clip-fractile="0.99" unique-id="HD USB Camera \\?\usb#vid_05a3&amp;pid_9230&amp;mi_00#6&amp;112b1bd&amp;0&amp;0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\global" format-id="0">
-            <units-per-pixel units="Millimeters" x="0.02666667" y="0.02624672" z="0.0" rotation="0.0"/>
+         <camera class="org.openpnp.machine.reference.camera.OpenPnpCaptureCamera" id="CAM165d05be57df7828" name="BottomCamera" looking="Up" auto-visible="true" shown-in-multi-camera-view="true" before-capture-light-on="true" user-action-light-on="true" after-capture-light-off="true" anti-glare-light-off="true" enable-units-per-pixel-3-d="false" auto-view-plane-z="false" settle-method="FixedTime" settle-time-ms="1000" settle-timeout-ms="500" settle-threshold="0.0" settle-debounce="0" settle-full-color="false" settle-gaussian-blur="0" settle-gradients="false" settle-mask-circle="0.0" settle-contrast-enhance="0.0" settle-diagnostics="false" fps="5.0" suspend-preview-in-tasks="false" capture-try-count="4" capture-try-timeout-ms="2000" rotation="0.0" flip-x="true" flip-y="false" offset-x="0" offset-y="0" crop-width="0" crop-height="0" scale-width="0" scale-height="0" red-balance="1.0" green-balance="1.0" blue-balance="1.0" deinterlace="false" light-actuator-id="ACT165d075d2d206188" allow-machine-actuators="false" focus-sensing-method="None" white-balance-lead-fractile="0.8" white-balance-clip-fractile="0.99" unique-id="HD USB Camera \\?\usb#vid_05a3&amp;pid_9230&amp;mi_00#6&amp;112b1bd&amp;0&amp;0000#{65e8773d-8f56-11d0-a3b9-00a0c9223196}\global" format-id="0">
+            <units-per-pixel units="Millimeters" x="0.02123142" y="0.02087683" z="0.0" rotation="0.0"/>
             <vision-provider class="org.openpnp.machine.reference.vision.OpenCvVisionProvider"/>
-            <head-offsets units="Millimeters" x="254.992" y="-31.793" z="0.0" rotation="0.0"/>
+            <head-offsets units="Millimeters" x="13.252" y="-25.248" z="-22.0" rotation="0.0"/>
             <calibration enabled="true">
-               <camera-matrix length="9">1917.7521942476444, 0.0, 1003.1928798214884, 0.0, 1911.8950217106167, 574.9866419597122, 0.0, 0.0, 1.0</camera-matrix>
-               <distortion-coefficients length="5">-0.38533356905294225, 0.41939204995375545, -0.0033381035994221636, 0.007901488440676611, -0.48620047784805437</distortion-coefficients>
+               <camera-matrix length="9">9480.05314835371, 0.0, 911.7887441580538, 0.0, 9504.435636879458, 511.645803666261, 0.0, 0.0, 1.0</camera-matrix>
+               <distortion-coefficients length="5">-22.274981593527855, 399.78767820739785, 0.05621328908925041, -0.0035705224268213678, 17852.752592354016</distortion-coefficients>
             </calibration>
             <focus-provider class="org.openpnp.machine.reference.camera.AutoFocusProvider" averaged-frames="1" focus-speed="0.5" show-diagnostics="true">
                <focal-resolution value="0.05" units="Millimeters"/>
@@ -1063,7 +1057,7 @@
             <back-light-compensation property="BackLightCompensation" value="1" auto="false"/>
             <brightness property="Brightness" value="0" auto="false"/>
             <contrast property="Contrast" value="32" auto="false"/>
-            <exposure property="Exposure" value="-7" auto="false"/>
+            <exposure property="Exposure" value="-8" auto="false"/>
             <focus property="Focus"/>
             <gain property="Gain" value="0" auto="false"/>
             <gamma property="Gamma" value="72" auto="false"/>
@@ -3364,7 +3358,7 @@
             <junction-deviation value="0.02" units="Millimeters"/>
          </driver>
       </drivers>
-      <discard-location units="Millimeters" x="186.604" y="377.0" z="0.0" rotation="0.0"/>
+      <discard-location units="Millimeters" x="133.876" y="120.943" z="0.0" rotation="0.0"/>
       <properties>
          <entry>
             <string>MultiPlacementBoardLocationProperties</string>
@@ -3382,13 +3376,13 @@
       </properties>
       <nozzle-tips>
          <nozzle-tip class="org.openpnp.machine.reference.ReferenceNozzleTip" id="TIP16af7b21260fa824" name="SamsungNozzleTip-N045-1" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" vision-calibration="None" vision-calibration-trigger="Manual" vision-match-minimum-score="0.2" vision-calibration-max-passes="3" z-calibration-trigger="Manual" z-calibration-fail-homing="true" template-nozzle-tip="true" template-locked="false" establish-part-on-level="false" establish-part-off-level="false" part-off-probing-milliseconds="0" part-off-dwell-milliseconds="0" is-push-and-drag-allowed="false">
-            <changer-start-location units="Millimeters" x="16.3" y="214.907" z="0.0" rotation="0.0"/>
+            <changer-start-location units="Millimeters" x="19.173" y="218.865" z="0.0" rotation="0.0"/>
             <changer-start-to-mid-speed>0.5</changer-start-to-mid-speed>
-            <changer-mid-location units="Millimeters" x="16.3" y="214.907" z="-17.8" rotation="0.0"/>
+            <changer-mid-location units="Millimeters" x="19.173" y="218.865" z="-19.9" rotation="0.0"/>
             <changer-mid-to-mid-2-speed>0.5</changer-mid-to-mid-2-speed>
-            <changer-mid-location-2 units="Millimeters" x="16.3" y="214.907" z="-16.3" rotation="0.0"/>
+            <changer-mid-location-2 units="Millimeters" x="19.173" y="218.865" z="-17.9" rotation="0.0"/>
             <changer-mid-2-to-end-speed>0.5</changer-mid-2-to-end-speed>
-            <changer-end-location units="Millimeters" x="35.0" y="214.907" z="-16.3" rotation="0.0"/>
+            <changer-end-location units="Millimeters" x="35.0" y="218.865" z="-17.9" rotation="0.0"/>
             <touch-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
             <vision-template-dimension-x value="10.0" units="Millimeters"/>
             <vision-template-dimension-y value="10.0" units="Millimeters"/>
@@ -3436,14 +3430,14 @@
             <diameter-low value="0.0" units="Millimeters"/>
          </nozzle-tip>
          <nozzle-tip class="org.openpnp.machine.reference.ReferenceNozzleTip" id="TIP16af7b7eb098b2d0" name="SamsungNozzleTip-N08-1" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" vision-calibration="None" vision-calibration-trigger="Manual" vision-match-minimum-score="0.2" vision-calibration-max-passes="3" z-calibration-trigger="Manual" z-calibration-fail-homing="true" template-nozzle-tip="false" template-locked="false" establish-part-on-level="false" establish-part-off-level="false" part-off-probing-milliseconds="0" part-off-dwell-milliseconds="0" is-push-and-drag-allowed="false">
-            <changer-start-location units="Millimeters" x="16.3" y="229.907" z="0.0" rotation="0.0"/>
+            <changer-start-location units="Millimeters" x="19.003" y="233.669" z="0.0" rotation="0.0"/>
             <changer-start-to-mid-speed>0.5</changer-start-to-mid-speed>
-            <changer-mid-location units="Millimeters" x="16.3" y="229.907" z="-17.8" rotation="0.0"/>
+            <changer-mid-location units="Millimeters" x="19.003" y="233.669" z="-19.9" rotation="0.0"/>
             <changer-mid-to-mid-2-speed>0.5</changer-mid-to-mid-2-speed>
-            <changer-mid-location-2 units="Millimeters" x="16.3" y="229.907" z="-16.3" rotation="0.0"/>
+            <changer-mid-location-2 units="Millimeters" x="19.003" y="233.669" z="-17.9" rotation="0.0"/>
             <changer-mid-2-to-end-speed>0.5</changer-mid-2-to-end-speed>
-            <changer-end-location units="Millimeters" x="35.0" y="229.907" z="-16.3" rotation="0.0"/>
-            <touch-location units="Millimeters" x="0.0" y="15.0" z="0.0" rotation="0.0"/>
+            <changer-end-location units="Millimeters" x="34.83" y="233.669" z="-17.9" rotation="0.0"/>
+            <touch-location units="Millimeters" x="-0.16999999999999815" y="14.804000000000002" z="0.0" rotation="0.0"/>
             <vision-template-dimension-x value="10.0" units="Millimeters"/>
             <vision-template-dimension-y value="10.0" units="Millimeters"/>
             <vision-template-tolerance value="4.0" units="Millimeters"/>
@@ -3490,14 +3484,14 @@
             <diameter-low value="0.0" units="Millimeters"/>
          </nozzle-tip>
          <nozzle-tip class="org.openpnp.machine.reference.ReferenceNozzleTip" id="TIP16af7b87c6db95cc" name="SamsungNozzleTip-N14-1" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" vision-calibration="None" vision-calibration-trigger="Manual" vision-match-minimum-score="0.2" vision-calibration-max-passes="3" z-calibration-trigger="Manual" z-calibration-fail-homing="true" template-nozzle-tip="false" template-locked="false" establish-part-on-level="false" establish-part-off-level="false" part-off-probing-milliseconds="0" part-off-dwell-milliseconds="0" is-push-and-drag-allowed="false">
-            <changer-start-location units="Millimeters" x="16.3" y="244.907" z="0.0" rotation="0.0"/>
+            <changer-start-location units="Millimeters" x="19.166" y="248.852" z="0.0" rotation="0.0"/>
             <changer-start-to-mid-speed>0.5</changer-start-to-mid-speed>
-            <changer-mid-location units="Millimeters" x="16.3" y="244.907" z="-17.8" rotation="0.0"/>
+            <changer-mid-location units="Millimeters" x="19.166" y="248.852" z="-19.9" rotation="0.0"/>
             <changer-mid-to-mid-2-speed>0.5</changer-mid-to-mid-2-speed>
-            <changer-mid-location-2 units="Millimeters" x="16.3" y="244.907" z="-16.3" rotation="0.0"/>
+            <changer-mid-location-2 units="Millimeters" x="19.166" y="248.852" z="-17.9" rotation="0.0"/>
             <changer-mid-2-to-end-speed>0.5</changer-mid-2-to-end-speed>
-            <changer-end-location units="Millimeters" x="35.0" y="244.907" z="-16.3" rotation="0.0"/>
-            <touch-location units="Millimeters" x="0.0" y="30.0" z="0.0" rotation="0.0"/>
+            <changer-end-location units="Millimeters" x="34.993" y="248.852" z="-17.9" rotation="0.0"/>
+            <touch-location units="Millimeters" x="-0.006999999999997897" y="29.986999999999995" z="0.0" rotation="0.0"/>
             <vision-template-dimension-x value="10.0" units="Millimeters"/>
             <vision-template-dimension-y value="10.0" units="Millimeters"/>
             <vision-template-tolerance value="4.0" units="Millimeters"/>
@@ -3544,14 +3538,14 @@
             <diameter-low value="0.0" units="Millimeters"/>
          </nozzle-tip>
          <nozzle-tip class="org.openpnp.machine.reference.ReferenceNozzleTip" id="TIP16af7b8c63623848" name="SamsungNozzleTip-N24-1" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" vision-calibration="None" vision-calibration-trigger="Manual" vision-match-minimum-score="0.2" vision-calibration-max-passes="3" z-calibration-trigger="Manual" z-calibration-fail-homing="true" template-nozzle-tip="false" template-locked="false" establish-part-on-level="false" establish-part-off-level="false" part-off-probing-milliseconds="0" part-off-dwell-milliseconds="0" is-push-and-drag-allowed="false">
-            <changer-start-location units="Millimeters" x="16.3" y="259.907" z="0.0" rotation="0.0"/>
+            <changer-start-location units="Millimeters" x="19.235" y="263.74" z="0.0" rotation="0.0"/>
             <changer-start-to-mid-speed>0.5</changer-start-to-mid-speed>
-            <changer-mid-location units="Millimeters" x="16.3" y="259.907" z="-17.8" rotation="0.0"/>
+            <changer-mid-location units="Millimeters" x="19.235" y="263.74" z="-19.9" rotation="0.0"/>
             <changer-mid-to-mid-2-speed>0.5</changer-mid-to-mid-2-speed>
-            <changer-mid-location-2 units="Millimeters" x="16.3" y="259.907" z="-16.3" rotation="0.0"/>
+            <changer-mid-location-2 units="Millimeters" x="19.235" y="263.74" z="-17.9" rotation="0.0"/>
             <changer-mid-2-to-end-speed>0.5</changer-mid-2-to-end-speed>
-            <changer-end-location units="Millimeters" x="35.0" y="259.907" z="-16.3" rotation="0.0"/>
-            <touch-location units="Millimeters" x="0.0" y="44.99999999999997" z="0.0" rotation="0.0"/>
+            <changer-end-location units="Millimeters" x="35.062" y="263.74" z="-17.9" rotation="0.0"/>
+            <touch-location units="Millimeters" x="0.062000000000001165" y="44.875" z="0.0" rotation="0.0"/>
             <vision-template-dimension-x value="10.0" units="Millimeters"/>
             <vision-template-dimension-y value="10.0" units="Millimeters"/>
             <vision-template-tolerance value="4.0" units="Millimeters"/>
@@ -3598,13 +3592,13 @@
             <diameter-low value="0.0" units="Millimeters"/>
          </nozzle-tip>
          <nozzle-tip class="org.openpnp.machine.reference.ReferenceNozzleTip" id="TIP16af7b8fdcb1ae60" name="SamsungNozzleTip-N40-1" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" vision-calibration="None" vision-calibration-trigger="Manual" vision-match-minimum-score="0.2" vision-calibration-max-passes="3" z-calibration-trigger="Manual" z-calibration-fail-homing="true" template-nozzle-tip="false" template-locked="false" establish-part-on-level="false" establish-part-off-level="false" part-off-probing-milliseconds="0" part-off-dwell-milliseconds="0" is-push-and-drag-allowed="false">
-            <changer-start-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+            <changer-start-location units="Millimeters" x="243.203" y="231.269" z="0.0" rotation="0.0"/>
             <changer-start-to-mid-speed>1.0</changer-start-to-mid-speed>
-            <changer-mid-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+            <changer-mid-location units="Millimeters" x="243.203" y="231.269" z="-20.0" rotation="0.0"/>
             <changer-mid-to-mid-2-speed>1.0</changer-mid-to-mid-2-speed>
-            <changer-mid-location-2 units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+            <changer-mid-location-2 units="Millimeters" x="243.203" y="231.269" z="-18.8" rotation="0.0"/>
             <changer-mid-2-to-end-speed>1.0</changer-mid-2-to-end-speed>
-            <changer-end-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+            <changer-end-location units="Millimeters" x="225.603" y="231.269" z="-18.8" rotation="0.0"/>
             <touch-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
             <vision-template-dimension-x value="10.0" units="Millimeters"/>
             <vision-template-dimension-y value="10.0" units="Millimeters"/>
@@ -3652,13 +3646,13 @@
             <diameter-low value="0.0" units="Millimeters"/>
          </nozzle-tip>
          <nozzle-tip class="org.openpnp.machine.reference.ReferenceNozzleTip" id="TIP16af7b96de4fa644" name="SamsungNozzleTip-N75-1" pick-dwell-milliseconds="0" place-dwell-milliseconds="0" vision-calibration="None" vision-calibration-trigger="Manual" vision-match-minimum-score="0.2" vision-calibration-max-passes="3" z-calibration-trigger="Manual" z-calibration-fail-homing="true" template-nozzle-tip="false" template-locked="false" establish-part-on-level="false" establish-part-off-level="false" part-off-probing-milliseconds="0" part-off-dwell-milliseconds="0" is-push-and-drag-allowed="false">
-            <changer-start-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+            <changer-start-location units="Millimeters" x="243.303" y="246.169" z="0.0" rotation="0.0"/>
             <changer-start-to-mid-speed>1.0</changer-start-to-mid-speed>
-            <changer-mid-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+            <changer-mid-location units="Millimeters" x="243.303" y="246.169" z="-20.0" rotation="0.0"/>
             <changer-mid-to-mid-2-speed>1.0</changer-mid-to-mid-2-speed>
-            <changer-mid-location-2 units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+            <changer-mid-location-2 units="Millimeters" x="243.303" y="246.169" z="-18.8" rotation="0.0"/>
             <changer-mid-2-to-end-speed>1.0</changer-mid-2-to-end-speed>
-            <changer-end-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
+            <changer-end-location units="Millimeters" x="225.603" y="246.169" z="-18.8" rotation="0.0"/>
             <touch-location units="Millimeters" x="0.0" y="0.0" z="0.0" rotation="0.0"/>
             <vision-template-dimension-x value="10.0" units="Millimeters"/>
             <vision-template-dimension-y value="10.0" units="Millimeters"/>
@@ -5564,11 +5558,11 @@
             <board-location-tolerance value="5.0" units="Millimeters"/>
          </tolerances>
       </fiducial-locator>
-      <motion-planner class="org.openpnp.machine.reference.driver.ReferenceAdvancedMotionPlanner" maximum-plan-history="60.0" allow-continuous-motion="true" allow-uncoordinated="false" diagnostics-enabled="true" interpolation-retiming="true" show-approximation="true" to-mid-1-speed="1.0" to-mid-2-speed="1.0" to-end-speed="1.0" start-location-enabled="true" mid-1-location-enabled="true" mid-2-location-enabled="false" end-location-enabled="false" to-mid-1-safe-z="true" to-mid-2-safe-z="true" to-end-safe-z="true">
-         <start-location units="Millimeters" x="186.0" y="149.1" z="0.0" rotation="90.0"/>
-         <mid-location-1 units="Millimeters" x="186.0" y="149.1" z="0.0" rotation="90.0"/>
-         <mid-location-2 units="Millimeters" x="25.34" y="99.32" z="0.0" rotation="0.0"/>
-         <end-location units="Millimeters" x="10.0" y="100.0" z="0.0" rotation="0.0"/>
+      <motion-planner class="org.openpnp.machine.reference.driver.ReferenceAdvancedMotionPlanner" maximum-plan-history="60.0" allow-continuous-motion="true" allow-uncoordinated="false" diagnostics-enabled="true" interpolation-retiming="true" show-approximation="true" to-mid-1-speed="0.5" to-mid-2-speed="0.5" to-end-speed="0.5" start-location-enabled="true" mid-1-location-enabled="true" mid-2-location-enabled="true" end-location-enabled="true" to-mid-1-safe-z="true" to-mid-2-safe-z="true" to-end-safe-z="true">
+         <start-location units="Millimeters" x="23.008" y="6.711" z="0.0" rotation="90.0"/>
+         <mid-location-1 units="Millimeters" x="23.008" y="306.711" z="0.0" rotation="90.0"/>
+         <mid-location-2 units="Millimeters" x="23.008" y="6.711" z="0.0" rotation="0.0"/>
+         <end-location units="Millimeters" x="23.008" y="306.711" z="0.0" rotation="0.0"/>
       </motion-planner>
       <home-after-enabled>true</home-after-enabled>
       <solutions target-milestone="Advanced">
