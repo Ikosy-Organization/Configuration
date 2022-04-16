@@ -1,0 +1,373 @@
+# OpenPnP Smoothieboard configuration.
+# Configuration for 5 Axis Build and Z homing.
+# -------------------------------------------- 
+
+# Smoothieboard configuration file, see http://smoothieware.org/configuring-smoothie.
+# NOTE Lines must not exceed 132 characters, and '#' characters mean what follows is ignored.
+
+# Fix for incorrect Digipots used on Smoothieboard Clones.
+# digipot_factor                                     36.6
+# digipot_max_current                                2.0                    # Maximum current that can be set.
+
+
+# Basic motion configuration.
+default_feed_rate                                  80000                  # Default speed (mm/minute) for G1/G2/G3 moves.
+default_seek_rate                                  80000                  # Default speed (mm/minute) for G0 moves.
+mm_per_arc_segment                                 0.5                    # Arcs are cut into segments (lines), this is the length for these segments.  
+
+# Planner module configuration.  Look-ahead and acceleration configuration.
+planner_queue_size                                 40                     # DO NOT CHANGE THIS UNLESS YOU KNOW EXACTLY WHAT YOUR ARE DOING.
+acceleration                                       5000                   # Acceleration in mm/second/second (was 10,000, reduced in an attempt to reduce oscillation of belt).
+z_acceleration                                     6000                   # Acceleration for Z only moves in mm/s^2, 0 disables it, disabled by default. DO NOT SET ON A DELTA.
+acceleration_ticks_per_second                      1000                   # Number of times per second the speed is updated.
+junction_deviation                                 0.005                  # Similar to the old "max_jerk", in millimeters, see: https://github.com/grbl/grbl/blob/master/planner.c#L409
+
+# Stepper module configuration.
+microseconds_per_step_pulse                        1                      # Duration of step pulses to stepper drivers, in microseconds.
+base_stepping_frequency                            100000                 # Base frequency for stepping, higher gives smoother movement.
+
+
+# STEPPER MODULE CONFIGURATION
+# Pins are defined as  ports and pin numbers.  Appending "!" to the number will invert a pin.
+
+# STEP CALCULATION
+# Calculator: https://www.prusaprinters.org/calculator/
+# 20 teeth gears
+# 12.73 mm gear pitch diameter
+# 1/32 uStepping
+# GT2 belt with 2mm spacing
+# 1.8 degree/step motors (200 steps/revolution)
+#
+# X and Y axis.
+# 200 steps/rev * 32 uSteps/step / (12.73*Pi mm/rev) = 160.03010774362 uSteps/mm
+#
+# Z axis.
+# r = 8 mm.
+# 1 step/1.8 degs * 32 uSteps/step * 180 deg/(Pi*r mm) = 127.32395447351 uSteps/mm
+#
+# A axis and B axis.
+# For rotational axis, treat as steps/degree.
+# 200 steps/rev * 32 uSteps/step / 360 degrees/rev   =  17.77777777778 uSteps/degree
+
+# X AXIS
+alpha_steps_per_mm                                 160                    # 160 micro steps per mm.
+alpha_step_pin                                     2.0                    # Pin for alpha stepper step signal.
+alpha_dir_pin                                      0.5!                   # Pin for alpha stepper direction, add '!' to the end to reverse direction.
+alpha_en_pin                                       0.4                    # Pin for alpha enable pin.
+alpha_current                                      1.8                    # X stepper motor current - Max 1.8.
+alpha_max_rate                                     80000                  # Maximum rate in mm/min.
+alpha_acceleration                                 10000                  # In mm/sec^2.
+x_axis_max_speed                                   80000                  # In mm/min.
+
+# Y AXIS
+beta_steps_per_mm                                  160                    # 160 micro steps per mm.
+beta_step_pin                                      2.1                    # Pin for beta stepper step signal.
+beta_dir_pin                                       0.11!                  # Pin for beta stepper direction, add '!' to the end to reverse direction.
+beta_en_pin                                        0.10                   # Pin for beta enable.
+beta_current                                       1.8                    # Y stepper motor current - Max 1.8.
+beta_max_rate                                      80000                  # Maxmimum rate in mm/min.
+beta_acceleration                                  10000                  # In mm/sec^2.
+y_axis_max_speed                                   80000                  # In mm/min.
+
+# Z AXIS
+17.777777777778
+gamma_steps_per_mm                                 127.32395447351        # Mirco steps per mm.
+gamma_step_pin                                     2.2                    # Pin for gamma stepper step signal.
+gamma_dir_pin                                      0.20                   # Pin for gamma stepper direction, add '!' to the end to reverse direction.
+gamma_en_pin                                       0.19                   # Pin for gamma enable.
+gamma_current                                      0.7                    # Z stepper motor current - Max 0.7.
+gamma_max_rate                                     80000                  # Maximum rate in degree/min.
+gamma_acceleration                                 10000                  # In degree/sec^2.
+z_axis_max_speed                                   20000                  # In degree/min.
+
+# A AXIS
+delta_steps_per_mm                                 17.777777777778        # Micro steps per degree.
+delta_step_pin                                     2.3                    # Pin for delta stepper step signal.
+delta_dir_pin                                      0.22                   # Pin for delta stepper direction.
+delta_en_pin                                       0.21                   # Pin for delta enable.
+delta_current                                      0.3                    # Stepper motor current - Max 0.6.
+delta_max_rate                                     80000.0                # In degree/min.
+delta_acceleration                                 50000.0                # In degree/sec^2.
+
+# B AXIS
+epsilon_steps_per_mm                               17.777777777778        # Micro steps per degree.
+epsilon_step_pin                                   2.8                    # Pin for delta stepper step signal.
+epsilon_dir_pin                                    2.13                   # Pin for delta stepper direction.
+epsilon_en_pin                                     4.29                   # Pin for delta enable.
+epsilon_current                                    0.3                    # Stepper motor current - Max 0.6.
+epsilon_max_rate                                   80000.0                # In degree/min.
+epsilon_acceleration                               50000.0                # In degree/sec^2.
+
+
+# VACUUM, EJECTION and LIGHTS
+# http://smoothieware.org/mosfets
+
+# Vacuum pump.
+# First large mosfet.
+switch.vacuum_pump.enable                          true                   # Enable this module.
+switch.vacuum_pump.startup_state                   false                  # Turned off at start.
+switch.vacuum_pump.input_off_command               M800                   # Command that will turn this switch off.
+switch.vacuum_pump.input_on_command                M801                   # Command that will turn this switch on.
+switch.vacuum_pump.output_pin                      2.7                    # Pin to control first big mosfet.
+switch.vacuum_pump.output_type                     digital                # Digital means this is just an on or off pin.
+
+# Nozzle 1 vacuum (left).
+# Second large mosfet.
+switch.vacuum_nozzle_1.enable                      true                   # Enable this module.
+switch.vacuum_nozzle_1.startup_state               false                  # Turned off at start.
+switch.vacuum_nozzle_1.input_off_command           M802                   # Command that will turn this switch off.
+switch.vacuum_nozzle_1.input_on_command            M803                   # Command that will turn this switch on.
+switch.vacuum_nozzle_1.output_pin                  2.5                    # Pin to control second big mosfet.
+switch.vacuum_nozzle_1.output_type                 digital                # Digital means this is just an on or off pin.
+
+# Top (down looking) light control.
+# First small mosfet.
+switch.top_light.enable                            true                   # Enable this module.
+switch.top_light.startup_state                     false                  # Turned off at start.
+switch.top_light.input_off_command                 M804                   # Command that will turn this switch off.
+switch.top_light.input_on_command                  M805                   # Command that will turn this switch on.
+switch.top_light.output_pin                        2.4                    # Pin to control first small mosfet.
+switch.top_light.output_type                       digital                # Digital means this is just an on or off pin.
+
+# Bottom (up looking) light control.
+# Second small mosfet.
+switch.bottom_light.enable                         true                   # Enable this module.
+switch.bottom_light.startup_state                  false                  # Turned off at start.
+switch.bottom_light.input_off_command              M806                   # Command that will turn this switch off.
+switch.bottom_light.input_on_command               M807                   # Command that will turn this switch on.
+switch.bottom_light.output_pin                     2.6                    # Pin to control second small mosfet.
+switch.bottom_light.output_type                    digital                # Digital means this is just an on or off pin.
+
+# Nozzle 2 vacuum (right).
+# Third large mosfet.
+switch.vacuum_nozzle_2.enable                      true                   # Enable this module.
+switch.vacuum_nozzle_2.startup_state               false                  # Turned off at start.
+switch.vacuum_nozzle_2.input_off_command           M808                   # Command that will turn this switch off.
+switch.vacuum_nozzle_2.input_on_command            M809                   # Command that will turn this switch on.
+switch.vacuum_nozzle_2.output_pin                  1.23                   # Pin to control third big mosfet.
+switch.vacuum_nozzle_2.output_type                 digital                # Digital means this is just an on or off pin.
+
+# Nozzle 1 ejection (left).
+# Third small mosfet.
+switch.ejection_nozzle_1.enable                    true                   # Enable this module.
+switch.ejection_nozzle_1.startup_state             false                  # Turned off at start.
+switch.ejection_nozzle_1.input_off_command         M810                   # Command that will turn this switch off.
+switch.ejection_nozzle_1.input_on_command          M811                   # Command that will turn this switch on.
+switch.ejection_nozzle_1.output_pin                1.22                   # Pin to control third small mosfet.
+switch.ejection_nozzle_1.output_type               digital                # Digital means this is just an on or off pin.
+
+# Ejection pump.
+# GPIO pin at edge of board.
+# External mosfet.
+switch.ejection_pump.enable                        true                   # Enable this module.
+switch.ejection_pump.startup_state                 false                  # Turned off at start.
+switch.ejection_pump.input_off_command             M812                   # Command that will turn this switch off.
+switch.ejection_pump.input_on_command              M813                   # Command that will turn this switch on.
+switch.ejection_pump.output_pin                    0.26                   # Pin to control first small mosfet.
+switch.ejection_pump.output_type                   digital                # Digital means this is just an on or off pin.
+
+# Nozzle 2 ejection (right).
+# GPIO pin at edge of board.
+# External mosfet.
+switch.ejection_nozzle_2.enable                    true                   # Enable this module.
+switch.ejection_nozzle_2.startup_state             false                  # Turned off at start.
+switch.ejection_nozzle_2.input_off_command         M814                   # Command that will turn this switch off.
+switch.ejection_nozzle_2.input_on_command          M815                   # Command that will turn this switch on.
+switch.ejection_nozzle_2.output_pin                0.25                   # Pin to control first small mosfet.
+switch.ejection_nozzle_2.output_type               digital                # Digital means this is just an on or off pin.
+
+
+# VACUUM SENSORS
+# Nozzle 1.
+temperature_control.nozzle_1.enable                true
+temperature_control.nozzle_1.sensor                ad8495                 # Nozzle 1 vacuum.
+temperature_control.nozzle_1.ad8495_pin            0.24                   # Pin to read.
+temperature_control.nozzle_1.ad8495_offset         100
+temperature_control.nozzle_1.readings_per_second   50
+temperature_control.nozzle_1.get_m_code            831                    # M code to get this temp i.e. M831.
+
+# Nozzle 2.
+temperature_control.nozzle_2.enable                true
+temperature_control.nozzle_2.sensor                ad8495                 # Nozzle 2 vacuum.
+temperature_control.nozzle_2.ad8495_pin            0.23                   # Pin to read.
+temperature_control.nozzle_2.ad8495_offset         100
+temperature_control.nozzle_2.readings_per_second   50
+temperature_control.nozzle_2.get_m_code            832                    # M code to get this temp i.e. M832.
+
+
+# HARD ENDSTOPS
+# New syntax.
+# NOTE only a min or a max *homing* endstop maybe defined.
+# NOTE Failure to add a *.axis property will disable the endstop.
+
+# X min (home).
+endstop.minx.enable                                true                   # Enable an endstop.
+endstop.minx.limit_enable                          true                   # Set to true to enable the limit on this endstop.
+endstop.minx.pin                                   1.24^                  # Pin.
+endstop.minx.axis                                  X                      # The axis designator.
+endstop.minx.max_travel                            270                    # The maximum travel in mm before it times out.
+endstop.minx.homing_direction                      home_to_min            # Direction it moves to the endstop.
+endstop.minx.homing_position                       0                      # The cartesian coordinate this is set to when it homes.
+endstop.minx.fast_rate                             70                     # Fast homing rate in mm/sec.
+endstop.minx.slow_rate                             10                     # Slow homing rate in mm/sec.
+endstop.minx.retract                               5                      # Bounce off endstop in mm.
+
+# X max.
+endstop.maxx.enable                                true                   # Enable an endstop.
+endstop.maxx.limit_enable                          true                   # Set to true to enable the limit on this endstop.
+endstop.maxx.pin                                   1.25^                  # Pin.
+endstop.maxx.axis                                  X                      # The axis designator.
+endstop.maxx.max_travel                            355                    # The maximum travel in mm before it times out.
+
+# Y min (home).
+endstop.miny.enable                                true                   # Enable an endstop.
+endstop.miny.limit_enable                          true                   # Set to true to enable the limit on this endstop.
+endstop.miny.pin                                   1.26^                  # Pin.
+endstop.miny.axis                                  Y                      # The axis designator.
+endstop.miny.max_travel                            350                    # The maximum travel in mm before it times out.
+endstop.miny.homing_direction                      home_to_min            # Direction it moves to the endstop.
+endstop.miny.homing_position                       0                      # The cartesian coordinate this is set to when it homes.
+endstop.miny.fast_rate                             70                     # Fast homing rate in mm/sec.
+endstop.miny.slow_rate                             10                     # Slow homing rate in mm/sec.
+endstop.miny.retract                               5                      # Bounce off endstop in mm.
+
+# Y max.
+endstop.maxy.enable                                true                   # Enable an endstop.
+endstop.maxy.limit_enable                          true                   # Set to true to enable the limit on this endstop.
+endstop.maxy.pin                                   1.27^                  # Pin.
+endstop.maxy.axis                                  Y                      # The axis designator.
+endstop.maxy.max_travel                            430                    # The maximum travel in mm before it times out.
+
+# Z min (home).
+# The "min" module is used but this is a mid-axis homing sensor.
+endstop.minz.enable                                true                   # Enable an endstop.
+endstop.minz.pin                                   1.28^!                 # Pin.
+endstop.minz.axis                                  Z                      # The axis designator.
+endstop.minz.max_travel                            360                    # The maximum travel in deg before it times out.
+endstop.minz.homing_direction                      home_to_min            # Direction it moves to the endstop.
+endstop.minz.homing_position                       0                      # The coordinate (degrees) this is set to when it homes.
+endstop.minz.fast_rate                             25                     # Fast homing rate in mm/sec.
+endstop.minz.slow_rate                             5                      # Slow homing rate in mm/sec.
+endstop.minz.retract                               0                      # Bounce off endstop in mm.
+endstop.minz.release_first                         true                   # First move away from endstop until released.
+
+
+# SOFT ENDSTOPS
+# Use soft endstops to prevent illegal moves beyond the actual endstops
+soft_endstop.enable                                false                  # Enable soft endstops.
+soft_endstop.x_min                                 0                      # Minimum X position.
+soft_endstop.x_max                                 347                    # Maximum X position. Set slightly higher than the soft limit in OpenPnP.
+
+soft_endstop.y_min                                 0                      # Minimum Y position
+soft_endstop.y_max                                 412                    # Maximum Y position. Set slightly higher than the soft limit in OpenPnP.
+
+#soft_endstop.z_min                                -146                   # Minimum Z position. Set slightly higher than the soft limit in OpenPnP.
+#soft_endstop.z_max                                +146                   # Maximum Z position. Set slightly higher than the soft limit in OpenPnP.
+
+soft_endstop.halt                                  true                   # Whether to issue a HALT state when hitting a soft endstop (if false, will just ignore commands that would exceed the limit).
+
+# Optional order in which axis will home.  The default is they all home at the same time,
+# if this is set it will force each axis to home one at a time in the specified order.
+home_z_first                                       true                   # Do not set this to false otherwise you might drag the nozzle across the table.
+
+# CONTROL PANEL
+# See: http://smoothieware.org/panel
+# Please find your panel on the wiki and copy/paste the right configuration here.
+panel.enable                                       false                  # Set to true to enable the panel code.
+
+# Example for RepRapDiscount Full Graphic Smart Controller.
+# On GLCD EXP1 is to left and EXP2 is to right (when looking at the back).
+# Pin 1 is bottom left, pin 2 is top left etc.
+# +5V is pin 10 on EXP1.
+# Gnd is pin 9 on EXP1 and EXP2.
+panel.lcd                                          reprap_discount_glcd
+panel.spi_channel                                  0                      # SPI channel to use:  ; GLCD EXP1 Pins 3,5 (MOSI, SCLK)
+panel.spi_cs_pin                                   0.16                   # SPI chip select:     ; GLCD EXP1 Pin 4
+panel.encoder_a_pin                                3.25^!                 # Encoder pin:         ; GLCD EXP2 Pin 3
+panel.encoder_b_pin                                3.26^!                 # Encoder pin:         ; GLCD EXP2 Pin 5
+panel.click_button_pin                             1.30^!                 # Click button:        ; GLCD EXP1 Pin 2
+panel.buzz_pin                                     1.31                   # Pin for buzzer:      ; GLCD EXP1 Pin 1
+panel.back_button_pin                              2.11^!                 # Back button:         ; GLCD EXP2 Pin 8
+panel.encoder_resolution                           2                      # The number of pulses the encoder emits per detent.
+
+# Setup for external sd card on the GLCD which uses the onboard sdcard SPI port.
+#panel.external_sd                                 true                   # Set to true if there is an extrernal sdcard on the panel.
+#panel.external_sd.spi_channel                     1                      # Set spi channel the sdcard is on.
+#panel.external_sd.spi_cs_pin                      0.28                   # Set spi chip select for the sdcard (or any spare pin).
+#panel.external_sd.sdcd_pin                        0.27^!                 # SD detect signal (set to nc if no sdcard detect) (or any spare pin).
+#panel.menu_offset                                 0                      # Some panels will need 1 here.
+
+panel.alpha_jog_feedrate                           9000                   # X jogging feedrate in mm/min.
+panel.beta_jog_feedrate                            9000                   # Y jogging feedrate in mm/min.
+panel.gamma_jog_feedrate                           3000                   # Z jogging feedrate in mm/min.
+
+# Custom menus: Example of a custom menu entry, which will show up in the Custom entry.
+# NOTE An underscore (_) gets converted to space in the menu and commands, | is used to separate multiple commands.
+custom_menu.reset.enable                           true                   #
+custom_menu.reset.name                             REBOOT                 # Reboot the Smoothie.
+custom_menu.reset.command                          reset                  #
+
+custom_menu.top_off.enable                         true                   #
+custom_menu.top_off.name                           Top_LED_off            # Turn Top Camera LED off.
+custom_menu.top_off.command                        M808                   #
+
+custom_menu.top_on.enable                          true                   #
+custom_menu.top_on.name                            Top_LED_on             # Turn Top Camera LED on.
+custom_menu.top_on.command                         M809                   #
+
+custom_menu.bottom_off.enable                      true                   #
+custom_menu.bottom_off.name                        Bottom_LED_off         # Turn Bottom Camera LED off.
+custom_menu.bottom_off.command                     M810                   #
+
+custom_menu.bottom_on.enable                       true                   #
+custom_menu.bottom_on.name                         Bottom_LED_on          # Turn Bottom Camera LED on.
+custom_menu.bottom_on.command                      M811                   #
+
+custom_menu.n1_vac_off.enable                      true                   #
+custom_menu.n1_vac_off.name                        N1_Vac_Off             # Turn Nozzle 1 Vacuum Off.
+custom_menu.n1_vac_off.command                     M800                   #
+
+custom_menu.n1_vac_on.enable                       true                   #
+custom_menu.n1_vac_on.name                         N1_Vac_on              # Turn Nozzle 1 Vacuum On.
+custom_menu.n1_vac_on.command                      M801                   #
+
+custom_menu.n2_vac_off.enable                      true                   #
+custom_menu.n2_vac_off.name                        N2_Vac_Off             # Turn Nozzle 2 Vacuum Off.
+custom_menu.n2_vac_off.command                     M804                   #
+
+custom_menu.n2_vac_on.enable                       true                   #
+custom_menu.n2_vac_on.name                         N2_Vac_on              # Turn Nozzle 2 Vacuum On.
+custom_menu.n2_vac_on.command                      M805                   #
+
+## System configuration
+
+# Ethernet Network settings.
+network.enable                                     true                   # Enable the ethernet network services.
+network.webserver.enable                           true                   # Enable the webserver.
+network.telnet.enable                              true                   # Enable the telnet server.
+network.ip_address                                 192.168.100.224        # The IP address (change this to 'auto' for DHCP).
+network.ip_mask                                    255.255.255.0          # The IP subnet mask.
+network.ip_gateway                                 192.168.100.1          # The gateway address.
+
+# Serial communications configuration (baud rate defaults to 9600 if undefined).
+# For communication over the UART port, *not* the USB/Serial port.
+uart0.baud_rate                                    115200                 # Baud rate for the default hardware ( UART ) serial port.
+second_usb_serial_enable                           false                  # This enables a second USB serial port.
+
+leds_disable                                       false                  # Disable using leds after config loaded.
+
+# Kill button maybe assigned to a different pin, set to the onboard pin by default.
+# See: http://smoothieware.org/killbutton
+kill_button_enable                                 true                   # Set to true to enable a kill button.
+kill_button_pin                                    2.12                   # Kill button pin. Default is same as pause button 2.12 (2.11 is another good choice).
+kill_button_toggle_enable                          true                   # Allows for latching estop button.
+#unkill_enable                                     true                   # False: do not unkill when button held or released; true: releasing kill button will leave kill.
+
+#msd_disable                                       false                  # Disable the MSD (USB SDCARD), see http://smoothieware.org/troubleshooting#disable-msd.
+#dfu_enable                                        false                  # For linux developers, set to true to enable DFU.
+
+# Only needed on a smoothieboard.
+# See: http://smoothieware.org/currentcontrol
+currentcontrol_module_enable                       true                   # Control stepper motor current via the configuration file.
+
+return_error_on_unhandled_gcode                    false
