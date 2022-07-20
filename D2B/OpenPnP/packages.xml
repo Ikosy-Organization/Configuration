@@ -1,7 +1,7 @@
 <openpnp-packages>
-   <package version="1.1" id="FIDUCIAL-1X2" description="Homing Fiducial" pick-vacuum-level="0.0" place-blow-off-level="0.0">
+   <package version="1.1" bottom-vision-id="BVS16fa5b7fafd89870" fiducial-vision-id="FVS16ffa67d5e3e72c0" id="FIDUCIAL-1X2" description="Homing Fiducial" pick-vacuum-level="0.0" place-blow-off-level="0.0">
       <footprint units="Millimeters" body-width="0.0" body-height="0.0">
-         <pad name="1" x="0.0" y="0.0" width="6.5" height="6.5" rotation="0.0" roundness="100.0"/>
+         <pad name="1" x="0.0" y="0.0" width="8.0" height="8.0" rotation="0.0" roundness="100.0"/>
       </footprint>
       <compatible-nozzle-tip-ids class="java.util.ArrayList"/>
    </package>
@@ -24,7 +24,7 @@
       <footprint units="Millimeters" body-width="0.0" body-height="0.0"/>
       <compatible-nozzle-tip-ids class="java.util.ArrayList"/>
    </package>
-   <package version="1.1" id="ELECTRO-SMD-E-7.8MM" description="Electrolytic Capacitor" tape-specification="24mm" pick-vacuum-level="0.0" place-blow-off-level="0.0">
+   <package version="1.1" bottom-vision-id="BVS16fa5b7fa13e9ef4" id="ELECTRO-SMD-E-7.8MM" description="Electrolytic Capacitor" tape-specification="24mm" pick-vacuum-level="0.0" place-blow-off-level="0.0">
       <footprint units="Millimeters" body-width="10.0" body-height="10.5"/>
       <compatible-nozzle-tip-ids class="java.util.ArrayList">
          <string>TIP1682fbfac32bdc40</string>
@@ -36,13 +36,13 @@
       </footprint>
       <compatible-nozzle-tip-ids class="java.util.ArrayList"/>
    </package>
-   <package version="1.1" id="Diode-Schotty" description="Diode Schottky" tape-specification="12mm" pick-vacuum-level="0.0" place-blow-off-level="0.0">
+   <package version="1.1" bottom-vision-id="BVS16fa5b7fa88444fc" id="Diode-Schotty" description="Diode Schottky" tape-specification="12mm" pick-vacuum-level="0.0" place-blow-off-level="0.0">
       <footprint units="Millimeters" body-width="5.15" body-height="6.15"/>
       <compatible-nozzle-tip-ids class="java.util.ArrayList">
          <string>TIP1682fbfac32bdc40</string>
       </compatible-nozzle-tip-ids>
    </package>
-   <package version="1.1" id="Inductor" tape-specification="24mm" pick-vacuum-level="0.0" place-blow-off-level="0.0">
+   <package version="1.1" bottom-vision-id="BVS16fa5b7fa13e9ef4" id="Inductor" tape-specification="24mm" pick-vacuum-level="0.0" place-blow-off-level="0.0">
       <footprint units="Millimeters" body-width="11.0" body-height="10.0"/>
       <compatible-nozzle-tip-ids class="java.util.ArrayList">
          <string>TIP1682fbff8ff0ca20</string>
@@ -58,7 +58,7 @@
       <footprint units="Millimeters" body-width="2.0" body-height="2.0"/>
       <compatible-nozzle-tip-ids class="java.util.ArrayList"/>
    </package>
-   <package version="1.1" id="Switch" tape-specification="24mm" pick-vacuum-level="0.0" place-blow-off-level="0.0">
+   <package version="1.1" bottom-vision-id="BVS16fa5b7fa13e9ef4" id="Switch" tape-specification="24mm" pick-vacuum-level="0.0" place-blow-off-level="0.0">
       <footprint units="Millimeters" body-width="8.5" body-height="3.5"/>
       <compatible-nozzle-tip-ids class="java.util.ArrayList">
          <string>TIP1682fbff8ff0ca20</string>
@@ -75,13 +75,13 @@
          <string>NT1</string>
       </compatible-nozzle-tip-ids>
    </package>
-   <package version="1.1" id="SOT28FL" tape-specification="8mm" pick-vacuum-level="0.0" place-blow-off-level="0.0">
+   <package version="1.1" bottom-vision-id="BVS16fa5b7fa33507c0" id="SOT28FL" tape-specification="8mm" pick-vacuum-level="0.0" place-blow-off-level="0.0">
       <footprint units="Millimeters" body-width="2.9" body-height="2.8"/>
       <compatible-nozzle-tip-ids class="java.util.ArrayList">
          <string>NT1</string>
       </compatible-nozzle-tip-ids>
    </package>
-   <package version="1.1" id="MSOP10" tape-specification="12mm" pick-vacuum-level="0.0" place-blow-off-level="0.0">
+   <package version="1.1" bottom-vision-id="BVS16fa5b7fa221b360" id="MSOP10" tape-specification="12mm" pick-vacuum-level="0.0" place-blow-off-level="0.0">
       <footprint units="Millimeters" body-width="3.0" body-height="4.9"/>
       <compatible-nozzle-tip-ids class="java.util.ArrayList">
          <string>NT1</string>
@@ -98,5 +98,17 @@
       <compatible-nozzle-tip-ids class="java.util.ArrayList">
          <string>TIP1682fbfac32bdc40</string>
       </compatible-nozzle-tip-ids>
+   </package>
+   <package version="1.1" fiducial-vision-id="FVS16ffa682a95045b8" id="FIDUCIAL-HOME-2" pick-vacuum-level="0.0" place-blow-off-level="0.0">
+      <footprint units="Millimeters" body-width="0.0" body-height="0.0">
+         <pad name="Fiducial" x="0.0" y="0.0" width="8.0" height="8.0" rotation="0.0" roundness="100.0"/>
+      </footprint>
+      <compatible-nozzle-tip-ids class="java.util.ArrayList"/>
+   </package>
+   <package version="1.1" id="FIDUCIAL-1X2-0" description="Homing Fiducial" pick-vacuum-level="0.0" place-blow-off-level="0.0">
+      <footprint units="Millimeters" body-width="0.0" body-height="0.0">
+         <pad name="1" x="0.0" y="0.0" width="9.0" height="9.0" rotation="0.0" roundness="100.0"/>
+      </footprint>
+      <compatible-nozzle-tip-ids class="java.util.ArrayList"/>
    </package>
 </openpnp-packages>

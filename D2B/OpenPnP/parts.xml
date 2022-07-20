@@ -1,9 +1,9 @@
 <openpnp-parts>
-   <part id="R0603-1K" name="Chip Resistor" height-units="Millimeters" height="0.45" package-id="R0603" speed="1.0" pick-retry-count="0"/>
+   <part bottom-vision-id="BVS16fa5b7fa388dabc" id="R0603-1K" name="Chip Resistor" height-units="Millimeters" height="0.45" package-id="R0603" speed="1.0" pick-retry-count="0"/>
    <part id="FIDUCIAL-HOME" name="Homing FID" height-units="Millimeters" height="0.0" package-id="FIDUCIAL-1X2" speed="1.0" pick-retry-count="0"/>
    <part id="CAP0603-1uF" name="Ceramic Capacitor" height-units="Millimeters" height="0.8" package-id="CAP0603" speed="1.0" pick-retry-count="0"/>
    <part id="CAP0603-0.1uF" name="Ceramic Capacitor" height-units="Millimeters" height="0.8" package-id="CAP0603" speed="1.0" pick-retry-count="0"/>
-   <part id="FIDUCIAL-1X2" name="Fiducial" height-units="Millimeters" height="0.0" package-id="FIDUCIAL-1X2" speed="1.0" pick-retry-count="0"/>
+   <part bottom-vision-id="BVS_Default" id="FIDUCIAL-1X2" name="Fiducial" height-units="Millimeters" height="0.0" package-id="FIDUCIAL-1X2" speed="1.0" pick-retry-count="0"/>
    <part id="ELECTRO-SMD-E-7.8MM" name="Electrolytic Capacitor" height-units="Millimeters" height="10.4" package-id="ELECTRO-SMD-E-7.8MM" speed="1.0" pick-retry-count="0"/>
    <part id="FIDUCIAL_1MM" name="Fiducial" height-units="Millimeters" height="0.0" package-id="FIDUCIAL_1MM" speed="1.0" pick-retry-count="0"/>
    <part id="CAP0603-22uF" name="Ceramic Capacitor" height-units="Millimeters" height="0.8" package-id="CAP0603" speed="1.0" pick-retry-count="0"/>
@@ -30,4 +30,6 @@
    <part id="Charger IC" height-units="Millimeters" height="1.1" package-id="MSOP10" speed="1.0" pick-retry-count="0"/>
    <part id="Regulator IC" height-units="Millimeters" height="1.55" package-id="SOP8" speed="1.0" pick-retry-count="0"/>
    <part id="usb" height-units="Millimeters" height="3.16" package-id="usb" speed="1.0" pick-retry-count="0"/>
+   <part fiducial-vision-id="FVS16ff9c0e543be7e0" id="FIDUCIAL-HOME-0" name="Homing FID" height-units="Millimeters" height="0.0" package-id="FIDUCIAL-HOME-2" speed="1.0" pick-retry-count="0"/>
+   <part fiducial-vision-id="FVS16ff9f6d17b31174" id="FIDUCIAL-HOME-0-0" name="Homing FID" height-units="Millimeters" height="0.0" package-id="FIDUCIAL-1X2" speed="1.0" pick-retry-count="0"/>
 </openpnp-parts>
