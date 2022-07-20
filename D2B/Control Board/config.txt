@@ -75,7 +75,7 @@ gamma_steps_per_mm                                 127.32395447351        # Mirc
 gamma_step_pin                                     2.2                    # Pin for gamma stepper step signal.
 gamma_dir_pin                                      0.20                   # Pin for gamma stepper direction, add '!' to the end to reverse direction.
 gamma_en_pin                                       0.19                   # Pin for gamma enable.
-gamma_current                                      0.7                    # Z stepper motor current - Max 0.7.
+gamma_current                                      1.3                    # Z stepper motor current - Max 0.7 for 20 mm 1.7 for 40 mm.
 gamma_max_rate                                     80000                  # Maximum rate in degree/min.
 gamma_acceleration                                 10000                  # In degree/sec^2.
 z_axis_max_speed                                   20000                  # In degree/min.
@@ -205,7 +205,7 @@ endstop.minx.enable                                true                   # Enab
 endstop.minx.limit_enable                          true                   # Set to true to enable the limit on this endstop.
 endstop.minx.pin                                   1.24^                  # Pin.
 endstop.minx.axis                                  X                      # The axis designator.
-endstop.minx.max_travel                            270                    # The maximum travel in mm before it times out.
+endstop.minx.max_travel                            300                    # The maximum travel in mm before it times out.
 endstop.minx.homing_direction                      home_to_min            # Direction it moves to the endstop.
 endstop.minx.homing_position                       0                      # The cartesian coordinate this is set to when it homes.
 endstop.minx.fast_rate                             70                     # Fast homing rate in mm/sec.
@@ -217,7 +217,7 @@ endstop.maxx.enable                                true                   # Enab
 endstop.maxx.limit_enable                          true                   # Set to true to enable the limit on this endstop.
 endstop.maxx.pin                                   1.25^                  # Pin.
 endstop.maxx.axis                                  X                      # The axis designator.
-endstop.maxx.max_travel                            355                    # The maximum travel in mm before it times out.
+endstop.maxx.max_travel                            300                    # The maximum travel in mm before it times out.
 
 # Y min (home).
 endstop.miny.enable                                true                   # Enable an endstop.
@@ -244,7 +244,7 @@ endstop.minz.enable                                true                   # Enab
 endstop.minz.pin                                   1.28^!                 # Pin.
 endstop.minz.axis                                  Z                      # The axis designator.
 endstop.minz.max_travel                            360                    # The maximum travel in deg before it times out.
-endstop.minz.homing_direction                      home_to_min            # Direction it moves to the endstop.
+endstop.minz.homing_direction                      home_to_max            # Direction it moves to the endstop.
 endstop.minz.homing_position                       0                      # The coordinate (degrees) this is set to when it homes.
 endstop.minz.fast_rate                             25                     # Fast homing rate in mm/sec.
 endstop.minz.slow_rate                             5                      # Slow homing rate in mm/sec.
@@ -347,7 +347,7 @@ network.webserver.enable                           true                   # Enab
 network.telnet.enable                              true                   # Enable the telnet server.
 network.ip_address                                 192.168.100.224        # The IP address (change this to 'auto' for DHCP).
 network.ip_mask                                    255.255.255.0          # The IP subnet mask.
-network.ip_gateway                                 192.168.100.1          # The gateway address.
+network.ip_gateway                                 192.168.1.1            # The gateway address.
 
 # Serial communications configuration (baud rate defaults to 9600 if undefined).
 # For communication over the UART port, *not* the USB/Serial port.
